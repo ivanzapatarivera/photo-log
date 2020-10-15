@@ -15,13 +15,26 @@ const dbURL = 'photolog';
 const dbLogs = ['logs'];
 const dbL = mongojs(dbURL, dbLogs);
 
-app.post('/log', (req, res) => {
-    console.log(req.body);
-    dbL.logs.insert(req.body, (error, log) => {
-        if (error) {
-            res.send(error);
-        } else {
-            res.send(log)
+app.get("/all", (req, res) => {
+
+    var notesArray = [];
+    
+    getNotes();
+    function getNotes() {
+      db.notes.find({}, (error, data) => {
+        for(var i = 0; i < data.length; i++) {
+          notesArray.push(data[i])
         }
-    })
-})
+        newNotes();
+      })
+      function newNotes() {
+        db.newNotes.find({}, (error, data) => {
+        for(var i = 0; i < data.length; i++) {
+          notesArray.push(data[i]);
+        }
+        res.json(notesArray);
+        console.log(notesArray)
+        })
+      }
+    }
+    });
