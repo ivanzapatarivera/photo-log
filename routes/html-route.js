@@ -6,4 +6,12 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '../../assets/html/index.html'))
 });
 
+router.get('/engine', (req, res) => {
+    res.sendFile(path.join(__dirname + '../../assets/html/photo-engine.html'))
+});
+
+router.get('/thankyou', (req, res) => {
+    res.sendFile(path.join(__dirname + '../../assets/html/thankyou.html'))
+});
+
 module.exports = router;
