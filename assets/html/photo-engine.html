@@ -12,7 +12,17 @@
 </head>
 <body>
 This is PhotoLog's engine page.<br>
-<span><a href="/thankyou">Submit Entry</a></span>
+
+<div id="entry-form" class="ml-5 my-5">
+    <h4>Log your photo's URL</h4>
+    <input type="text" id="title" style="height: 30px; width: 250px;" /><br>
+    <h4 class="mt-4">Where was this picture taken?</h4>
+    <textarea id="location" style="height: 30px; width: 250px;"></textarea>
+    <div id="buttons">
+        <button id="log-image" style="border: 0px; border-radius: 15px;" class="shadow-sm px-4 py-1 mt-4">Log Image</button>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
 </body>
