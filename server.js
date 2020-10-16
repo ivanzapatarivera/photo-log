@@ -10,9 +10,10 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("./assets/html"));
+app.use(express.static("./assets"));
 
 const route = require('./routes/html-route');
+require('./routes/api')
 
 app.use('/', route);
 app.use('/engine', route);
