@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.static("./assets"));
 
 const route = require('./routes/html-route');
-require('./routes/api')
+app.use(require('./routes/api'));
 
 app.use('/', route);
 app.use('/engine', route);
