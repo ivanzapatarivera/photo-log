@@ -2,10 +2,10 @@
   "name": "photo-log",
   "version": "1.0.0",
   "description": "This application will allow user to organize travel pictures",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
+    "mongojs": "^3.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.5",
     "path": "^0.12.7",
     "router": "^1.3.5"
   },
