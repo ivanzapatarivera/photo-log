@@ -2,7 +2,7 @@ function Nav() {
   var body = document.getElementById("root");
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
                 <div class="container">
-                    <a class="navbar-brand" href="#">PhotoLog</a>
+                    <a class="navbar-brand" href="/">PhotoLog</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
