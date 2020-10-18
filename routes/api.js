@@ -1,8 +1,8 @@
 const express = require("express");
-const mongojs = require("mongojs");
+const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
-const nodemon = require('nodemon');
+
 const app = express();
 
 app.use(logger("dev"));
@@ -10,12 +10,13 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const dbURL = 'photolog';
-const colLogs = ['logs'];
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/photolog", { 
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
-app.post('/logs', (req, res) => {
-    console.log(req)
-    
+app.post('/log', ({ body }, res) => {
+
 })
 
 module.exports = app;

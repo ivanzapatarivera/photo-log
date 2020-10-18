@@ -16,3 +16,31 @@ label, button {
     margin-top: 10px;
     margin-bottom: 2.5px;
 }
+h1, h4 {
+    color: white;
+    text-shadow: 1px 1px 2px #7c7c7c;
+}
+
+
+
+/* Background Image */
+body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url('https://bit.ly/2T40mYr') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .card {
+      background-color: white;
+      opacity: 0.9;
+  }
