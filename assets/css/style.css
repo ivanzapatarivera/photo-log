@@ -8,3 +8,7 @@ input, textarea {
 .log {
     text-align: right;
 }
+label, button {
+    font-weight: 600;
+    margin-top: 10px;
+}
