@@ -30,7 +30,26 @@
                         <input type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
                         <label for="description">Description</label><br>
                         <textarea type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
-                        <button class="mx-auto">Log</button>
+                        <button class="button btn btn-primary">Log</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center pt-5">PhotoLog'er</h1>
+        <div class="row p-1">
+            <div class="col-12 col-md-6 card mx-auto">
+                <div class="card-body">
+                    <h5 class="text-center">Log Another Photo!</h5>
+                    <form action="/logAnother" method="post">
+                        <label for="titleAnother">Title</label><br>
+                        <input type="text" name="titleAnother" id="titleAnother" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;How would you like to name this picture?"><br>
+                        <label for="URLAnother">Web Address</label><br>
+                        <input type="text" name="URLAnother" id="URLAnother" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;What's the URL where this picture is located?"><br>
+                        <label for="locationAnother">LocationAnother</label><br>
+                        <input type="text" name="locationAnother" id="locationAnother" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
+                        <label for="descriptionAnother">DescriptionAnother</label><br>
+                        <textarea type="text" name="descriptionAnother" id="descriptionAnother" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
+                        <button class="button btn btn-primary">Log Another</button>
                     </form>
                 </div>
             </div>

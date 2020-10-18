@@ -3,17 +3,21 @@ const Schema = mongoose.Schema;
 
 const logs = new Schema ({
 
-    log: {
+    title: {
+        type: String,
+        required: true
+    }, 
+    URL: {
         type: String,
         required: true
     }, 
     location: {
         type: String,
         required: true
-    },
-    timestamp: {
-        type: String, 
-        required: true
+    }, 
+    description: {
+        type: String,
+        require: true
     }
 
 });
