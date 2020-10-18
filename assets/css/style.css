@@ -1,3 +1,10 @@
 .navbar {
     background-color: rgb(255, 138, 96);
 }
+input, textarea {
+    width: 100%;
+    font-style: italic;
+}
+.log {
+    text-align: right;
+}
