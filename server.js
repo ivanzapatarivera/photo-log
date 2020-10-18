@@ -12,12 +12,8 @@ app.use(express.json());
 
 app.use(express.static("./assets"));
 
-const route = require('./routes/html-route');
+app.use(require('./routes/html-route'));
 app.use(require('./routes/api'));
-
-app.use('/', route);
-app.use('/engine', route);
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {console.log(`App running on http://localhost:${PORT}`)})
