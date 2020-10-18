@@ -2,12 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-const dbL = require('../models/logs.js');
-const dbA = require('../models/logsAnother.js')
+const logs = require('../models/logs.js');
+const another = require('../models/logsAnother.js')
 const app = express();
 
 app.post('/log', ({ body }, res) => {
-    dbL.create(body)
+    logs.create(body)
     .then(db => {
         console.log(db)
     })
@@ -20,7 +20,7 @@ app.post('/log', ({ body }, res) => {
 });
 
 app.post('/logAnother', ({ body }, res) => {
-    dbA.create(body)
+    another.create(body)
     .then(db => {
         console.log(db)
     })
@@ -33,14 +33,14 @@ app.post('/logAnother', ({ body }, res) => {
 });
 
 app.get('/log', (req, res) => {
-    dbL.find({})
+    logs.find({})
     .then(cb => {
         res.json(cb)
     })
 })
 
 app.get('/logAnother', (req, res) => {
-    dbA.find({})
+    another.find({})
     .then(cb => {
         res.json(cb)
     })
