@@ -26,4 +26,18 @@ app.post('/logAnother', ({ body }, res) => {
     });
 });
 
+app.get('/log', (req, res) => {
+    dbL.find({})
+    .then(cb => {
+        res.json(cb)
+    })
+})
+
+app.get('/logAnother', (req, res) => {
+    dbA.find({})
+    .then(cb => {
+        res.json(cb)
+    })
+})
+
 module.exports = app;
