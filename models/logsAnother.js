@@ -3,19 +3,19 @@ const SchemaAnother = mongoose.Schema;
 
 const logsAnother = new SchemaAnother ({
 
-    titleAnother: {
+    title: {
         type: String,
         required: true
     }, 
-    URLAnother: {
+    URL: {
         type: String,
         required: true
     }, 
-    locationAnother: {
+    location: {
         type: String,
         required: true
     }, 
-    descriptionAnother: {
+    description: {
         type: String,
         require: true
     }

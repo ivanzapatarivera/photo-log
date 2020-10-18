@@ -11,6 +11,9 @@ app.post('/log', ({ body }, res) => {
     .then(db => {
         console.log(db)
     })
+    .then(db => {
+        res.redirect('/thankyou')
+    })
     .catch(err => {
         res.json(err);
     });
@@ -20,6 +23,9 @@ app.post('/logAnother', ({ body }, res) => {
     dbA.create(body)
     .then(db => {
         console.log(db)
+    })
+    .then(db => {
+        res.redirect('/thankyou')
     })
     .catch(err => {
         res.json(err);
