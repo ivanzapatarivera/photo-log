@@ -1,8 +1,7 @@
 {
   "name": "photo-log",
   "version": "1.0.0",
-  "description": "This application will allow user to organize travel pictures",
- 
+  "description": "This application will allow user to organize travel pictures", 
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
