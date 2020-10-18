@@ -4,6 +4,9 @@
 input, textarea {
     width: 100%;
     font-style: italic;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: lightblue;
 }
 .log {
     text-align: right;
@@ -11,4 +14,5 @@ input, textarea {
 label, button {
     font-weight: 600;
     margin-top: 10px;
+    margin-bottom: 2.5px;
 }
