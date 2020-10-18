@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 
+
+const dbL = require('../models/logs');
 const app = express();
 
 app.use(logger("dev"));
@@ -16,7 +18,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/photolog", {
 });
 
 app.post('/log', ({ body }, res) => {
-
-})
+    dbL.create(body)
+    .then(db => {
+        console.log(db)
+    })
+    .catch(err => {
+        res.json(err);
+    });
+});
 
 module.exports = app;
