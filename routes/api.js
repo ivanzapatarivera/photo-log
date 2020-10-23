@@ -69,4 +69,11 @@ app.get('/photologstatus', ({ body }, res) => {
     })
 })
 
+app.get('/photologstatus', (req, res) => {
+    statusUpdate.find({})
+    .then(cb => {
+        res.json(cb)
+    })
+})
+
 module.exports = app;
