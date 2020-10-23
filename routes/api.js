@@ -6,6 +6,8 @@ const logs = require('../models/logs.js');
 const profilepic = require('../models/profilepic.js');
 const app = express();
 
+
+// These are the routes for photo logs
 app.post('/log', ({ body }, res) => {
     logs.create(body)
     .then(db => {
@@ -26,6 +28,8 @@ app.get('/log', (req, res) => {
     })
 });
 
+
+// These are the routes for profile picture updates
 app.post('/profilepic', ({ body }, res) => {
     profilepic.create(body)
     .then(db => {
@@ -45,6 +49,9 @@ app.get('/profilepic', (req, res) => {
         res.json(cb)
     })
 })
+
+
+// These are the route for status updates
 
 
 module.exports = app;
