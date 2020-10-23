@@ -4,6 +4,7 @@ const logger = require("morgan");
 
 const logs = require('../models/logs.js');
 const profilepic = require('../models/profilepic.js');
+const statusUpdate = require('../models/statusupdate.js');
 const app = express();
 
 
@@ -53,7 +54,7 @@ app.get('/profilepic', (req, res) => {
 
 // These are the route for status updates
 app.get('/photologstatus', ({ body }, res) => {
-    
+
 })
 
 module.exports = app;
