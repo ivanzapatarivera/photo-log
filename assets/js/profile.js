@@ -1,6 +1,6 @@
 function profile() {
   const profile = document.querySelector("#profilepic");
-  const profileapi = "/profilepic";
+  const profileapi = "https://photo-logger.herokuapp.com/profilepic";
 
   if (profile) {
     fetch(profileapi)
