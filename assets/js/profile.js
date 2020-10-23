@@ -1,27 +1,15 @@
 function profile() {
-  const source = "https://photo-logger.herokuapp.com/log";
-  const profile = document.getElementById("profile");
-  fetch(source)
-    .then((res) => res.json(source))
-    // .then((res) => console.log(res))
-    .then((res) => {
-      res.map((d) => {
-        const createNode = (elem) => {
-          return document.createElement(elem);
-        };
-        const appendNode = (parent, elem) => {
-          // console.log(elem)
-          parent.appendChild(elem);
-        };
-        let li = createNode('li');
-        let image = createNode('img');
-        image.setAttribute('src', d.log.URL)
-        appendNode(li, image);
-        appendNode(profile, li);
-      })
-      .catch((err) => {
-          console.error("Error", err);
-      })
-    });
+  const profile = document.querySelector('#profilepic');
+  const profileapi = '/profilepic';
+  fetch(profileapi)
+  .then((res) => res.json(profileapi))
+  .then((d) => {
+    var dL = d.length - 1
+    var URL = d[dL].URL
+    console.log(URL)
+    var img = `<img src=${URL} class="profilepic">`;
+    profile.insertAdjacentHTML('afterbegin', img)
+  })  
+
 }
 profile();
