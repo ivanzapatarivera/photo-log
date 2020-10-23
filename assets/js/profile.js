@@ -13,6 +13,13 @@ function profile() {
         profile.insertAdjacentHTML("afterbegin", img);
       });
   }
+
+  const changePro = document.querySelector("#show");
+  const form = document.querySelector("#form");
+  changePro.addEventListener("click", function () {
+    form.style.display = "block";
+    console.log(form.style.display);
+  });
 }
 
 export { profile };
