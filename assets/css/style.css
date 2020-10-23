@@ -53,3 +53,7 @@ body:before {
       height: auto;
       border-radius: 25px;
   }
+
+  .hidden {
+      display: none;
+  }
