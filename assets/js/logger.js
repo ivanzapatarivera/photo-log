@@ -19,10 +19,11 @@ function logger() {
                 </div>
                 </div>`;
 
-  append();
-
-  function append() {
-    div.insertAdjacentHTML("afterend", form);
+  if (div) {
+    append();
+    function append() {
+      div.insertAdjacentHTML("afterend", form);
+    }
   }
 }
 
