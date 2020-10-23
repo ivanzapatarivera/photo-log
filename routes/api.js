@@ -54,7 +54,19 @@ app.get('/profilepic', (req, res) => {
 
 // These are the route for status updates
 app.get('/photologstatus', ({ body }, res) => {
-
+    statusUpdate.create(body)
+    .then(db => {
+        console.log(db)
+    })
+    .then(db => {
+        res.redirect('/profile')
+    })
+    .then(
+        alert('Status has been updated!')
+    )
+    .catch(err => {
+        res.json(err)
+    })
 })
 
 module.exports = app;
