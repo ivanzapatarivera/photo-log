@@ -21,7 +21,9 @@ h1, h4 {
     text-shadow: 1px 1px 2px #7c7c7c;
 }
 
-
+#root {
+    color: white;
+}
 
 /* Background Image */
 body:before {
@@ -43,4 +45,5 @@ body:before {
   .card {
       background-color: white;
       opacity: 0.9;
+      color: black;
   }

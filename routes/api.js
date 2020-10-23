@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 
 const logs = require('../models/logs.js');
-const another = require('../models/logsAnother.js')
+const another = require('../models/logsAnother.js');
+const profilepic = require('../models/profilepic.js');
 const app = express();
 
 app.post('/log', ({ body }, res) => {
@@ -37,6 +38,26 @@ app.get('/log', (req, res) => {
     .then(cb => {
         res.json(cb)
     })
+});
+
+app.post('/profilepic', ({ body }, res) => {
+    profilepic.create(body)
+    .then(db => {
+        console.log(db)
+    })
+    .then(db => {
+        res.redirect('/profile')
+    })
+    .catch(err => {
+        res.json(err)
+    })
+});
+
+app.get('/profilepic', (req, res) => {
+    profilepic.find({})
+    .then(cb => {
+        res.json(cb)
+    })
 })
 
 app.get('/logAnother', (req, res) => {
@@ -44,6 +65,6 @@ app.get('/logAnother', (req, res) => {
     .then(cb => {
         res.json(cb)
     })
-})
+});
 
 module.exports = app;
