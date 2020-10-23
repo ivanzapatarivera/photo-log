@@ -52,6 +52,8 @@ app.get('/profilepic', (req, res) => {
 
 
 // These are the route for status updates
-
+app.get('/photologstatus', ({ body }, res) => {
+    
+})
 
 module.exports = app;
