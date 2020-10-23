@@ -8,7 +8,6 @@ function profile() {
       .then((d) => {
         var dL = d.length - 1;
         var URL = d[dL].URL;
-        console.log(URL);
         var img = `<img src=${URL} class="profilepic">`;
         profile.insertAdjacentHTML("afterbegin", img);
       });
@@ -17,7 +16,11 @@ function profile() {
   const changePro = document.querySelector("#show");
   const form = document.querySelector("#form");
   changePro.addEventListener("click", function () {
-    form.style.display = "block";
+    if (form.style.display === "block") {
+      form.style.display = "none";
+    } else {
+      form.style.display = "block";
+    }
     console.log(form.style.display);
   });
 }
