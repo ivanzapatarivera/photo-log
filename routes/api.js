@@ -27,6 +27,9 @@ app.get('/log', (req, res) => {
     .then(cb => {
         res.json(cb)
     })
+    .catch(err => {
+        res.json(err);
+    });
 });
 
 
@@ -49,11 +52,14 @@ app.get('/profilepic', (req, res) => {
     .then(cb => {
         res.json(cb)
     })
+    .catch(err => {
+        res.json(err);
+    });
 })
 
 
 // These are the route for status updates
-app.get('/photologstatus', ({ body }, res) => {
+app.post('/photologstatus', ({ body }, res) => {
     statusUpdate.create(body)
     .then(db => {
         console.log(db)
@@ -61,9 +67,6 @@ app.get('/photologstatus', ({ body }, res) => {
     .then(db => {
         res.redirect('/profile')
     })
-    .then(
-        alert('Status has been updated!')
-    )
     .catch(err => {
         res.json(err)
     })
@@ -74,6 +77,9 @@ app.get('/photologstatus', (req, res) => {
     .then(cb => {
         res.json(cb)
     })
+    .catch(err => {
+        res.json(err);
+    });
 })
 
 module.exports = app;
