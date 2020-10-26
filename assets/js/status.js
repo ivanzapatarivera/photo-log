@@ -34,8 +34,15 @@ function status() {
         .then((d) => {
           d.map((d) => {
               let li = createNode('li');
-              li.innerText = d.statusUpdate
-              appendNode(previousStats, li)
+              let br = createNode('br');
+              let spanDate = createNode('span');
+              spanDate.innerText = "Created on: " + d.timestamp;
+              let spanStatus = createNode('span');
+              spanStatus.innerText = d.statusUpdate;
+              appendNode(li, spanDate);
+              appendNode(li, br);
+              appendNode(li, spanStatus);
+              appendNode(previousStats, li);
           })
         })
         .catch((err) => {
