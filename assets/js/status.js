@@ -34,6 +34,8 @@ function status() {
         .then((d) => {
           d.map((d) => {
             let li = createNode("li");
+            li.setAttribute('class', 'mt-3 col-12 col-md-8 mx-auto card pt-2 px-4 pb-4');
+            li.setAttribute('style', 'border-radius: 15px;')
             let br = createNode("br");
             let spanDate = createNode("span");
 
