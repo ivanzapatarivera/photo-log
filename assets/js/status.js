@@ -7,7 +7,6 @@ function status() {
     return document.createElement(elem);
   };
   const appendNode = (parent, elem) => {
-    // console.log(elem)
     parent.appendChild(elem);
   };
 
@@ -34,8 +33,11 @@ function status() {
         .then((d) => {
           d.map((d) => {
             let li = createNode("li");
-            li.setAttribute('class', 'mt-3 col-12 col-md-8 mx-auto card text-left pt-2 px-4 pb-4');
-            li.setAttribute('style', 'border-radius: 15px;')
+            li.setAttribute(
+              "class",
+              "mt-3 col-12 col-md-8 mx-auto card text-left pt-2 px-4 pb-4"
+            );
+            li.setAttribute("style", "border-radius: 15px;");
             let br = createNode("br");
             let spanDate = createNode("span");
 
@@ -58,7 +60,7 @@ function status() {
               dateArray[0] +
               " @" +
               dateArray3[0];
-              spanDate.setAttribute('style', 'font-size: .8rem;');
+            spanDate.setAttribute("style", "font-size: .8rem;");
             let spanStatus = createNode("span");
             spanStatus.innerText = d.statusUpdate;
             appendNode(li, spanDate);
@@ -72,17 +74,6 @@ function status() {
           console.error("Error: ", err);
         });
     }
-
-    statusShowHide();
-    function statusShowHide() {
-        fetch(statusAPI)
-        .then((res) => res.json(statusAPI))
-        .then((d) => {
-            if(d.length = 0) {
-                status.style.display = "none";
-            }
-    })
-
   }
 }
 
