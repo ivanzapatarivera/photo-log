@@ -73,7 +73,7 @@ app.post('/photologstatus', ({ body }, res) => {
 })
 
 app.get('/photologstatus', (req, res) => {
-    statusUpdate.find({})
+    statusUpdate.find({}).sort({timestamp: -1})
     .then(cb => {
         res.json(cb)
     })
