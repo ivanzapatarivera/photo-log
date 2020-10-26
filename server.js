@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const nodemon = require('nodemon');
 const app = express();
+const bodyParser = require('body-parser');
+
+const fs = require('fs');
+const path = require('path');
 
 app.use(logger("dev"));
 
@@ -13,7 +17,8 @@ app.use(express.static("./assets"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/PhotoLog", { 
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 app.use(require('./routes/html-route'));
