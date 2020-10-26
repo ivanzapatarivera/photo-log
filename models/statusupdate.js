@@ -6,7 +6,11 @@ const statusUpdate = new Schema ({
     statusUpdate: {
         type: String,
         required: true
-    } 
+    }, 
+    timestamp: {
+        type: Date,
+        default: Date.now()
+    }
   
 });
 

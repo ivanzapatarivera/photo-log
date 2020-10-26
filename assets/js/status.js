@@ -37,9 +37,9 @@ function status() {
               li.innerText = d.statusUpdate
               appendNode(previousStats, li)
           })
+        })
         .catch((err) => {
             console.error("Error: ", err);
-        })
         });
     }
   }
