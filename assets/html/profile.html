@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,14 +26,15 @@
             </div>
             <div class="col-12 col-md-6">
                 <h3 class="headline mt-3">This is PhotoLog Status</h3>
-                <div id="statusText" class="card">This is the PhotoLog status paragraph.</p>
-                <div id="status">
-                    <button class="btn btn-primary" id="showStatus">New Status</button>
-                    <form action="/photologstatus" method="post" id="formStatus" class="mt-4 hidden">
-                        <label for="statusUpdate">Enter Update</label>
-                        <textarea name="statusUpdate" id="statusUpdate" cols="30" rows="3"></textarea>
-                        <button class="button btn btn-primary">Update</button>
-                    </form>
+                <div id="statusText" class="card p-4">
+                    <div id="status">
+                        <button class="btn btn-primary" id="showStatus">Update Status</button>
+                        <form action="/photologstatus" method="post" id="formStatus" class="mt-4 hidden">
+                            <label for="statusUpdate">Enter Update</label>
+                            <textarea name="statusUpdate" id="statusUpdate" cols="30" rows="3"></textarea>
+                            <button class="button btn btn-primary">Update</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
