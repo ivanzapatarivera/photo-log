@@ -31,14 +31,14 @@ function profile() {
     // Thide code will allow to show and hide the form to post a status update
     const changeStatus = document.querySelector("#showStatus");
     const statusForm = document.querySelector("#formStatus");
-    changeStatus.addEventListener("click", function () {
-      if (statusForm.style.display === "block") {
-        statusForm.style.display = "none";
-      } else {
-        statusForm.style.display = "block";
-      }
-      console.log(statusForm.style.display);
-    });
+    // changeStatus.addEventListener("click", function () {
+    //   if (statusForm.style.display === "block") {
+    //     statusForm.style.display = "none";
+    //   } else {
+    //     statusForm.style.display = "block";
+    //   }
+    //   console.log(statusForm.style.display);
+    // });
   }
 }
 

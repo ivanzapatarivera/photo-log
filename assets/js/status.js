@@ -11,20 +11,20 @@ function status() {
   };
 
   if (status) {
-    statusCard();
-    function statusCard() {
-      fetch(statusAPI)
-        .then((res) => res.json(statusAPI))
-        .then((d) => {
-          console.log(d);
-          var dL = d.length - 1;
-          console.log(dL);
-          var URL = d[dL].statusUpdate;
-          console.log(URL);
-          var update = `<p class="text-left">${URL}</p>`;
-          status.insertAdjacentHTML("afterbegin", update);
-        });
-    }
+    // statusCard();
+    // function statusCard() {
+    //   fetch(statusAPI)
+    //     .then((res) => res.json(statusAPI))
+    //     .then((d) => {
+    //       console.log(d);
+    //       var dL = d.length - 1;
+    //       console.log(dL);
+    //       var URL = d[dL].statusUpdate;
+    //       console.log(URL);
+    //       var update = `<p class="text-left">${URL}</p>`;
+    //       status.insertAdjacentHTML("afterbegin", update);
+    //     });
+    // }
 
     previousStatus();
     function previousStatus() {
