@@ -49,8 +49,8 @@ body:before {
   }
 
   .profilepic {
-      width: 150px;
-      height: auto;
+      height: 50px;
+      width: auto;
       border-radius: 25px;
   }
 
