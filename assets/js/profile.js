@@ -11,7 +11,7 @@ function profile() {
         console.log(dL);
         var URL = d[dL].URL;
         console.log(URL)
-        var img = `<img src=${URL} class="profilepic">`;
+        var img = `<img src=${URL} class="profilepic mt-4">`;
         profile.insertAdjacentHTML("afterbegin", img);
       });
 

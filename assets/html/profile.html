@@ -15,9 +15,12 @@
     <div class="container mt-5">
 
         <h1 class="text-center pt-4"><i class="far fa-user-circle"></i> Profile</h1>        
-        <div class="row mt-5 text-center">
-            <div class="col-12 col-md-3 mb-3" id="profilepic"> 
-                <br><button id="show" class="button btn btn-primary">Change Profile Picture</button>
+        <div class="row mt-5 text-center bg-white">
+            <div class="col-12 col-md-3 mb-3"> 
+                <div id="show">
+                    <div id="profilepic"></div>
+                </div>
+                <!-- <br><button id="show" class="button btn btn-primary"></button> -->
                 <form action="/profilepic" method="post" class="hidden" id="form">
                     <label for="URL">URL</label><br>
                     <input type="text" name="URL" id="URL" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Add your profile picture's URL"><br>
