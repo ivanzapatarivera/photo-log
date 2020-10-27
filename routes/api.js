@@ -17,6 +17,9 @@ app.post('/log', ({ body }, res) => {
     .then(db => {
         res.redirect('/thankyou')
     })
+    .then(db => {
+        res.redirect('/profile')
+    })
     .catch(err => {
         res.json(err);
     });
@@ -54,7 +57,7 @@ app.get('/profilepic', (req, res) => {
     })
     .catch(err => {
         res.json(err);
-    });
+    })
 })
 
 
@@ -79,7 +82,7 @@ app.get('/photologstatus', (req, res) => {
     })
     .catch(err => {
         res.json(err);
-    });
+    })
 })
 
 

@@ -1,4 +1,5 @@
-function status() {
+function status(event) {
+  // event.preventDefault();
   console.log("You're in status.js");
   const status = document.querySelector("#statusText");
   const previousStats = document.querySelector("#previousStatus");
@@ -27,7 +28,8 @@ function status() {
     // }
 
     previousStatus();
-    function previousStatus() {
+    function previousStatus(event) {
+      // event.preventDefault();
       fetch(statusAPI)
         .then((res) => res.json(statusAPI))
         .then((d) => {
