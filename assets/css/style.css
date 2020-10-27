@@ -68,3 +68,17 @@ h1, h3, h4 {
       display: none;
   }
 
+  .cardImage {
+      height: 150px;
+      width: auto;
+      border-radius: 15px;
+      text-align: center;
+  }
+
+  .cardTitle {
+      font-size: .85em;
+  }
+
+  .cards {
+      border-width: 0;
+  }

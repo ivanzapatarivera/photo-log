@@ -11,8 +11,8 @@ function pictures() {
             d.map((d) => {
                 const title = d.title;
                 const URL = d.URL;
-                var card = `<div class="card">
-                            <h5>${title}</h5>
+                var card = `<div class="card cards text-center">
+                            <p class="cardTitle mt-4">${title}<p>
                             <img src=${URL} class="cardImage" />
                             </div>`
                 event.insertAdjacentHTML("afterbegin", card);
