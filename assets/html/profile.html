@@ -13,10 +13,10 @@
 <body id="root">
 
     <div class="container mt-5">
-        <h1 class="text-center pt-4"><i class="far fa-user-circle"></i> Profile</h1>
-        
+
+        <h1 class="text-center pt-4"><i class="far fa-user-circle"></i> Profile</h1>        
         <div class="row mt-5 text-center">
-            <div class="col-12 col-md-6 mb-4" id="profilepic"> 
+            <div class="col-12 col-md-3 mb-3" id="profilepic"> 
                 <br><button id="show" class="button btn btn-primary">Change Profile Picture</button>
                 <form action="/profilepic" method="post" class="hidden" id="form">
                     <label for="URL">URL</label><br>
@@ -24,9 +24,9 @@
                     <button class="button btn btn-primary">Post</button>
                 </form>
             </div>
-            <div class="col-12 col-md-6">
-                <h3 class="headline">My Thoughts</h3>
-                <div id="statusText" class="card p-4">
+            <div class="col-12 col-md-9 card">
+                <!-- <h3 class="headline">My Thoughts</h3> -->
+                <div id="statusText" class=" p-4">
                     <div id="status">
                         <button class="btn btn-primary" id="showStatus">Update Status</button>
                         <form action="/photologstatus" method="post" id="formStatus" class="mt-4 hidden">
@@ -38,6 +38,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row text-center">
             <div class="col-12 my-4">
                 <h3 class="text-center">Timeline</h3>
