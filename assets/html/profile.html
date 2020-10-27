@@ -17,56 +17,61 @@
     <title>PhotoLog - Profile</title>
   </head>
   <body id="root">
-    <div class="container mt-5">
+    <div class="container main mt-5 mb-5 py-5">
       <h1 class="text-center pt-4">
         <i class="far fa-user-circle"></i> Profile
       </h1>
 
-      <!-- This is the first row with profile picture and form to update Timeline -->
-      <div class="row mt-5 text-center">
-        <!-- Profile picture column -->
-        <div class="col-12 col-md-3 mb-3">
-          <!-- Profile Picture -->
-          <div id="show">
-            <div id="profilepic"></div>
-          </div>
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <!-- This is the first row with profile picture and form to update Timeline -->
+          <div class="row mt-5 text-center">
+            <!-- Profile picture column -->
+            <div class="col-12 col-md-3 mb-3">
+              <!-- Profile Picture -->
+              <div id="show">
+                <div id="profilepic"></div>
+              </div>
 
-          <!-- Profile picture update form -->
-          <form action="/profilepic" method="post" class="hidden" id="form">
-            <label for="URL">URL</label><br />
-            <input
-              type="text"
-              name="URL"
-              id="URL"
-              placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Add your profile picture's URL"
-            /><br />
-            <button class="button btn btn-primary">Post</button>
-          </form>
-        </div>
-
-        <!-- PhotoLog Status update column  -->
-        <div class="col-12 col-md-9">
-          <div id="statusText">
-            <div id="status">
-              <form action="/photologstatus" method="post" id="formStatus">
-                <label for="statusUpdate">Enter Update</label>
-                <textarea
-                  name="statusUpdate"
-                  id="statusUpdate"
-                  cols="30"
-                  rows="3"
-                ></textarea>
-                <button class="button btn btn-primary">Update</button>
+              <!-- Profile picture update form -->
+              <form action="/profilepic" method="post" class="hidden" id="form">
+                <label for="URL">URL</label><br />
+                <input
+                  type="text"
+                  name="URL"
+                  id="URL"
+                  placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Add your profile picture's URL"
+                /><br />
+                <button class="button btn btn-primary">Post</button>
               </form>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="row text-center">
-        <div class="col-12 my-4">
-          <h3 class="text-center">Timeline</h3>
-          <ul style="list-style: none" id="previousStatus"></ul>
+            <!-- PhotoLog Status update column  -->
+            <div class="col-12 col-md-9">
+              <div id="statusText">
+                <div id="status">
+                  <form action="/photologstatus" method="post" id="formStatus">
+                    <textarea
+                      name="statusUpdate"
+                      id="statusUpdate"
+                      cols="30"
+                      rows="3"
+                      placeholder="What's on your mind?"
+                      class="px-4 py-1"
+                    ></textarea>
+                    <button class="button btn btn-primary">Update</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 my-4">
+              <h3 class="text-center">Timeline</h3>
+              <div class="mx-auto px-2" id="previousStatus"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

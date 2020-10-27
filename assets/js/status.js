@@ -32,10 +32,10 @@ function status() {
         .then((res) => res.json(statusAPI))
         .then((d) => {
           d.map((d) => {
-            let li = createNode("li");
+            let li = createNode("div");
             li.setAttribute(
               "class",
-              "mt-3 col-12 col-md-8 mx-auto card text-left pt-2 px-4 pb-4"
+              "mt-3 col-12 col-md-12 mx-auto card text-left pt-2 px-4 pb-4"
             );
             li.setAttribute("style", "border-radius: 15px;");
             let br = createNode("br");

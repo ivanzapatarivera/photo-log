@@ -1,6 +1,15 @@
 .navbar {
     background-color: rgb(255, 138, 96);
 }
+
+body {
+    background-color: aliceblue;
+}
+
+.main {
+    background-color: white;
+}
+
 input, textarea {
     width: 100%;
     font-style: italic;
@@ -17,16 +26,16 @@ label, button {
     margin-bottom: 2.5px;
 }
 h1, h4 {
-    color: white;
+    /* color: white; */
     text-shadow: 1px 1px 2px #7c7c7c;
 }
 
-#root {
-    color: white;
-}
+/* #root { */
+    /* color: white; */
+/* } */
 
 /* Background Image */
-body:before {
+/* body:before {
     content: "";
     display: block;
     position: fixed;
@@ -40,12 +49,13 @@ body:before {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+  } */
 
   .card {
-      background-color: white;
+      /* background-color: white; */
       opacity: 0.9;
       color: black;
+      border-color: lightblue;
   }
 
   .profilepic {
@@ -57,3 +67,4 @@ body:before {
   .hidden {
       display: none;
   }
+
