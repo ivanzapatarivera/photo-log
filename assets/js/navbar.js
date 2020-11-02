@@ -22,19 +22,22 @@ function Nav() {
                     </div>
                 </div>
                 </nav>`;
-    
+  var footer = `<footer id="footer" class="text-center fixed-bottom footer py-2">
+                    <a href="/" class="footer pr-5"><i class="fas fa-home"></i></a>
+                    <a href="/engine" class="footer px-5"><i class="far fa-images"></i></a>
+                    <a href="/" class="footer pl-5"><i class="fas fa-camera-retro"></i> PhotoLog</a>
+                </footer>`;
 
   appendNavbar();
 
   function appendNavbar() {
-    if(width >= 993) {
-        console.log("Window width is: ", width)
-      body.insertAdjacentHTML("afterbegin", navbar)
+    if (width >= 993) {
+      console.log("Window width is: ", width);
+      body.insertAdjacentHTML("afterbegin", navbar);
     } else {
-        console.log("Window width is: ", width)
-        // body.insertAdjacentHTML("afterend", footer)
+      console.log("Window width is: ", width);
+      body.insertAdjacentHTML("afterend", footer)
     }
-    
   }
 }
 

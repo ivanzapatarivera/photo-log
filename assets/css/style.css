@@ -90,7 +90,7 @@ h4 {
   border-width: 0;
 }
 
-.footerStyle {
-  background-color: cornflowerblue;
-  color: white;
+.footer {
+text-decoration: none;
+
 }
