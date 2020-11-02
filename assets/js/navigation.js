@@ -43,7 +43,7 @@ function Nav() {
     //     body.insertAdjacentHTML("afterend", footer)
     //     nav.style.display === "none";
     //   }
-      if (widthA >= 993) {
+      if (width >= 993) {
         console.log("Window width is: ", width);
         body.insertAdjacentHTML("afterbegin", navbar);
       } else {
