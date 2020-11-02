@@ -36,7 +36,7 @@ function Nav() {
       body.insertAdjacentHTML("afterbegin", navbar);
     } else {
       console.log("Window width is: ", width);
-      body.insertAdjacentHTML("afterend", footer)
+      body.insertAdjacentHTML("afterend", footer);
     }
   }
 }
