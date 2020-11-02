@@ -53,6 +53,5 @@ function Nav() {
       
     };
   }
-}
 
 export { Nav };
