@@ -90,7 +90,7 @@ app.get("/photologstatus", (req, res) => {
     });
 });
 
-app.get("/find/:id", (req, res) => {
+app.get("/findStatus/:id", (req, res) => {
   statusUpdate.findOne(
     { _id: mongojs.ObjectId(req.params.id) },
     (err, data) => {
@@ -103,7 +103,7 @@ app.get("/find/:id", (req, res) => {
   );
 });
 
-app.delete("/delete/:id", (req, res) => {
+app.delete("/deleteStatus/:id", (req, res) => {
   statusUpdate
     .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
       if (err) {
