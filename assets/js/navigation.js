@@ -23,6 +23,7 @@ function Nav() {
                     </div>
                 </div>
                 </nav>`;
+                
   var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
                     <a href="/" class="footer pr-3"><i class="fas fa-home"></i></a>
                     <a href="/" class="footer px-5"><i class="fas fa-camera-retro"></i> PhotoLog</a>
