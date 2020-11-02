@@ -59,7 +59,7 @@ app.get('/profilepic', (req, res) => {
     .catch(err => {
         res.json(err);
     })
-})
+});
 
 
 // These are the route for status updates
@@ -74,7 +74,7 @@ app.post('/photologstatus', ({ body }, res) => {
     .catch(err => {
         res.json(err)
     })
-})
+});
 
 app.get('/photologstatus', (req, res) => {
     statusUpdate.find({}).sort({timestamp: -1})
@@ -84,7 +84,7 @@ app.get('/photologstatus', (req, res) => {
     .catch(err => {
         res.json(err);
     })
-})
+});
 
 app.get("/find/:id", (req, res) => {
     statusUpdate.findOne(
@@ -98,8 +98,21 @@ app.get("/find/:id", (req, res) => {
             }
         }
     )
-})
+});
 
+app.get("/delete/:id", (req, res) => {
+    statusUpdate.remove(
+        {_id: mongojs.ObjectId(req.params.id)},
+        (err, data) => {
+            if (err) {
+                res.send(error);
+            }
+            else {
+                res.send(data)
+            }
+        }
+    )
+});
 
 
 module.exports = app;
