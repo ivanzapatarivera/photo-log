@@ -37,6 +37,34 @@ app.get("/log", (req, res) => {
     });
 });
 
+app.get("/findLog/:id", (req, res) => {
+  logs.findOne(
+    { _id: mongojs.ObjectId(req.params.id) },
+    (err, data) => {
+      if (err) {
+        res.send(error);
+      } else {
+        res.send(data);
+      }
+    }
+  );
+});
+
+app.delete("/deleteLog/:id", (req, res) => {
+  logs
+    .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
+      if (err) {
+        res.send(error);
+      } else {
+        res.send(data);
+      }
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+
 // These are the routes for profile picture updates
 app.post("/profilepic", ({ body }, res) => {
   profilepic
