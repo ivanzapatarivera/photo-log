@@ -40,24 +40,23 @@ function status(event) {
           console.error("Error: ", err);
         });
     }
-  }
 
-  previousStats.addEventListener("click", function (e) {
-    if (e.target.matches(".delete")) {
-      console.log("you clicked on delete");
-      console.log("this is the element: ", e.target);
-      var el = e.target;
-      console.log(el);
-      var dataID = el.getAttribute("data-id");
-      console.log(dataID);
-      fetch("/delete/" + dataID, {
-        method: "delete",
-      })
-      .then((res) => {
-        console.log(res)
-      })
-    }
-  });
+    previousStats.addEventListener("click", function (e) {
+      if (e.target.matches(".delete")) {
+        console.log("you clicked on delete");
+        console.log("this is the element: ", e.target);
+        var el = e.target;
+        console.log(el);
+        var dataID = el.getAttribute("data-id");
+        console.log(dataID);
+        fetch("/delete/" + dataID, {
+          method: "delete",
+        }).then(() => {
+          location.reload();
+        });
+      }
+    });
+  }
 }
 
 export { status };

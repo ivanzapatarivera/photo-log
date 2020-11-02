@@ -81,7 +81,7 @@ app.post("/photologstatus", ({ body }, res) => {
 app.get("/photologstatus", (req, res) => {
   statusUpdate
     .find({})
-    .sort({ timestamp: -1 })
+    .sort({ timestamp: 1 })
     .then((cb) => {
       res.json(cb);
     })
@@ -104,13 +104,17 @@ app.get("/find/:id", (req, res) => {
 });
 
 app.delete("/delete/:id", (req, res) => {
-  statusUpdate.remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
-    if (err) {
-      res.send(error);
-    } else {
-      res.send(data);
-    }
-  });
+  statusUpdate
+    .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
+      if (err) {
+        res.send(error);
+      } else {
+        res.send(data);
+      }
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 module.exports = app;
