@@ -27,18 +27,6 @@ function profile() {
       }
       console.log(form.style.display);
     });
-
-    // Uncomment to allow show and hide of form to post a status update
-    // const changeStatus = document.querySelector("#showStatus");
-    // const statusForm = document.querySelector("#formStatus");
-    // changeStatus.addEventListener("click", function () {
-    //   if (statusForm.style.display === "block") {
-    //     statusForm.style.display = "none";
-    //   } else {
-    //     statusForm.style.display = "block";
-    //   }
-    //   console.log(statusForm.style.display);
-    // });
   }
 }
 

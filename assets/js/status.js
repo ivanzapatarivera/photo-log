@@ -1,5 +1,4 @@
 function status(event) {
-  // event.preventDefault();
   console.log("You're in status.js");
   const status = document.querySelector("#statusText");
   const previousStats = document.querySelector("#previousStatus");
@@ -12,25 +11,10 @@ function status(event) {
   };
 
   if (status) {
-    // statusCard();
-    // function statusCard() {
-    //   fetch(statusAPI)
-    //     .then((res) => res.json(statusAPI))
-    //     .then((d) => {
-    //       console.log(d);
-    //       var dL = d.length - 1;
-    //       console.log(dL);
-    //       var URL = d[dL].statusUpdate;
-    //       console.log(URL);
-    //       var update = `<p class="text-left">${URL}</p>`;
-    //       status.insertAdjacentHTML("afterbegin", update);
-    //     });
-    // }
 
     previousStatus();
     function previousStatus(event) {
-      // event.preventDefault();
-      fetch(statusAPI)
+          fetch(statusAPI)
         .then((res) => res.json(statusAPI))
         .then((d) => {
           d.map((d) => {
