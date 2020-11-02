@@ -7,11 +7,11 @@ function pictures() {
         fetch(API)
         .then((res) => res.json(API))
         .then((d) => {
-            // console.log(d);
+            
             d.map((d) => {
                 const title = d.title;
                 const id = d._id;
-                console.log(d);
+            
                 const URL = d.URL;
                 var card = `<div class="card cards text-center">
                             <p class="cardTitle mt-4" data-id=${id}>${title} <span onClick="delete" data-id=${id} class="delete"><i class="far fa-trash-alt"></i></span><p>

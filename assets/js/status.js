@@ -10,7 +10,7 @@ function status(event) {
         .then((res) => res.json(statusAPI))
         .then((d) => {
           d.map((d) => {
-            console.log(d);
+            
             let id = d._id;
 
             let date = d.timestamp;
@@ -42,6 +42,12 @@ function status(event) {
         });
     }
   }
+
+  previousStats.addEventListener("click", function(e) {
+    if(e.target.matches(".delete")){
+      console.log("you clicked on delete");
+    }
+  })
 }
 
 export { status };
