@@ -1,7 +1,7 @@
 function status(event) {
   const status = document.querySelector("#statusText");
   const previousStats = document.querySelector("#previousStatus");
-  const statusAPI = "/photologstatus";
+  const statusAPI = "/status";
 
   if (status) {
     previousStatus();

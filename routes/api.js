@@ -92,7 +92,7 @@ app.get("/profilepic", (req, res) => {
 });
 
 // These are the route for status updates
-app.post("/photologstatus", ({ body }, res) => {
+app.post("/status", ({ body }, res) => {
   statusUpdate
     .create(body)
     .then((db) => {
@@ -106,7 +106,7 @@ app.post("/photologstatus", ({ body }, res) => {
     });
 });
 
-app.get("/photologstatus", (req, res) => {
+app.get("/status", (req, res) => {
   statusUpdate
     .find({})
     .sort({ timestamp: 1 })
