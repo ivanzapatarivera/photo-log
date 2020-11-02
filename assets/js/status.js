@@ -10,8 +10,8 @@ function status(event) {
         .then((res) => res.json(statusAPI))
         .then((d) => {
           d.map((d) => {
-            let id = d._id;
 
+            let id = d._id;
             let date = d.timestamp;
             let dateArray = date.split("-");
             let dateArray2 = dateArray[2].split("T");
