@@ -1,7 +1,8 @@
 function Nav() {
   var body = document.getElementById("root");
+
   var width = window.innerWidth;
-  var navbar = `<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
+  var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="/">PhotoLog</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -31,13 +32,21 @@ function Nav() {
   appendNavigation();
 
   function appendNavigation() {
-    if (width >= 993) {
-      console.log("Window width is: ", width);
-      body.insertAdjacentHTML("afterbegin", navbar);
-    } else {
-      console.log("Window width is: ", width);
-      body.insertAdjacentHTML("afterend", footer);
-    }
+    var widthA, heightA;
+    window.onresize = window.onload = function () {
+      widthA = this.innerWidth;
+      heightA = this.innerHeight;
+
+      if (widthA >= 993) {
+        console.log("Window width is: ", width);
+        body.insertAdjacentHTML("afterbegin", navbar);
+        footer.style.display === "none";
+      } else {
+        console.log("Window width is: ", width);
+        body.insertAdjacentHTML("afterend", footer);
+        navbar.style.display === "none";
+      }
+    };
   }
 }
 
