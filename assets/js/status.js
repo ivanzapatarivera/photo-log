@@ -49,7 +49,7 @@ function status(event) {
         console.log(el);
         var dataID = el.getAttribute("data-id");
         console.log(dataID);
-        fetch("/delete/" + dataID, {
+        fetch("/deleteStatus/" + dataID, {
           method: "delete",
         }).then(() => {
           location.reload();
