@@ -22,10 +22,10 @@ function Nav() {
                     </div>
                 </div>
                 </nav>`;
-  var footer = `<footer id="footer" class="text-center fixed-bottom footer py-2">
-                    <a href="/" class="footer pr-5"><i class="fas fa-home"></i></a>
-                    <a href="/engine" class="footer px-5"><i class="far fa-images"></i></a>
-                    <a href="/" class="footer pl-5"><i class="fas fa-camera-retro"></i> PhotoLog</a>
+  var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
+                    <a href="/" class="footer pr-3"><i class="fas fa-home"></i></a>
+                    <a href="/" class="footer px-5"><i class="fas fa-camera-retro"></i> PhotoLog</a>
+                    <a href="/engine" class="footer pl-3"><i class="far fa-images"></i></a>
                 </footer>`;
 
   appendNavbar();
