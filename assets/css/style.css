@@ -1,37 +1,44 @@
-.navbar {
-    background-color: rgb(255, 138, 96);
+.navbar,
+.footer
+{
+  background-color: rgb(255, 138, 96);
+  color: white;
 }
 
 body {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 .main {
-    background-color: white;
+  background-color: white;
 }
 
-input, textarea {
-    width: 100%;
-    font-style: italic;
-    border-radius: 15px;
-    border-width: 1px;
-    border-color: lightblue;
+input,
+textarea {
+  width: 100%;
+  font-style: italic;
+  border-radius: 15px;
+  border-width: 1px;
+  border-color: lightblue;
 }
 .log {
-    text-align: right;
+  text-align: right;
 }
-label, button {
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 2.5px;
+label,
+button {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 2.5px;
 }
-h1, h3, h4 {
-    /* color: white; */
-    text-shadow: 1px 1px 2px #7c7c7c;
+h1,
+h3,
+h4 {
+  /* color: white; */
+  text-shadow: 1px 1px 2px #7c7c7c;
 }
 
 /* #root { */
-    /* color: white; */
+/* color: white; */
 /* } */
 
 /* Background Image */
@@ -51,34 +58,39 @@ h1, h3, h4 {
     background-size: cover;
   } */
 
-  .card {
-      /* background-color: white; */
-      opacity: 0.9;
-      color: black;
-      border-color: lightblue;
-  }
+.card {
+  /* background-color: white; */
+  opacity: 0.9;
+  color: black;
+  border-color: lightblue;
+}
 
-  .profilepic {
-      height: 75px;
-      width: auto;
-      border-radius: 25px;
-  }
+.profilepic {
+  height: 75px;
+  width: auto;
+  border-radius: 25px;
+}
 
-  .hidden {
-      display: none;
-  }
+.hidden {
+  display: none;
+}
 
-  .cardImage {
-      height: 150px;
-      width: auto;
-      border-radius: 15px;
-      text-align: center;
-  }
+.cardImage {
+  height: 150px;
+  width: auto;
+  border-radius: 15px;
+  text-align: center;
+}
 
-  .cardTitle {
-      font-size: .85em;
-  }
+.cardTitle {
+  font-size: 0.85em;
+}
 
-  .cards {
-      border-width: 0;
-  }
+.cards {
+  border-width: 0;
+}
+
+.footerStyle {
+  background-color: cornflowerblue;
+  color: white;
+}

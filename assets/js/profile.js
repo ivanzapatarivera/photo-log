@@ -6,11 +6,11 @@ function profile() {
     fetch(profileapi)
       .then((res) => res.json(profileapi))
       .then((d) => {
-        console.log(d);
+        // console.log(d);
         var dL = d.length - 1;
-        console.log(dL);
+        // console.log(dL);
         var URL = d[dL].URL;
-        console.log(URL)
+        // console.log(URL)
         var img = `<img src=${URL} class="profilepic mt-4">`;
         profile.insertAdjacentHTML("afterbegin", img);
       });
@@ -25,7 +25,7 @@ function profile() {
       } else {
         form.style.display = "block";
       }
-      console.log(form.style.display);
+      // console.log(form.style.display);
     });
   }
 }

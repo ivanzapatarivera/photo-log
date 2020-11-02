@@ -1,5 +1,5 @@
 function pictures() {
-    console.log('You\'re in pictures.')
+    // console.log('You\'re in pictures.')
     
     const event = document.querySelector('#picturesWall');
     const API = ('/log')
@@ -7,7 +7,7 @@ function pictures() {
         fetch(API)
         .then((res) => res.json(API))
         .then((d) => {
-            console.log(d);
+            // console.log(d);
             d.map((d) => {
                 const title = d.title;
                 const URL = d.URL;

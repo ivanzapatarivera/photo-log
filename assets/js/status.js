@@ -1,5 +1,5 @@
 function status(event) {
-  console.log("You're in status.js");
+  // console.log("You're in status.js");
   const status = document.querySelector("#statusText");
   const previousStats = document.querySelector("#previousStatus");
   const statusAPI = "/photologstatus";
@@ -29,13 +29,13 @@ function status(event) {
 
             // Date format
             let date = d.timestamp;
-            console.log(date);
+            // console.log(date);
             let dateArray = date.split("-");
-            console.log(dateArray);
+            // console.log(dateArray);
             let dateArray2 = dateArray[2].split("T");
-            console.log(dateArray2);
+            // console.log(dateArray2);
             let dateArray3 = dateArray2[1].split(".");
-            console.log(dateArray3);
+            // console.log(dateArray3);
 
             spanDate.innerText =
               "Created on: " +

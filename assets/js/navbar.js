@@ -1,5 +1,6 @@
 function Nav() {
   var body = document.getElementById("root");
+  var width = window.innerWidth;
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="/">PhotoLog</a>
@@ -21,11 +22,19 @@ function Nav() {
                     </div>
                 </div>
                 </nav>`;
+    
 
   appendNavbar();
 
   function appendNavbar() {
-    body.insertAdjacentHTML("afterbegin", navbar);
+    if(width >= 993) {
+        console.log("Window width is: ", width)
+      body.insertAdjacentHTML("afterbegin", navbar)
+    } else {
+        console.log("Window width is: ", width)
+        // body.insertAdjacentHTML("afterend", footer)
+    }
+    
   }
 }
 
