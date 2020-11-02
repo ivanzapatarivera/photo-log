@@ -5,6 +5,12 @@
   color: white;
 }
 
+.navbar {
+  display: block;
+}
+
+
+
 body {
   background-color: aliceblue;
 }

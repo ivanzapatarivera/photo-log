@@ -1,6 +1,6 @@
 function Nav() {
   var body = document.getElementById("root");
-
+  
   var width = window.innerWidth;
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
                 <div class="container">
@@ -32,20 +32,25 @@ function Nav() {
   appendNavigation();
 
   function appendNavigation() {
-    var widthA, heightA;
-    window.onresize = window.onload = function () {
-      widthA = this.innerWidth;
-      heightA = this.innerHeight;
 
+    // var widthA;
+    // window.onresize = window.onload = function () {
+    //   widthA = this.innerWidth;
+    //   var nav =  document.getElementById('navbar');
+    //   if (widthA >= 993) {
+    //     body.insertAdjacentHTML("afterbegin", navbar);
+    //   } else {
+    //     body.insertAdjacentHTML("afterend", footer)
+    //     nav.style.display === "none";
+    //   }
       if (widthA >= 993) {
         console.log("Window width is: ", width);
         body.insertAdjacentHTML("afterbegin", navbar);
-        footer.style.display === "none";
       } else {
         console.log("Window width is: ", width);
         body.insertAdjacentHTML("afterend", footer);
-        navbar.style.display === "none";
       }
+      
     };
   }
 }
