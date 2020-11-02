@@ -50,6 +50,12 @@ function status(event) {
       console.log(el);
       var dataID = el.getAttribute("data-id");
       console.log(dataID);
+      fetch("/delete/" + dataID, {
+        method: "delete",
+      })
+      .then((res) => {
+        console.log(res)
+      })
     }
   });
 }
