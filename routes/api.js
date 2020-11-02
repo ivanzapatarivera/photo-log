@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const mongojs = require("mongojs");
 const logger = require("morgan");
 
 const logs = require('../models/logs.js');
@@ -83,6 +84,20 @@ app.get('/photologstatus', (req, res) => {
     .catch(err => {
         res.json(err);
     })
+})
+
+app.get("/find/:id", (req, res) => {
+    statusUpdate.findOne(
+        {_id: mongojs.ObjectId(req.params.id)},
+        (err, data) => {
+            if (err) {
+                res.send(error);
+            }
+            else {
+                res.send(data)
+            }
+        }
+    )
 })
 
 

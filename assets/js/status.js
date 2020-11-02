@@ -10,7 +10,6 @@ function status(event) {
         .then((res) => res.json(statusAPI))
         .then((d) => {
           d.map((d) => {
-            
             let id = d._id;
 
             let date = d.timestamp;
@@ -29,10 +28,10 @@ function status(event) {
 
             let statusText = d.statusUpdate;
             let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left pt-2 px-4 pb-4" style="border-radius: 15px;" data-id="${id}">
-            <span style="font-size: .8rem;">${timestamp} 
-            <span onClick="delete" class="delete"><i class="far fa-trash-alt text-right delete"></i>
-            </span></span><br>
-            <span data-id="${id}">${statusText}</span></div>`;
+                            <span style="font-size: .8rem;">${timestamp} 
+                            <span onClick="delete" class="delete"><i class="far fa-trash-alt text-right delete" data-id=${id}></i>
+                            </span></span><br>
+                            <span data-id="${id}">${statusText}</span></div>`;
 
             previousStats.insertAdjacentHTML("afterbegin", statusCard);
           });
@@ -43,11 +42,16 @@ function status(event) {
     }
   }
 
-  previousStats.addEventListener("click", function(e) {
-    if(e.target.matches(".delete")){
+  previousStats.addEventListener("click", function (e) {
+    if (e.target.matches(".delete")) {
       console.log("you clicked on delete");
+      console.log("this is the element: ", e.target);
+      var el = e.target;
+      console.log(el);
+      var dataID = el.getAttribute("data-id");
+      console.log(dataID);
     }
-  })
+  });
 }
 
 export { status };
