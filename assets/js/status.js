@@ -27,16 +27,11 @@ function status(event) {
             let br = createNode("br");
             let spanDate = createNode("span");
 
-            // Date format
-            let date = d.timestamp;
-            // console.log(date);
-            let dateArray = date.split("-");
-            // console.log(dateArray);
-            let dateArray2 = dateArray[2].split("T");
-            // console.log(dateArray2);
+            let date = d.timestamp; 
+            let dateArray = date.split("-");       
+            let dateArray2 = dateArray[2].split("T");     
             let dateArray3 = dateArray2[1].split(".");
-            // console.log(dateArray3);
-
+      
             spanDate.innerText =
               "Created on: " +
               dateArray[1] +
