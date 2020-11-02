@@ -28,9 +28,9 @@ function Nav() {
                     <a href="/engine" class="footer pl-3"><i class="far fa-images"></i></a>
                 </footer>`;
 
-  appendNavbar();
+  appendNavigation();
 
-  function appendNavbar() {
+  function appendNavigation() {
     if (width >= 993) {
       console.log("Window width is: ", width);
       body.insertAdjacentHTML("afterbegin", navbar);

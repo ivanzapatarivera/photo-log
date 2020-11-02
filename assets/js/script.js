@@ -1,4 +1,4 @@
-import { Nav } from './navbar.js';
+import { Nav } from './navigation.js';
 import { logger } from './logger.js';
 import { profile } from './profile.js';
 import { status } from './status.js';
