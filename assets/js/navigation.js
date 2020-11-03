@@ -23,7 +23,6 @@ function Nav() {
                     </div>
                 </div>
                 </nav>`;
-                
   var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
                     <a href="/" class="footer pr-3"><i class="fas fa-home"></i></a>
                     <a href="/" class="footer px-5"><i class="fas fa-camera-retro"></i> PhotoLog</a>
@@ -34,25 +33,20 @@ function Nav() {
 
   function appendNavigation() {
 
-    // var widthA;
-    // window.onresize = window.onload = function () {
-    //   widthA = this.innerWidth;
-    //   var nav =  document.getElementById('navbar');
-    //   if (widthA >= 993) {
-    //     body.insertAdjacentHTML("afterbegin", navbar);
-    //   } else {
-    //     body.insertAdjacentHTML("afterend", footer)
-    //     nav.style.display === "none";
-    //   }
-      if (width >= 993) {
-        console.log("Window width is: ", width);
+
+    var widthA;
+    window.onresize = window.onload = function () {
+      widthA = this.innerWidth;
+      var nav = document.getElementById('navbar');
+      if (widthA >= 993) {
         body.insertAdjacentHTML("afterbegin", navbar);
       } else {
-        console.log("Window width is: ", width);
-        body.insertAdjacentHTML("afterend", footer);
+        body.insertAdjacentHTML("afterend", footer)
+      
       }
       
     };
   }
+}
 
 export { Nav };
