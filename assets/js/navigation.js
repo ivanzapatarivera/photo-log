@@ -32,21 +32,10 @@ function Nav() {
   appendNavigation();
 
   function appendNavigation() {
-
-
-    var widthA;
-    window.onresize = window.onload = function () {
-      widthA = this.innerWidth;
-      var nav = document.getElementById('navbar');
-      if (widthA >= 993) {
         body.insertAdjacentHTML("afterbegin", navbar);
-      } else {
-        body.insertAdjacentHTML("afterend", footer)
-      
-      }
-      
+        body.insertAdjacentHTML("afterbegin", footer);   
     };
   }
-}
+
 
 export { Nav };
