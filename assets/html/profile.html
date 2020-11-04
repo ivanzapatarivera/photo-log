@@ -23,8 +23,13 @@
       </h1>
 
       <div class="row">
+
+        <!-- Empty column -->
+        <div class="col-12 col-md-1"></div>
+
         <!-- Column with profile content -->
         <div class="col-12 col-md-8">
+
           <!-- This is the first row with profile picture and form to update Timeline -->
           <div class="row mt-5 text-center">
             <!-- Profile picture column -->
@@ -50,12 +55,12 @@
             <!-- PhotoLog Status update column  -->
             <div class="col-12 col-md-9">
               <div id="statusText">
-                <div id="status">
+                <div id="status" class="mt-5">
                   <form action="/status" method="post" id="formStatus">
                     <textarea
                       name="statusUpdate"
                       id="statusUpdate"
-                      cols="30"
+                      cols="100%"
                       rows="3"
                       placeholder="What's on your mind?"
                       class="px-4 py-1"
@@ -76,10 +81,14 @@
         </div>
 
         <!-- Column with logged pictures -->
-        <div class="col-12 col-md-4">
-          <h3 class="text-center">Pictures</h3>
-          <div id="picturesWall"></div>
+        <div class="col-12 col-md-2 my-4">
+          <!-- <h3 class="text-center">Pictures</h3> -->
+          <div id="picturesWall" class="my-4"></div>
         </div>
+
+        <!-- Empty column -->
+        <div class="col-12 col-md-1"></div>
+
       </div>
     </div>
     
