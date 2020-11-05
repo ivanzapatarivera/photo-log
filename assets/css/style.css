@@ -60,6 +60,12 @@ h4 {
   height: 150px;
   border-radius: 15px;
   text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform .2s;
+}
+
+.cardImage:hover {
+  transform: scale(1.075);
 }
 
 .cardTitle {
