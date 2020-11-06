@@ -1,5 +1,7 @@
 function thankYou() {
   setTimeout(function () {
-    window.location.href = "https://www.tutorialspoint.com/javascript/";
+    window.location.href = "/";
   }, 5000);
 }
+
+export { thankYou };
