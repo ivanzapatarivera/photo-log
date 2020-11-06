@@ -5,11 +5,18 @@ function pictures() {
     fetch(API)
       .then((res) => res.json(API))
       .then((d) => {
-        d.map((d) => {
+        console.log(d)
+        var dArray = [];
+        dArray.push(d);
+        dArray = dArray[0]
+        dArray = dArray.slice(Math.max(dArray.length - 6, 0));
+        console.log(dArray);
+        dArray.map((d) => {
           const title = d.title;
           const id = d._id;
           const description = d.description;
           const URL = d.URL;
+                   
           var card = `<div class="card cards text-center col-12 col-md-2">
                         <p class="cardTitle mt-4" data-id=${id}>
                         <span onClick="delete" data-id=${id} class="delete"><i class="far fa-trash-alt delete" data-id=${id}></i></span></p>
@@ -28,6 +35,8 @@ function pictures() {
         });
       });
   }
+
+  
 
   event.addEventListener("click", function (e) {
     if (e.target.matches(".delete")) {
