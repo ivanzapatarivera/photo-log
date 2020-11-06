@@ -1,4 +1,4 @@
-function Nav() {
+function nav() {
   var body = document.getElementById("root");
 
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -37,4 +37,4 @@ function Nav() {
   }
 
 
-export { Nav };
+export { nav };
