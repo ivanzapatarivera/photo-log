@@ -5,17 +5,19 @@ function pictures() {
     fetch(API)
       .then((res) => res.json(API))
       .then((d) => {
-        d = d.slice(Math.max(d.length - 6, 0));
+        d = d.slice(Math.max(d.length - 5, 0));
         d.map((d) => {
           const title = d.title;
           const id = d._id;
           const description = d.description;
           const URL = d.URL;
 
-          var card = `<div class="picturesWall cards text-center col-12 col-md-2">
+          var card = `<div class="picturesWall cards text-center col-12 col-lg-2">
                         <p class="cardTitle mt-4" data-id=${id}>
                         <p><img src=${URL} class="cardImage" /><br></p> 
-                        <span onClick="delete" data-id=${id} class="delete"><i class="far fa-trash-alt delete" data-id=${id}></i></span></p>
+                        <span class="cardTitle">${title}&nbsp;
+                          <span onClick="delete" data-id=${id} class="delete"><i class="far fa-trash-alt delete" data-id=${id}></i></span>
+                        </span></p>
                       </div>`;
 
           // DO NOT DELETE --- CACHED CODE
