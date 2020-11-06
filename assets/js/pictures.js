@@ -12,10 +12,10 @@ function pictures() {
           const description = d.description;
           const URL = d.URL;
 
-          var card = `<div class="cards text-center col-12 col-lg-2">
+          var card = `<div class="cards mx-auto text-center col-12 col-lg-2">
                         <p class="mt-4" data-id=${id}>
                         <p><img src=${URL} class="cardImage" /><br></p> 
-                        <span class="cardTitle">${title}&nbsp;
+                        <span class="cardTitle">${title}&nbsp;<br>
                           <span onClick="delete" data-id=${id} class="delete">
                             <i class="far fa-trash-alt delete" data-id=${id}></i>
                           </span>
