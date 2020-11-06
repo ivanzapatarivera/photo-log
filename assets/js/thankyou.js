@@ -4,4 +4,4 @@ function thankYou() {
   }, 5000);
 }
 
-export { thankYou };
+thankYou();
