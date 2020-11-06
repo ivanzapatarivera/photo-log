@@ -39,10 +39,11 @@ h4 {
   text-shadow: 1px 1px 2px #7c7c7c;
 }
 
-.card {
+.cards {
   opacity: 0.9;
   color: black;
   border-color: lightblue;
+  background-color: rgb(240, 240, 240);
 }
 
 .profilepic {
@@ -53,10 +54,6 @@ h4 {
 
 .hidden {
   display: none;
-}
-
-.picturesWall {
-  background-color: rgb(175, 175, 175);
 }
 
 .cardImage {
