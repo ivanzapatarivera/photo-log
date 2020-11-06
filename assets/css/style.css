@@ -42,8 +42,8 @@ h4 {
 .cards {
   opacity: 0.9;
   color: black;
+  border-width: 0;
   border-color: lightblue;
-  background-color: rgb(240, 240, 240);
 }
 
 .profilepic {
@@ -65,16 +65,17 @@ h4 {
   transition: transform .2s;
 }
 
+.picturesWall {
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+}
+
 .cardImage:hover {
   transform: scale(1.075);
 }
 
 .cardTitle {
   font-size: 0.85em;
-}
-
-.cards {
-  border-width: 0;
 }
 
 .footer {
