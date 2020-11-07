@@ -14,7 +14,7 @@ function pictures() {
 
           var card = `<div class="cards mx-auto text-center col-12 col-lg-2">
                         <p class="mt-4" data-id=${id}>
-                        <p><img src=${URL} class="cardImage" /><br></p> 
+                        <p><a href=${URL} target="_0"><img src=${URL} class="cardImage" /></a><br></p> 
                         <span class="cardTitle">${title}&nbsp;<br>
                           <span onClick="delete" data-id=${id} class="delete">
                             <i class="far fa-trash-alt delete" data-id=${id}></i>
