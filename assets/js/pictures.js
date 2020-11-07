@@ -12,7 +12,7 @@ function pictures() {
           const description = d.description;
           const URL = d.URL;
 
-          var card = `<div class="cards mx-auto text-center col-12 col-lg-2">
+          var card = `<div class="cards mx-auto text-center col-12 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
                         <p><a href=${URL} target="_0"><img src=${URL} class="cardImage" /></a><br></p> 
                         <span class="cardTitle">${title}&nbsp;<br>
@@ -31,6 +31,11 @@ function pictures() {
           // </p>
           // </div>
           event.insertAdjacentHTML("afterbegin", card);
+
+          const picClick = document.getElementById(id);
+          picClick.addEventListener("click", function() {
+            
+          })
         });
       });
   }
