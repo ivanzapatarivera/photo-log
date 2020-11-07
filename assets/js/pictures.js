@@ -34,7 +34,10 @@ function pictures() {
 
           const picClick = document.getElementById(id);
           picClick.addEventListener("click", function(e) {
-            console.log(e.path[0].currentSrc)
+          
+            var currentSrc = e.path[0].currentSrc;
+            console.log(currentSrc);
+            
           })
         });
       });
