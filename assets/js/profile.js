@@ -1,4 +1,23 @@
 function profile() {
+
+  const newProfilePic = document.querySelector("#newProfilePic");
+  const newProfilePicForm = `<form action="/profilepic" method="post" class="hidden" id="form">
+                              <label for="URL">URL</label><br />
+                              <input
+                                type="text"
+                                name="URL"
+                                id="URL"
+                                placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Add your profile picture's URL"
+                              /><br />
+                              <button class="button btn btn-primary">Change</button>
+                            </form>`;
+
+  if (newProfilePic) {
+    console.log('I can read id="newProfilePic"')
+    newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm)
+  }
+
+
   const profile = document.querySelector("#profilepic");
   const profileapi = "/profilepic";
 
@@ -22,7 +41,9 @@ function profile() {
         form.style.display = "block";
       }
     });
-  }
+  };
+
+
 }
 
 export { profile };
