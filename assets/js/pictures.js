@@ -1,5 +1,6 @@
 function pictures() {
-  const event = document.querySelector("#picturesWall");
+  const event = document.querySelector('#picturesWall');
+  const eventPicDiv = document.querySelector('#pictureDiv');
   const API = "/log";
   if (event) {
     fetch(API)
@@ -37,7 +38,13 @@ function pictures() {
           
             var currentSrc = e.path[0].currentSrc;
             console.log(currentSrc);
-            
+
+            var picDiv = `<div><img src=${currentSrc} id=${currentSrc}></div>`;
+            console.log(picDiv);
+
+            if(eventPicDiv){
+              console.log("This is eventPicDiv")
+            }
           })
         });
       });
