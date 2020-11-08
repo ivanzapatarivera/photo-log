@@ -6,14 +6,27 @@ function pictures() {
     fetch(API)
       .then((res) => res.json(API))
       .then((d) => {
-        d = d.slice(Math.max(d.length - 5, 0));
+        d = d.slice(Math.max(d.length - 6, 0));
+        const imageDefaultDisplay = d.length - 1;
+        console.log(imageDefaultDisplay);
+        const imageDefaultDisplayURL = d[imageDefaultDisplay].URL;
+        const imageDefaultDisplayCaption = d[imageDefaultDisplay].description;
+        eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
+                                  <a href=${imageDefaultDisplayURL} target="_0">
+                                    <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
+                                  </a>
+                                  <figcaption class="text-center mt-2">${imageDefaultDisplayCaption}<br>
+                                    &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
+                                  </figcaption>
+                                </div>`;
+
         d.map((d) => {
           const title = d.title;
           const id = d._id;
           const description = d.description;
           const URL = d.URL;
 
-          var card = `<div class="cards mx-auto text-center col-12 col-lg-2" id=${id}>
+          var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
                         <p><img src=${URL} class="cardImage" /><br></p> 
                         <span class="cardTitle">${title}&nbsp;<br>
