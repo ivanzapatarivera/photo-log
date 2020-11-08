@@ -40,13 +40,14 @@ function pictures() {
                             <a href=${URL} target="_0">
                               <img src=${currentSrc} id=${currentSrc} class="picDiv">
                             </a>
-                            <figcaption class="text-center">${description}<br>
+                            <figcaption class="text-center mt-2">${description}<br>
                               &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
                             </figcaption>
                           </div>`;
 
-            if (eventPicDiv) { eventPicDiv.innerHTML = picDiv }
-            
+            if (eventPicDiv) {
+              eventPicDiv.innerHTML = picDiv;
+            }
           });
         });
       });
