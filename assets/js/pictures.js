@@ -7,19 +7,19 @@ function pictures() {
       .then((res) => res.json(API))
       .then((data) => {
         data = data.slice(Math.max(data.length - 6, 0));
-        const imageDefaultDisplay = data.length - 1;
-        console.log(imageDefaultDisplay);
-        const imageDefaultDisplayURL = data[imageDefaultDisplay].URL;
-        const imageDefaultDisplayCaption =
-          data[imageDefaultDisplay].description;
-        eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
+        // const imageDefaultDisplay = data.length - 1;
+        // console.log(imageDefaultDisplay);
+        // const imageDefaultDisplayURL = data[imageDefaultDisplay].URL;
+        // const imageDefaultDisplayCaption =
+        //   data[imageDefaultDisplay].description;
+        // eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
                                 
-                                    <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
+        //                             <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
                                   
-                                  <figcaption class="text-center mt-2">${imageDefaultDisplayCaption}<br>
-                                    &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
-                                  </figcaption>
-                                </div>`;
+        //                           <figcaption class="text-center mt-2">${imageDefaultDisplayCaption}<br>
+        //                             &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
+        //                           </figcaption>
+        //                         </div>`;
 
         data.map((data) => {
           const title = data.title;
@@ -50,14 +50,14 @@ function pictures() {
           const eventPictureClick = document.getElementById(id);
           eventPictureClick.addEventListener("click", function (event) {
             var currentSrc = event.path[0].currentSrc;
-            var picDiv = `<div class="col-12 col-lg-12 mx-auto">
+            var picDiv = `<div class=" card">
                          
-                              <img src=${currentSrc} id=${currentSrc} class="picDiv mt-2">
+                              <img src=${currentSrc} id=${currentSrc} class="picDiv mt-2"><br>
+                              <span class="picDiv mt-3 text-center" style="width: 100%; background-color: white; opacity: 0.75;">${description}</span>
                             
-                            <figcaption class="text-center mt-2">${description}<br>
-                              &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
-                            </figcaption>
+                            
                           </div>`;
+            console.log(event.path[10]);
 
             if (eventPicDiv) {
               eventPicDiv.innerHTML = picDiv;
