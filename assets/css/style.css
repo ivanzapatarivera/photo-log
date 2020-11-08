@@ -83,7 +83,7 @@ h4 {
 .fullScreenDiv {
   display: none;
   position: fixed;
-  opacity: 0.75;
+  background-color: rgba(0, 0, 0, 0.2);
   top: 0;
   left: 0px;
   height: 100vh;
@@ -93,7 +93,7 @@ h4 {
 .enlargedImage {
   margin-top: 15%;
   max-height: 600px;
-  opacity: 1;
+  background-color: white;
   object-fit: contain;
 }
 

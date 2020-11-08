@@ -13,9 +13,9 @@ function pictures() {
         // const imageDefaultDisplayCaption =
         //   data[imageDefaultDisplay].description;
         // eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
-                                
+
         //                             <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
-                                  
+
         //                           <figcaption class="text-center mt-2">${imageDefaultDisplayCaption}<br>
         //                             &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
         //                           </figcaption>
@@ -47,24 +47,23 @@ function pictures() {
           // </div>
           event.insertAdjacentHTML("afterbegin", card);
           const eventPictureClick = document.getElementById(id);
-          
-          eventPictureClick.addEventListener("click", function (event) {
 
-            eventPicDiv.style.display = 'block';
+          eventPictureClick.addEventListener("click", function (event) {
+            eventPicDiv.style.display = "block";
             var currentSrc = event.path[0].currentSrc;
             var width = event.toElement.naturalWidth;
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
                                 <div id="caption" class="caption mt-0">${description}</div>`;
-            
+
             if (eventPicDiv) {
               eventPicDiv.innerHTML = enlargedImage;
             }
 
             const eventCurrentSrc = document.getElementById(currentSrc);
-          
+
             eventCurrentSrc.addEventListener("click", function (event) {
               if (eventPicDiv) {
-                eventPicDiv.style.display = 'none';
+                eventPicDiv.style.display = "none";
                 eventPicDiv.innerHTML = "";
               }
             });
