@@ -50,11 +50,11 @@ function pictures() {
           
           eventPictureClick.addEventListener("click", function (event) {
 
-            eventPicDiv.style.display = 'block'
+            eventPicDiv.style.display = 'block';
             var currentSrc = event.path[0].currentSrc;
             var width = event.toElement.naturalWidth;
-            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage"><br>
-                          <span id="caption" style="">${description}</span>`;
+            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
+                                <div id="caption" class="caption mt-0">${description}</div>`;
             
             if (eventPicDiv) {
               eventPicDiv.innerHTML = enlargedImage;
@@ -64,6 +64,7 @@ function pictures() {
           
             eventCurrentSrc.addEventListener("click", function (event) {
               if (eventPicDiv) {
+                eventPicDiv.style.display = 'none';
                 eventPicDiv.innerHTML = "";
               }
             });

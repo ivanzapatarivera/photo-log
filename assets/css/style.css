@@ -83,14 +83,26 @@ h4 {
 .fullScreenDiv {
   display: none;
   position: fixed;
-  top: 0px;
+  opacity: 0.75;
+  top: 0;
   left: 0px;
-  height: auto;
-  max-height: 500px;
+  height: 100vh;
+  z-index: 1000;
 }
 
 .enlargedImage {
-  
+  margin-top: 15%;
+  max-height: 600px;
+  opacity: 1;
+  object-fit: contain;
+}
+
+.caption {
+  background-color: black;
+  opacity: 0.75;
+  color: white;
+  font-weight: 400;  
+  width: 100%;
 }
 
 
