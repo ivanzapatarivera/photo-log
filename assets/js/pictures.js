@@ -1,6 +1,6 @@
 function pictures() {
-  const event = document.querySelector('#picturesWall');
-  var eventPicDiv = document.querySelector('#pictureDiv');
+  const event = document.querySelector("#picturesWall");
+  var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
   if (event) {
     fetch(API)
@@ -34,11 +34,8 @@ function pictures() {
           event.insertAdjacentHTML("afterbegin", card);
 
           const picClick = document.getElementById(id);
-          picClick.addEventListener("click", function(e) {
-          
+          picClick.addEventListener("click", function (e) {
             var currentSrc = e.path[0].currentSrc;
-            console.log(currentSrc);
-
             var picDiv = `<div class="col-12 col-lg-12 mx-left">
                             <a href=${URL} target="_0">
                               <img src=${currentSrc} id=${currentSrc} class="picDiv">
@@ -48,15 +45,9 @@ function pictures() {
                             </figcaption>
                           </div>`;
 
-            console.log(picDiv);
-
-            if(eventPicDiv){
-
-              console.log("This is eventPicDiv");
-              console.log(eventPicDiv.innerHTML)
-              eventPicDiv.innerHTML = picDiv
-            }
-          })
+            if (eventPicDiv) { eventPicDiv.innerHTML = picDiv }
+            
+          });
         });
       });
   }
