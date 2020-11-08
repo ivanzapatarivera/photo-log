@@ -41,6 +41,7 @@ function pictures() {
 
             var picDiv = `<div class="col-12 col-lg-12 mx-left">
                             <img src=${currentSrc} id=${currentSrc} class="picDiv">
+                            <figcaption>${description}</figcaption>
                           </div>`;
 
             console.log(picDiv);
