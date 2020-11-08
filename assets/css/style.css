@@ -75,16 +75,19 @@ h4 {
   margin: auto;
   margin-top: 25px;
 }
+
 .cardTitle {
   font-size: 0.85em;
 }
 
-.picDivImg, .picDiv {
+
+
+
+/* .picDivImg, .picDiv {
  
   position: fixed;
   transform: translate(-50%, 0);
   max-width: 37.5vw;
-  /* max-height: 500px; */
   top: 25%;
   left: 50%;
   align-self: center;
@@ -95,7 +98,7 @@ h4 {
 
 .picDivImg {
   border-radius: 15px;
-}
+} */
 
 .footer {
   text-decoration: none;

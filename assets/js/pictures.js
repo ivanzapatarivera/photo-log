@@ -51,13 +51,8 @@ function pictures() {
           eventPictureClick.addEventListener("click", function (event) {
             var currentSrc = event.path[0].currentSrc;
             var width = event.toElement.naturalWidth
-            var picDiv = `<div class=" card">
-                              
-                              <img src=${currentSrc} id=${currentSrc} class="picDivImg mt-2"><br>
-                              <span class="picDiv mt-2 p-2 text-center" id="caption" style="width: ${width}px; color: white; background-color: black; opacity: 0.75; font-weight: bold;">${description}</span>
-                            
-                            
-                          </div>`;
+            var picDiv = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10"><br>
+                          <span id="caption" style="">${description}</span>`;
             
             
             
