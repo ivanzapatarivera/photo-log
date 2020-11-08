@@ -53,11 +53,11 @@ function pictures() {
             eventPicDiv.style.display = 'block'
             var currentSrc = event.path[0].currentSrc;
             var width = event.toElement.naturalWidth;
-            var picDiv = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10"><br>
+            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage"><br>
                           <span id="caption" style="">${description}</span>`;
             
             if (eventPicDiv) {
-              eventPicDiv.innerHTML = picDiv;
+              eventPicDiv.innerHTML = enlargedImage;
             }
 
             const eventCurrentSrc = document.getElementById(currentSrc);
