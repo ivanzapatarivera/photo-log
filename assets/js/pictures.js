@@ -36,7 +36,7 @@ function pictures() {
           const picClick = document.getElementById(id);
           picClick.addEventListener("click", function (e) {
             var currentSrc = e.path[0].currentSrc;
-            var picDiv = `<div class="col-12 col-lg-12 mx-left">
+            var picDiv = `<div class="col-12 col-lg-12 mx-auto">
                             <a href=${URL} target="_0">
                               <img src=${currentSrc} id=${currentSrc} class="picDiv">
                             </a>

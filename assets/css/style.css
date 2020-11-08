@@ -84,6 +84,15 @@ h4 {
   margin-left: -12px;
   margin-top: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  /* opacity:1;
+  background-color:#ccc;
+  position:fixed;
+  width:auto;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:1000; */
 }
 
 .footer {
