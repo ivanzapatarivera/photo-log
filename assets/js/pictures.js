@@ -10,7 +10,8 @@ function pictures() {
         const imageDefaultDisplay = data.length - 1;
         console.log(imageDefaultDisplay);
         const imageDefaultDisplayURL = data[imageDefaultDisplay].URL;
-        const imageDefaultDisplayCaption = data[imageDefaultDisplay].description;
+        const imageDefaultDisplayCaption =
+          data[imageDefaultDisplay].description;
         eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
                                 
                                     <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
@@ -64,10 +65,10 @@ function pictures() {
 
             const eventCurrentSrc = document.getElementById(currentSrc);
             eventCurrentSrc.addEventListener("click", function (event) {
-              if(eventPicDiv) {
+              if (eventPicDiv) {
                 eventPicDiv.innerHTML = "";
               }
-            })
+            });
           });
         });
       });
