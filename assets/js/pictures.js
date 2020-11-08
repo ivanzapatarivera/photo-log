@@ -46,9 +46,9 @@ function pictures() {
           // </div>
           event.insertAdjacentHTML("afterbegin", card);
 
-          const picClick = document.getElementById(id);
-          picClick.addEventListener("click", function (e) {
-            var currentSrc = e.path[0].currentSrc;
+          const eventPictureClick = document.getElementById(id);
+          eventPictureClick.addEventListener("click", function (event) {
+            var currentSrc = event.path[0].currentSrc;
             var picDiv = `<div class="col-12 col-lg-12 mx-auto">
                          
                               <img src=${currentSrc} id=${currentSrc} class="picDiv mt-2">
@@ -61,6 +61,13 @@ function pictures() {
             if (eventPicDiv) {
               eventPicDiv.innerHTML = picDiv;
             }
+
+            const eventCurrentSrc = document.getElementById(currentSrc);
+            eventCurrentSrc.addEventListener("click", function (event) {
+              if(eventPicDiv) {
+                eventPicDiv.innerHTML = "";
+              }
+            })
           });
         });
       });
