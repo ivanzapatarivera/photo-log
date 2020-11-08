@@ -40,8 +40,12 @@ function pictures() {
             console.log(currentSrc);
 
             var picDiv = `<div class="col-12 col-lg-12 mx-left">
-                            <img src=${currentSrc} id=${currentSrc} class="picDiv">
-                            <figcaption>${description}</figcaption>
+                            <a href=${URL} target="_0">
+                              <img src=${currentSrc} id=${currentSrc} class="picDiv">
+                            </a>
+                            <figcaption class="text-center">${description}<br>
+                              &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
+                            </figcaption>
                           </div>`;
 
             console.log(picDiv);
