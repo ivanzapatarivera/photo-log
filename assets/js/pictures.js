@@ -46,17 +46,16 @@ function pictures() {
           // </p>
           // </div>
           event.insertAdjacentHTML("afterbegin", card);
-
           const eventPictureClick = document.getElementById(id);
+          
           eventPictureClick.addEventListener("click", function (event) {
+
+            eventPicDiv.style.display = 'block'
             var currentSrc = event.path[0].currentSrc;
-            var width = event.toElement.naturalWidth
+            var width = event.toElement.naturalWidth;
             var picDiv = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10"><br>
                           <span id="caption" style="">${description}</span>`;
             
-            
-            
-
             if (eventPicDiv) {
               eventPicDiv.innerHTML = picDiv;
             }
