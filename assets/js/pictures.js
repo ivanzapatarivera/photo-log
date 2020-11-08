@@ -50,20 +50,24 @@ function pictures() {
           const eventPictureClick = document.getElementById(id);
           eventPictureClick.addEventListener("click", function (event) {
             var currentSrc = event.path[0].currentSrc;
+            var width = event.toElement.naturalWidth
             var picDiv = `<div class=" card">
                          
                               <img src=${currentSrc} id=${currentSrc} class="picDiv mt-2"><br>
-                              <span class="picDiv mt-3 text-center" style="width: 100%; background-color: white; opacity: 0.75;">${description}</span>
+                              <span class="picDiv mt-2 text-center" id="caption" style="width: ${width}px; background-color: white; opacity: 0.75;">${description}</span>
                             
                             
                           </div>`;
-            console.log(event.path[10]);
+            
+            // console.log(event.toElement.naturalWidth);
+            
 
             if (eventPicDiv) {
               eventPicDiv.innerHTML = picDiv;
             }
 
             const eventCurrentSrc = document.getElementById(currentSrc);
+          
             eventCurrentSrc.addEventListener("click", function (event) {
               if (eventPicDiv) {
                 eventPicDiv.innerHTML = "";
