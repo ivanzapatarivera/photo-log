@@ -91,15 +91,14 @@ h4 {
 }
 
 .enlargedImage {
-  margin-top: 15%;
+  margin-top: 10%;
   max-height: 600px;
-  background-color: white;
   object-fit: contain;
 }
 
 .caption {
   background-color: black;
-  opacity: 0.75;
+  /* opacity: 0.75; */
   color: white;
   font-weight: 400;  
   width: 100%;
