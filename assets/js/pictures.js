@@ -5,26 +5,26 @@ function pictures() {
   if (event) {
     fetch(API)
       .then((res) => res.json(API))
-      .then((d) => {
-        d = d.slice(Math.max(d.length - 6, 0));
-        const imageDefaultDisplay = d.length - 1;
+      .then((data) => {
+        data = data.slice(Math.max(data.length - 6, 0));
+        const imageDefaultDisplay = data.length - 1;
         console.log(imageDefaultDisplay);
-        const imageDefaultDisplayURL = d[imageDefaultDisplay].URL;
-        const imageDefaultDisplayCaption = d[imageDefaultDisplay].description;
+        const imageDefaultDisplayURL = data[imageDefaultDisplay].URL;
+        const imageDefaultDisplayCaption = data[imageDefaultDisplay].description;
         eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
-                                  <a href=${imageDefaultDisplayURL} target="_0">
+                                
                                     <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
-                                  </a>
+                                  
                                   <figcaption class="text-center mt-2">${imageDefaultDisplayCaption}<br>
                                     &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
                                   </figcaption>
                                 </div>`;
 
-        d.map((d) => {
-          const title = d.title;
-          const id = d._id;
-          const description = d.description;
-          const URL = d.URL;
+        data.map((data) => {
+          const title = data.title;
+          const id = data._id;
+          const description = data.description;
+          const URL = data.URL;
 
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
@@ -50,9 +50,9 @@ function pictures() {
           picClick.addEventListener("click", function (e) {
             var currentSrc = e.path[0].currentSrc;
             var picDiv = `<div class="col-12 col-lg-12 mx-auto">
-                            <a href=${URL} target="_0">
+                         
                               <img src=${currentSrc} id=${currentSrc} class="picDiv mt-2">
-                            </a>
+                            
                             <figcaption class="text-center mt-2">${description}<br>
                               &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
                             </figcaption>
