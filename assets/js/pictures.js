@@ -38,7 +38,7 @@ function pictures() {
             var currentSrc = e.path[0].currentSrc;
             var picDiv = `<div class="col-12 col-lg-12 mx-auto">
                             <a href=${URL} target="_0">
-                              <img src=${currentSrc} id=${currentSrc} class="picDiv">
+                              <img src=${currentSrc} id=${currentSrc} class="picDiv mt-2">
                             </a>
                             <figcaption class="text-center mt-2">${description}<br>
                               &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
