@@ -39,7 +39,10 @@ function pictures() {
             var currentSrc = e.path[0].currentSrc;
             console.log(currentSrc);
 
-            var picDiv = `<div><img src=${currentSrc} id=${currentSrc} class="picDiv"></div>`;
+            var picDiv = `<div class="col-12 col-lg-12 mx-left">
+                            <img src=${currentSrc} id=${currentSrc} class="picDiv">
+                          </div>`;
+
             console.log(picDiv);
 
             if(eventPicDiv){

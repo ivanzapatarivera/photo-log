@@ -62,20 +62,25 @@ h4 {
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: transform .2s;
-}
-
-.picturesWall {
-  width: 100%;
-  background-color: rgb(240, 240, 240);
+  transition: transform 0.2s;
 }
 
 .cardImage:hover {
   transform: scale(1.075);
 }
 
+.picturesWall {
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+}
 .cardTitle {
   font-size: 0.85em;
+}
+
+.picDiv {
+  width: 100%;
+  margin-left: -12px;
+  margin-top: 25px;
 }
 
 .footer {
