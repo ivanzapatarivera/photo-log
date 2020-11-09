@@ -10,7 +10,7 @@ router.get('/profile', (req, res) => {
     res.sendFile(path.join(__dirname + '../../assets/html/profile.html'))
 });
 
-router.get('/logger', (req, res) => {
+router.get('/LogYourPhoto', (req, res) => {
     res.sendFile(path.join(__dirname + '../../assets/html/photo-engine.html'))
 });
 
