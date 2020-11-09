@@ -81,7 +81,7 @@ h4 {
 }
 
 .fullScreenDiv {
-  display: none;
+  visibility: hidden;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
@@ -98,7 +98,6 @@ h4 {
 
 .caption {
   background-color: black;
-  /* opacity: 0.75; */
   color: white;
   font-weight: 400;  
   width: 100%;

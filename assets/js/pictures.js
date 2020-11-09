@@ -49,7 +49,7 @@ function pictures() {
           const eventPictureClick = document.getElementById(id);
 
           eventPictureClick.addEventListener("click", function (event) {
-            eventPicDiv.style.display = "block";
+            eventPicDiv.style.visibility = "visible";
             var currentSrc = event.path[0].currentSrc;
             var width = event.toElement.naturalWidth;
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
@@ -63,7 +63,7 @@ function pictures() {
 
             eventCurrentSrc.addEventListener("click", function (event) {
               if (eventPicDiv) {
-                eventPicDiv.style.display = "none";
+                eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
               }
             });
