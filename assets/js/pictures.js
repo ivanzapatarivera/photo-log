@@ -7,19 +7,7 @@ function pictures() {
       .then((res) => res.json(API))
       .then((data) => {
         data = data.slice(Math.max(data.length - 6, 0));
-        // const imageDefaultDisplay = data.length - 1;
-        // console.log(imageDefaultDisplay);
-        // const imageDefaultDisplayURL = data[imageDefaultDisplay].URL;
-        // const imageDefaultDisplayCaption =
-        //   data[imageDefaultDisplay].description;
-        // eventPicDiv.innerHTML = `<div class="col-12 col-lg-12 mx-auto">
-
-        //                             <img src=${imageDefaultDisplayURL} id=${imageDefaultDisplayURL} class="picDiv mt-2">
-
-        //                           <figcaption class="text-center mt-2">${imageDefaultDisplayCaption}<br>
-        //                             &copy; Iv&aacute;n J. Zapata-Rivera (Click on image for full resolution.)
-        //                           </figcaption>
-        //                         </div>`;
+        
 
         data.map((data) => {
           const title = data.title;
