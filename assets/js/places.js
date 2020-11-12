@@ -6,48 +6,31 @@ function places() {
 }
 
 const API = "/getLocations/";
+var allLocationsArray = [];
 function displayLocations() {
+
+  var locationsArray = [];
+
   fetch(API)
     .then((res) => res.json(API))
     .then((response) => {
-      response.map((locations) => {
-        // console.log(locations);
-        fetch(API + locations)
-          .then((res) => res.json(API + locations))
-          .then((allLocations) => {
-            // console.log(allLocations[0].location);
-            var i = 0;
-            i++
-            // console.log(i);
-            // console.log('This is allLocations ', allLocations.length)
-            var locationsURL = [];
-            for(var i = 0; i < allLocations.length; i++){
-              var locs = allLocations[i].URL
-              locationsURL.push(locs);
-              var card = `<div class="text-center">
-                            <img src='${locationsURL}' id='${allLocations[0].location}' />
-                         </div>`;
-              console.log(card);
-            }
-            // console.log('These are the locations URL\'s :', locationsURL);
-            // var card = `<div class="text-center">
-            //                 <h6 id="${locations}"><a href="/getLocations/${locations}">${allLocations[0].location}</a></h6>` + locationsURL + `<br>
-            //                 <img src='${locationsURL}' />
-            //             </div>`;
-            // placesEl.insertAdjacentHTML("afterend", card);
-          });
-      });
+      response.map((divResponse) => {
+        var divLocations = `<div class="col-12 bg-danger">
+                              <h5 id="${divResponse}">${divResponse}</h5>
+                            </div>`;
+        placesEl.insertAdjacentHTML("afterbegin", divLocations);
+        locationsArray.push(divResponse);
+      })
+    })
+  console.log('This is locationsArray: ', locationsArray);
+  allLocationsArray.push(locationsArray)
+  displayPictures();
+}
 
-      // for (var i = 0; i < response.length; i++) {
-      //   fetch(API + response[i])
-      //     .then((res) => res.json(API + response[i]))
-      //     .then((response) => {
-      //       response.map((locationsJSON) => {
-      //         console.log(response);
-      //       });
-      //     });
-      // }
-    });
+var locations
+
+function displayPictures() {
+  console.log('These is allLocationsArray inside displayPictures(): ' + allLocationsArray);
 }
 
 export { places };
