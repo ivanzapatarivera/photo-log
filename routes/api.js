@@ -37,6 +37,10 @@ app.get("/log", (req, res) => {
     });
 });
 
+app.get('/logsLocation', (req, res) = {
+  
+})
+
 
 // These are the routes to find/delete logs by ID
 app.get("/findLog/:id", (req, res) => {
