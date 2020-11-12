@@ -37,14 +37,16 @@ app.get("/log", (req, res) => {
     });
 });
 
+
+// These are the routes to find/delete logs by ID
 app.get("/findLog/:id", (req, res) => {
   logs.findOne(
     { _id: mongojs.ObjectId(req.params.id) },
     (err, data) => {
       if (err) {
-        res.send(error);
+        res.send(error)
       } else {
-        res.send(data);
+        res.send(data)
       }
     }
   );
@@ -54,9 +56,9 @@ app.delete("/deleteLog/:id", (req, res) => {
   logs
     .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
       if (err) {
-        res.send(error);
+        res.send(error)
       } else {
-        res.send(data);
+        res.send(data)
       }
     })
     .catch((err) => {
@@ -64,19 +66,31 @@ app.delete("/deleteLog/:id", (req, res) => {
     });
 });
 
+// Will get all logs by unrepeated locations
+app.get("/getLocations", (req, res) => {
+  logs
+    .distinct("location")
+    .then((db) => {
+      res.json(db);
+    })
+    .catch((err) => {
+      res.json(err)
+    })
+})
+
 
 // These are the routes for profile picture updates
 app.post("/profilepic", ({ body }, res) => {
   profilepic
     .create(body)
     .then((db) => {
-      console.log(db);
+      console.log(db)
     })
     .then((db) => {
       res.redirect("/profile");
     })
     .catch((err) => {
-      res.json(err);
+      res.json(err)
     });
 });
 
@@ -84,10 +98,10 @@ app.get("/profilepic", (req, res) => {
   profilepic
     .find({})
     .then((cb) => {
-      res.json(cb);
+      res.json(cb)
     })
     .catch((err) => {
-      res.json(err);
+      res.json(err)
     });
 });
 
@@ -111,21 +125,22 @@ app.get("/status", (req, res) => {
     .find({})
     .sort({ timestamp: 1 })
     .then((cb) => {
-      res.json(cb);
+      res.json(cb)
     })
     .catch((err) => {
-      res.json(err);
+      res.json(err)
     });
 });
 
+// These are the routes to find status by ID
 app.get("/findStatus/:id", (req, res) => {
   statusUpdate.findOne(
     { _id: mongojs.ObjectId(req.params.id) },
     (err, data) => {
       if (err) {
-        res.send(error);
+        res.send(error)
       } else {
-        res.send(data);
+        res.send(data)
       }
     }
   );
@@ -135,14 +150,16 @@ app.delete("/deleteStatus/:id", (req, res) => {
   statusUpdate
     .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
       if (err) {
-        res.send(error);
+        res.send(error)
       } else {
-        res.send(data);
+        res.send(data)
       }
     })
     .catch((err) => {
-      res.json(err);
+      res.json(err)
     });
 });
+
+
 
 module.exports = app;
