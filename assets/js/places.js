@@ -20,10 +20,12 @@ function displayLocations() {
             i++
             // console.log(i);
             // console.log('This is allLocations ', allLocations.length)
+            var locationsURL = [];
             for(var i = 0; i < allLocations.length; i++){
-              var locationsURL = allLocations[i].URL
-              console.log(locationsURL)
+              var locs = allLocations[i].URL
+              locationsURL.push(locs);
             }
+            console.log('These are the locations URL\'s :', locationsURL);
             var card = `<div class="text-center">
                             <h6 id="${locations}"><a href="/getLocations/${locations}">${allLocations[0].location}</a></h6>
                         </div>`;
