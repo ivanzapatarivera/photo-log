@@ -18,10 +18,22 @@ function displayLocations() {
         var divLocations = `<div class="col-12 bg-danger">
                               <h5 id="${divResponse}">${divResponse}</h5>
                             </div>`;
-        placesEl.insertAdjacentHTML("afterbegin", divLocations);
+        placesEl.insertAdjacentHTML("afterend", divLocations);
         var imageEl = document.getElementById(`${divResponse}`);
         imageEl.addEventListener("click", function() {
           console.log(`You've clicked on ${divResponse}.`);
+        })
+
+        var locationsAPI = API + divResponse
+        console.log(locationsAPI)
+
+        fetch(locationsAPI)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res.length);
+          for (var i = 0; i < res.length; i++){
+            console.log('This is res.URL: ', res);
+          }
         })
       })
 
