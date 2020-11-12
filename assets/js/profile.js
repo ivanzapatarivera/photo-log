@@ -13,7 +13,6 @@ function profile() {
                             </form>`;
 
   if (newProfilePic) {
-    console.log('I can read id="newProfilePic"')
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm)
   }
 

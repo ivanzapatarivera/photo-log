@@ -1,7 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const mongojs = require("mongojs");
-const logger = require("morgan");
+
 
 const logs = require("../models/logs.js");
 const profilepic = require("../models/profilepic.js");
@@ -37,32 +36,36 @@ app.get("/log", (req, res) => {
     });
 });
 
-app.get('/logsLocation', (req, res) = {
-  
-})
 
+
+// app.get('/page/:word', (req, res) => {
+//   collection.find({ word : req.params.word }).toArray().then(results => {
+//     if (results.length) {
+//       ...word found...
+//     } else {
+//       ...word not found...
+//     }
+//   });
+// });
 
 // These are the routes to find/delete logs by ID
 app.get("/findLog/:id", (req, res) => {
-  logs.findOne(
-    { _id: mongojs.ObjectId(req.params.id) },
-    (err, data) => {
-      if (err) {
-        res.send(error)
-      } else {
-        res.send(data)
-      }
+  logs.findOne({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
+    if (err) {
+      res.send(error);
+    } else {
+      res.send(data);
     }
-  );
+  });
 });
 
 app.delete("/deleteLog/:id", (req, res) => {
   logs
     .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
       if (err) {
-        res.send(error)
+        res.send(error);
       } else {
-        res.send(data)
+        res.send(data);
       }
     })
     .catch((err) => {
@@ -78,23 +81,33 @@ app.get("/getLocations", (req, res) => {
       res.json(db);
     })
     .catch((err) => {
-      res.json(err)
-    })
-})
+      res.json(err);
+    });
+});
 
+app.get("/getLocations/:location", (req, res) => {
+  logs
+    .find({ location: req.params.location })
+    .then((cb) => {
+      res.json(cb)
+    })    
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
 // These are the routes for profile picture updates
 app.post("/profilepic", ({ body }, res) => {
   profilepic
     .create(body)
     .then((db) => {
-      console.log(db)
+      console.log(db);
     })
     .then((db) => {
       res.redirect("/profile");
     })
     .catch((err) => {
-      res.json(err)
+      res.json(err);
     });
 });
 
@@ -102,10 +115,10 @@ app.get("/profilepic", (req, res) => {
   profilepic
     .find({})
     .then((cb) => {
-      res.json(cb)
+      res.json(cb);
     })
     .catch((err) => {
-      res.json(err)
+      res.json(err);
     });
 });
 
@@ -129,10 +142,10 @@ app.get("/status", (req, res) => {
     .find({})
     .sort({ timestamp: 1 })
     .then((cb) => {
-      res.json(cb)
+      res.json(cb);
     })
     .catch((err) => {
-      res.json(err)
+      res.json(err);
     });
 });
 
@@ -142,9 +155,9 @@ app.get("/findStatus/:id", (req, res) => {
     { _id: mongojs.ObjectId(req.params.id) },
     (err, data) => {
       if (err) {
-        res.send(error)
+        res.send(error);
       } else {
-        res.send(data)
+        res.send(data);
       }
     }
   );
@@ -154,16 +167,14 @@ app.delete("/deleteStatus/:id", (req, res) => {
   statusUpdate
     .remove({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
       if (err) {
-        res.send(error)
+        res.send(error);
       } else {
-        res.send(data)
+        res.send(data);
       }
     })
     .catch((err) => {
-      res.json(err)
+      res.json(err);
     });
 });
-
-
 
 module.exports = app;
