@@ -85,6 +85,8 @@ app.get("/getLocations", (req, res) => {
     });
 });
 
+
+// Will create API dynamically by each location created
 app.get("/getLocations/:location", (req, res) => {
   logs
     .find({ location: req.params.location })
