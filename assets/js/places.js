@@ -32,7 +32,7 @@ function displayLocations() {
         .then((res) => {
           console.log(res.length);
           for (var i = 0; i < res.length; i++){
-            console.log('This is res.URL: ', res);
+            console.log(`This is response for ${divResponse}: `, res[i].URL);
           }
         })
       })
