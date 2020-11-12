@@ -11,8 +11,8 @@ function displayLocations() {
     .then((res) => res.json(API))
     .then((response) => {
       response.map((divResponse) => {
-        var divLocations = `<div class="col-12">
-                              <h5 id="${divResponse}">${divResponse}</h5>
+        var divLocations = `<div class="col-12 text-center">
+                              <h5 id="${divResponse}" class="mt-4">${divResponse}</h5>
                             </div>`;
         placesEl.insertAdjacentHTML("afterend", divLocations);
         var imageEl = document.getElementById(`${divResponse}`);
@@ -25,7 +25,7 @@ function displayLocations() {
           .then((res) => {
             for (var i = 0; i < res.length; i++) {
               var URL = res[i].URL;
-              var divImage = `<a href="${URL}" target="_blank"><img src=${URL} class="col-10 py-4" /></a>`;
+              var divImage = `<a href="${URL}" target="_blank"><img src=${URL} class="col-10 my-2 divImage" /></a>`;
               imageEl.insertAdjacentHTML("afterend", divImage);
             }
           });
