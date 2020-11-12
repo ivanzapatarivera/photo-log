@@ -15,7 +15,7 @@ function displayLocations() {
         fetch(API + locations)
           .then((res) => res.json(API + locations))
           .then((allLocations) => {
-            console.log(allLocations[0].location);
+            // console.log(allLocations[0].location);
             var i = 0;
             i++
             // console.log(i);
@@ -24,12 +24,17 @@ function displayLocations() {
             for(var i = 0; i < allLocations.length; i++){
               var locs = allLocations[i].URL
               locationsURL.push(locs);
+              var card = `<div class="text-center">
+                            <img src='${locationsURL}' id='${allLocations[0].location}' />
+                         </div>`;
+              console.log(card);
             }
-            console.log('These are the locations URL\'s :', locationsURL);
-            var card = `<div class="text-center">
-                            <h6 id="${locations}"><a href="/getLocations/${locations}">${allLocations[0].location}</a></h6>
-                        </div>`;
-            placesEl.insertAdjacentHTML("afterend", card);
+            // console.log('These are the locations URL\'s :', locationsURL);
+            // var card = `<div class="text-center">
+            //                 <h6 id="${locations}"><a href="/getLocations/${locations}">${allLocations[0].location}</a></h6>` + locationsURL + `<br>
+            //                 <img src='${locationsURL}' />
+            //             </div>`;
+            // placesEl.insertAdjacentHTML("afterend", card);
           });
       });
 
