@@ -7,7 +7,7 @@ function places() {
   }
 }
 
-const API = ('/getLocations');
+const API = ('/getLocations/');
 var locationsArray = [];
 function displayLocations() {
  
@@ -19,10 +19,10 @@ function displayLocations() {
         response.map((locations) => {
             console.log(locations);
             locationsArray.push(locations)
-            // var card = `<div class="text-center">
-            //             <h6>${locations}</h6>
-            //             </div>`
-            // placesEl.insertAdjacentHTML("afterend", card)
+            var card = `<div class="text-center">
+                        <h6>${locations}</h6>
+                        </div>`
+            placesEl.insertAdjacentHTML("afterend", card)
         })
     })
 
@@ -31,7 +31,7 @@ function displayLocations() {
 
 function allLocations() {
   console.log('These are all the locations: ', locationsArray)
-  
+
 }
 
 
