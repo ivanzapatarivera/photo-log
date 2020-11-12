@@ -15,7 +15,7 @@ function displayLocations() {
     .then((response) => {
       response.map((divResponse) => {
         console.log(divResponse)
-        var divLocations = `<div class="col-12 bg-danger">
+        var divLocations = `<div class="col-12">
                               <h5 id="${divResponse}">${divResponse}</h5>
                             </div>`;
         placesEl.insertAdjacentHTML("afterend", divLocations);
@@ -30,9 +30,13 @@ function displayLocations() {
         fetch(locationsAPI)
         .then((res) => res.json())
         .then((res) => {
-          console.log(res.length);
+          // console.log(res.length);
           for (var i = 0; i < res.length; i++){
-            console.log(`This is response for ${divResponse}: `, res[i].URL);
+            var URL = res[i].URL;
+            // console.log(`${divResponse} `, URL)
+            var divImage = `<a href="${URL}" target="_blank"> <img src=${URL} class="col-10 py-4" />`;
+            console.log(divImage)
+            imageEl.insertAdjacentHTML("afterend", divImage)
           }
         })
       })
