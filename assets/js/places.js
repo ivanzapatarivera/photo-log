@@ -13,15 +13,15 @@ function displayLocations() {
       response.map((locations) => {
         console.log(locations);
         var card = `<div class="text-center">
-                        <h6 id="${locations}">${locations}</h6 id="${locations}">
+                        <h6 id="${locations}"><a href="/getLocations/${locations}">${locations}</a></h6 id="${locations}">
                     </div>`;
         placesEl.insertAdjacentHTML("afterend", card);
 
         fetch(API + locations)
         .then((res) => res.json(API + locations))
         .then((allLocations) => {
-          console.log(allLocations);
-          
+          console.log(allLocations.length);
+
         })
 
         
