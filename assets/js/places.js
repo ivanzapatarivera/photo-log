@@ -16,7 +16,7 @@ function displayLocations() {
             var card = `<div class="text-center">
                         <h6>${locations}</h6>
                         </div>`
-            placesEl.insertAdjacentHTML("afterbegin", card)
+            placesEl.insertAdjacentHTML("afterend", card)
         })
         
     })
