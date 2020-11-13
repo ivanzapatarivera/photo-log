@@ -1,4 +1,5 @@
 const placesEl = document.querySelector("#places");
+var eventPicDiv = document.querySelector("#pictureDiv");
 function places() {
   if (placesEl) {
     displayLocations();
@@ -35,6 +36,7 @@ function displayLocations() {
                 var URL = res.URL;
                 var id = res._id;
                 var title = res.title;
+                var description = res.description;
 
                 var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                                 <p class="mt-4" data-id=${id}>
@@ -48,6 +50,27 @@ function displayLocations() {
                               </div>`;
 
                 photoLogsImageCardsEl.insertAdjacentHTML("afterbegin", card);
+                const eventPictureClick = document.getElementById(id);
+
+                eventPictureClick.addEventListener("click", function (event) {
+                  eventPicDiv.style.visibility = "visible";
+                  var currentSrc = event.path[0].currentSrc;
+                  var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
+                                <div id="caption" class="caption mt-0">${description}</div>`;
+
+                  if (eventPicDiv) {
+                    eventPicDiv.innerHTML = enlargedImage;
+                  }
+
+                  const eventCurrentSrc = document.getElementById(currentSrc);
+
+                  eventCurrentSrc.addEventListener("click", function (event) {
+                    if (eventPicDiv) {
+                      eventPicDiv.style.visibility = "hidden";
+                      eventPicDiv.innerHTML = "";
+                    }
+                  });
+                });
               });
             });
         });
