@@ -6,7 +6,7 @@ function pictures() {
     fetch(API)
       .then((res) => res.json(API))
       .then((data) => {
-        data = data.slice(Math.max(data.length - 6, 0));
+        data = data.slice(Math.max(data.length - 5, 0));
         
 
         data.map((data) => {
@@ -33,7 +33,7 @@ function pictures() {
           // <span>${description}</span>
           // </p>
           // </div>
-          event.insertAdjacentHTML("afterbegin", card);
+          event.insertAdjacentHTML("beforeend", card);
           const eventPictureClick = document.getElementById(id);
 
           eventPictureClick.addEventListener("click", function (event) {
