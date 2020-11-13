@@ -25,14 +25,18 @@ function displayLocations() {
 
         imageEl.addEventListener("click", function () {
           photoLogsBoxEl.innerHTML = divResponse;
+          photoLogsImageCardsEl.innerHTML = "";
           fetch(locationsAPI)
             .then((res) => res.json())
             .then((res) => {
-              for (var i = 0; i < res.length; i++) {
-                var URL = res[i].URL;
-                var id = res[i]._id;
-                var title = res[i].title;
-                var divImage = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
+              // console.log(res);
+              res.map((res) => {
+               
+               var URL = res.URL;
+               var id = res._id;
+               var title = res.title;
+
+               var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                                 <p class="mt-4" data-id=${id}>
                                   <p><img src=${URL} class="cardImage" /><br></p>
                                   <span class="cardTitle">${title}&nbsp;<br>
@@ -42,19 +46,11 @@ function displayLocations() {
                                   </span>
                                 </p>
                               </div>`;
-
-                emptyHTML();
-                function emptyHTML() {
-                  photoLogsImageCardsEl.innerHTML = "";
-                  insertHTML();
-                }
-                function insertHTML() {
-                  photoLogsImageCardsEl.insertAdjacentHTML(
-                    "beforebegin",
-                    divImage
-                  );
-                }
-              }
+              
+              photoLogsImageCardsEl.insertAdjacentHTML("afterbegin", card);
+            
+              });
+             
             });
         });
         var locationsAPI = API + divResponse;
