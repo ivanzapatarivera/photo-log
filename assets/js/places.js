@@ -50,7 +50,7 @@ function displayLocations() {
                 }
                 function insertHTML() {
                   photoLogsImageCardsEl.insertAdjacentHTML(
-                    "afterend",
+                    "beforebegin",
                     divImage
                   );
                 }
