@@ -18,25 +18,23 @@ function displayLocations() {
         placesEl.insertAdjacentHTML("beforeend", divLocations);
 
         // Display all images contained in each album
-        var imageEl = document.getElementById(`${divResponse}`);
+        var placesTraveledCityNameEl = document.getElementById(`${divResponse}`);
         var photoLogsBoxEl = document.getElementById("recentPhotosLogsBox");
         var photoLogsImageCardsEl = document.getElementById("picturesWall");
         var locationsAPI = API + divResponse;
 
-        imageEl.addEventListener("click", function () {
+        placesTraveledCityNameEl.addEventListener("click", function () {
           photoLogsBoxEl.innerHTML = divResponse;
           photoLogsImageCardsEl.innerHTML = "";
           fetch(locationsAPI)
             .then((res) => res.json())
             .then((res) => {
-              // console.log(res);
               res.map((res) => {
-               
-               var URL = res.URL;
-               var id = res._id;
-               var title = res.title;
+                var URL = res.URL;
+                var id = res._id;
+                var title = res.title;
 
-               var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
+                var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                                 <p class="mt-4" data-id=${id}>
                                   <p><img src=${URL} class="cardImage" /><br></p>
                                   <span class="cardTitle">${title}&nbsp;<br>
@@ -46,23 +44,11 @@ function displayLocations() {
                                   </span>
                                 </p>
                               </div>`;
-              
-              photoLogsImageCardsEl.insertAdjacentHTML("afterbegin", card);
-            
+
+                photoLogsImageCardsEl.insertAdjacentHTML("afterbegin", card);
               });
-             
             });
         });
-        var locationsAPI = API + divResponse;
-        // fetch(locationsAPI)
-        //   .then((res) => res.json())
-        //   .then((res) => {
-        //     for (var i = 0; i < res.length; i++) {
-        //       var URL = res[i].URL;
-        //       var divImage = `<a href="${URL}" target="_blank"><img src=${URL} class="col-10 my-2 divImage" /></a>`;
-        //       imageEl.insertAdjacentHTML("afterend", divImage);
-        //     }
-        //   });
       });
     });
 }
