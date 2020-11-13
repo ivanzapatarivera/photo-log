@@ -25,7 +25,6 @@ function displayLocations() {
         var photoLogsBoxEl = document.getElementById('recentPhotosLogsBox');
         imageEl.addEventListener("click", function(){
           console.log(`You've clicked ${divResponse}.`);
-          // console.log(photoLogsBoxEl.innerHTML);
           photoLogsBoxEl.innerHTML = divResponse;
         })
         var locationsAPI = API + divResponse;
