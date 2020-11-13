@@ -18,7 +18,9 @@ function displayLocations() {
         placesEl.insertAdjacentHTML("beforeend", divLocations);
 
         // Display all images contained in each album
-        var placesTraveledCityNameEl = document.getElementById(`${divResponse}`);
+        var placesTraveledCityNameEl = document.getElementById(
+          `${divResponse}`
+        );
         var photoLogsBoxEl = document.getElementById("recentPhotosLogsBox");
         var photoLogsImageCardsEl = document.getElementById("picturesWall");
         var locationsAPI = API + divResponse;
