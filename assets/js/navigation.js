@@ -1,7 +1,7 @@
 function nav() {
   var body = document.getElementById("root");
 
-  var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="/">PhotoLog</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
