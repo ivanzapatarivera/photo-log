@@ -22,6 +22,9 @@ function displayLocations() {
 
         // Display all images contained in each album
         var imageEl = document.getElementById(`${divResponse}`);
+        imageEl.addEventListener("click", function(){
+          console.log(`You've clicked ${divResponse}.`)
+        })
         var locationsAPI = API + divResponse;
         // fetch(locationsAPI)
         //   .then((res) => res.json())
