@@ -18,6 +18,9 @@ function nav() {
                             <li class="nav-item">
                                 <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
                             </li>
+                            <li class="nav-item" id="locationsLogged">
+                                <a class="nav-link" href=""><i class="fas fa-map-marker-alt"></i> Locations </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
