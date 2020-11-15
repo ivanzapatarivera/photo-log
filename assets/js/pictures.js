@@ -3,11 +3,15 @@ function pictures() {
   var eventPicDiv = document.querySelector("#pictureDiv");
   
   const API = "/log";
+
+  
   if (event) {
+
+    // Rendering the last 6 images posted
     fetch(API)
       .then((res) => res.json(API))
       .then((data) => {
-        data = data.slice(Math.max(data.length - 5, 0));
+        data = data.slice(Math.max(data.length - 6, 0));
         
 
         data.map((data) => {
@@ -50,7 +54,7 @@ function pictures() {
 
             const eventCurrentSrc = document.getElementById(currentSrc);
 
-            eventCurrentSrc.addEventListener("click", function (event) {
+            eventPicDiv.addEventListener("click", function (event) {
               if (eventPicDiv) {
                 eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
