@@ -72,5 +72,5 @@ Email: [ivan.zapata.rivera@gmail.com](mailto:ivan.zapata.rivera@gmail.com)
 
 ## Screenshot 
  
-![Getting Started](images/screenshot.png) 
+![Getting Started](assets/images/screenshot.png) 
  
