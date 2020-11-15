@@ -52,7 +52,7 @@ function pictures() {
               eventPicDiv.innerHTML = enlargedImage;
             }
 
-            const eventCurrentSrc = document.getElementById(currentSrc);
+            // const eventCurrentSrc = document.getElementById(currentSrc);
 
             eventPicDiv.addEventListener("click", function (event) {
               if (eventPicDiv) {
