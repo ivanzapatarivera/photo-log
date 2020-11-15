@@ -44,13 +44,13 @@ function nav() {
   // Show and hide places traveled
   function showHideLocationsLogged() {
     const albumsIcon = document.querySelector("#locationsLogged");
-    const placesTraveledDiv = document.querySelector('#places');
+    const placesTraveledDiv = document.querySelector("#places");
     albumsIcon.addEventListener("click", function () {
-        if(placesTraveledDiv.style.display === "block") {
-            placesTraveledDiv.style.display = "none"
-        } else {
-            placesTraveledDiv.style.display = "block"
-        }
+      if (placesTraveledDiv.style.display === "block") {
+        placesTraveledDiv.style.display = "none";
+      } else {
+        placesTraveledDiv.style.display = "block";
+      }
     });
   }
 }
