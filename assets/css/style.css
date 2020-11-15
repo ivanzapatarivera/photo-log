@@ -8,6 +8,10 @@
   display: block;
 }
 
+.nav-link:hover {
+  cursor: pointer;
+}
+
 body {
   background-color: aliceblue;
 }
