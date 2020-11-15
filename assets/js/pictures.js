@@ -1,6 +1,7 @@
 function pictures() {
   const event = document.querySelector("#picturesWall");
   var eventPicDiv = document.querySelector("#pictureDiv");
+  
   const API = "/log";
   if (event) {
     fetch(API)
