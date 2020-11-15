@@ -46,10 +46,10 @@ function nav() {
     const albumsIcon = document.querySelector("#locationsLogged");
     const placesTraveledDiv = document.querySelector('#places');
     albumsIcon.addEventListener("click", function (event) {
-        if(placesTraveledDiv.style.display = "none") {
-            placesTraveledDiv.style.display = "block"
-        } else if (placesTraveledDiv.style.display = "block") {
+        if(placesTraveledDiv.style.display === "block") {
             placesTraveledDiv.style.display = "none"
+        } else {
+            placesTraveledDiv.style.display = "block"
         }
     });
   }
