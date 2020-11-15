@@ -45,7 +45,7 @@ function nav() {
   function showHideLocationsLogged() {
     const albumsIcon = document.querySelector("#locationsLogged");
     const placesTraveledDiv = document.querySelector('#places');
-    albumsIcon.addEventListener("click", function (event) {
+    albumsIcon.addEventListener("click", function () {
         if(placesTraveledDiv.style.display === "block") {
             placesTraveledDiv.style.display = "none"
         } else {
