@@ -18,8 +18,8 @@ function nav() {
                             <li class="nav-item">
                                 <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
                             </li>
-                            <li class="nav-item nav-link" id="locationsLogged">
-                               <i class="fas fa-map-marker-alt"></i> Albums
+                            <li class="nav-item nav-link">
+                               <span id="locationsLogged"><i class="fas fa-map-marker-alt"></i> Albums </span>
                             </li>
                         </ul>
                     </div>
@@ -33,11 +33,26 @@ function nav() {
 
   appendNavigation();
 
+  // Insert navbar and footer
   function appendNavigation() {
-        body.insertAdjacentHTML("afterbegin", navbar);
-        body.insertAdjacentHTML("afterbegin", footer);   
-    };
+    body.insertAdjacentHTML("afterbegin", navbar);
+    body.insertAdjacentHTML("afterbegin", footer);
+
+    showHideLocationsLogged();
   }
 
+  // Show and hide places traveled
+  function showHideLocationsLogged() {
+    const albumsIcon = document.querySelector("#locationsLogged");
+    const placesTraveledDiv = document.querySelector('#places');
+    albumsIcon.addEventListener("click", function (event) {
+        if(placesTraveledDiv.style.display = "none") {
+            placesTraveledDiv.style.display = "block"
+        } else if (placesTraveledDiv.style.display = "block") {
+            placesTraveledDiv.style.display = "none"
+        }
+    });
+  }
+}
 
 export { nav };

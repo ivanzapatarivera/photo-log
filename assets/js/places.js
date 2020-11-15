@@ -26,6 +26,7 @@ function displayLocations() {
         var photoLogsImageCardsEl = document.getElementById("picturesWall");
         var locationsAPI = API + divResponse;
 
+        // Event listener to render image cards on dynamically generated card
         placesTraveledCityNameEl.addEventListener("click", function () {
           photoLogsBoxEl.innerHTML = divResponse;
           photoLogsImageCardsEl.innerHTML = "";
