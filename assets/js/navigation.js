@@ -53,19 +53,19 @@ function nav() {
 
     // Event listener when in desktop view
     albumsIcon.addEventListener("click", function () {
-      if (placesTraveledDiv.style.display === "block") {
-        placesTraveledDiv.style.display = "none";
+      if (placesTraveledDiv.style.visibility === "visible") {
+        placesTraveledDiv.style.visibility = "hidden";
       } else {
-        placesTraveledDiv.style.display = "block";
+        placesTraveledDiv.style.visibility = "visible";
       }
     });
 
     // Event listener when in mobile view
     albumsIconMobile.addEventListener("click", function () {
-      if (placesTraveledDiv.style.display === "block") {
-        placesTraveledDiv.style.display = "none";
+      if (placesTraveledDiv.style.visibility === "visible") {
+        placesTraveledDiv.style.visibility = "hidden";
       } else {
-        placesTraveledDiv.style.display = "block";
+        placesTraveledDiv.style.visibility = "visible";
       }
     });
   }
