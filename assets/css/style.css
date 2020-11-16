@@ -120,6 +120,10 @@ h4 {
   cursor: pointer;
 }
 
+.placesTraveled {
+  visibility: hidden;
+}
+
 .footer {
   text-decoration: none;
   font-size: .975rem;
