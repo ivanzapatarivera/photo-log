@@ -41,11 +41,13 @@ function nav() {
     showHideLocationsLogged();
   }
 
-  // Show and hide places traveled
+  // Show and hide places traveled DIV
   function showHideLocationsLogged() {
     const albumsIcon = document.querySelector("#locationsLoggedNavbar");
     const albumsIconMobile = document.querySelector("#locationsLoggedMobile");
     const placesTraveledDiv = document.querySelector("#places");
+
+    // Event listener when in desktop view
     albumsIcon.addEventListener("click", function () {
       if (placesTraveledDiv.style.display === "block") {
         placesTraveledDiv.style.display = "none";
@@ -53,6 +55,8 @@ function nav() {
         placesTraveledDiv.style.display = "block";
       }
     });
+
+    // Event listener when in mobile view
     albumsIconMobile.addEventListener("click", function () {
       if (placesTraveledDiv.style.display === "block") {
         placesTraveledDiv.style.display = "none";
