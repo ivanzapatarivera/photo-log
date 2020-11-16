@@ -1,5 +1,5 @@
 function nav() {
-  var body = document.getElementById('root');
+  var body = document.getElementById("root");
 
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
                 <div class="container">
@@ -35,31 +35,31 @@ function nav() {
 
   // Insert navbar and footer
   function appendNavigation() {
-    body.insertAdjacentHTML('afterbegin', navbar);
-    body.insertAdjacentHTML('afterbegin', footer);
+    body.insertAdjacentHTML("afterbegin", navbar);
+    body.insertAdjacentHTML("afterbegin", footer);
 
     showHideLocationsLogged();
   }
 
   // Show and hide places traveled
   function showHideLocationsLogged() {
-    const albumsIcon = document.querySelector('#locationsLoggedNavbar');
-    const albumsIconMobile = document.querySelector('#locationsLoggedMobile')
-    const placesTraveledDiv = document.querySelector('#places');
-    albumsIcon.addEventListener('click', function () {
-      if (placesTraveledDiv.style.display === 'block') {
-        placesTraveledDiv.style.display = 'none'
+    const albumsIcon = document.querySelector("#locationsLoggedNavbar");
+    const albumsIconMobile = document.querySelector("#locationsLoggedMobile");
+    const placesTraveledDiv = document.querySelector("#places");
+    albumsIcon.addEventListener("click", function () {
+      if (placesTraveledDiv.style.display === "block") {
+        placesTraveledDiv.style.display = "none";
       } else {
-        placesTraveledDiv.style.display = 'block'
+        placesTraveledDiv.style.display = "block";
       }
     });
-    albumsIconMobile.addEventListener('click', function() {
-      if (placesTraveledDiv.style.display === 'block') {
-        placesTraveledDiv.style.display = 'none'
+    albumsIconMobile.addEventListener("click", function () {
+      if (placesTraveledDiv.style.display === "block") {
+        placesTraveledDiv.style.display = "none";
       } else {
-        placesTraveledDiv.style.display = 'block'
+        placesTraveledDiv.style.display = "block";
       }
-    })
+    });
   }
 }
 
