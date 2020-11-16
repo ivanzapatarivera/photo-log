@@ -1,6 +1,7 @@
 function nav() {
   var body = document.getElementById("root");
 
+  // Attach navigation as a navbar when in desktop view (static)
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="/">PhotoLog</a>
@@ -25,6 +26,9 @@ function nav() {
                     </div>
                 </div>
                 </nav>`;
+
+
+  // Attach navigation as a footer when in mobile view (static)
   var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
                     <a href="/" class="footer"><i class="fas fa-home"></i> PhotoLog</a>
                     <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
