@@ -27,7 +27,6 @@ function nav() {
                 </div>
                 </nav>`;
 
-
   // Attach navigation as a footer when in mobile view (static)
   var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
                     <a href="/" class="footer"><i class="fas fa-home"></i> PhotoLog</a>
@@ -55,12 +54,10 @@ function nav() {
     albumsIcon.addEventListener("click", function () {
       if (placesTraveledDiv.style.visibility === "visible") {
         placesTraveledDiv.style.visibility = "hidden";
-        placesTraveledDiv.classList.remove('animate__fadeIn');
-        placesTraveledDiv.classList.add('animate__fadeOut');
+        placesTraveledDiv.classList.remove("animate__fadeIn");
       } else {
         placesTraveledDiv.style.visibility = "visible";
-        placesTraveledDiv.classList.remove('animate__fadeOut');
-        placesTraveledDiv.classList.add('animate__fadeIn');
+        placesTraveledDiv.classList.add("animate__fadeIn");
       }
     });
 
