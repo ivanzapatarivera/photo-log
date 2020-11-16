@@ -74,7 +74,10 @@ function displayLocations() {
                 });
               });
             });
+            placesEl.style.visibility = 'hidden';
         });
+
+         
       });
     });
 }
