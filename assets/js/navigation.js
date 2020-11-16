@@ -26,8 +26,8 @@ function nav() {
                 </div>
                 </nav>`;
   var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
-                    <a href="/" class="footer pr-3"><i class="fas fa-home"></i> PhotoLog</a>
-                    <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i> Log</a>
+                    <a href="/" class="footer"><i class="fas fa-home"></i> PhotoLog</a>
+                    <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
                     <span id="locationsLogged"><i class="fas fa-map-marker-alt"></i> Albums </span>
                 </footer>`;
 
