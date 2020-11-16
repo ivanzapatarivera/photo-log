@@ -41,6 +41,7 @@ function pictures() {
           event.insertAdjacentHTML("beforeend", card);
           const eventPictureClick = document.getElementById(id);
 
+          // Display dynamically generated albums of traveled places
           eventPictureClick.addEventListener("click", function (event) {
             eventPicDiv.style.visibility = "visible";
             var currentSrc = event.path[0].currentSrc;
@@ -52,14 +53,15 @@ function pictures() {
               eventPicDiv.innerHTML = enlargedImage;
             }
 
-            // const eventCurrentSrc = document.getElementById(currentSrc);
-
-            eventPicDiv.addEventListener("click", function (event) {
+            // Change albums of traveled places visibility
+            eventPicDiv.addEventListener("click", function () {
               if (eventPicDiv) {
                 eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
               }
             });
+
+            // const eventCurrentSrc = document.getElementById(currentSrc);
           });
         });
       });
