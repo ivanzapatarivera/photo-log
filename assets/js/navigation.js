@@ -57,6 +57,8 @@ function nav() {
         placesTraveledDiv.style.visibility = "hidden";
       } else {
         placesTraveledDiv.style.visibility = "visible";
+        placesTraveledDiv.classList.add('animate__fadeIn');
+        placesTraveledDiv.classList.add('animate__fadeOut')
       }
     });
 
