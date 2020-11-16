@@ -45,7 +45,7 @@ function pictures() {
             eventPicDiv.style.visibility = "visible";
             var currentSrc = event.path[0].currentSrc;
             // var width = event.toElement.naturalWidth;
-            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
+            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
                                 <div id="caption" class="caption mt-0">${description}</div>`;
 
             if (eventPicDiv) {
