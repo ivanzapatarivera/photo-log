@@ -34,7 +34,6 @@ function displayLocations() {
             .then((res) => res.json())
             .then((res) => {
               res.map((res) => {
-                
                 var URL = res.URL;
                 var id = res._id;
                 var title = res.title;
@@ -63,8 +62,10 @@ function displayLocations() {
                   if (eventPicDiv) {
                     eventPicDiv.innerHTML = enlargedImage;
                   }
+
+                  // Event listener to change visbility of dynamically created image DIVs
                   const eventCurrentSrc = document.getElementById(currentSrc);
-                  eventCurrentSrc.addEventListener("click", function (event) {
+                  eventCurrentSrc.addEventListener("click", function () {
                     if (eventPicDiv) {
                       eventPicDiv.style.visibility = "hidden";
                       eventPicDiv.innerHTML = "";
