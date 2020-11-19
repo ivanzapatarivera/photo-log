@@ -34,14 +34,16 @@ function nav() {
                           `;
 
   // Attach bottom bar when in desktop view
-  // var footerBarDesktopView
+  var footerBarDesktopView = `<footer id="footerDesktop" class="text-center fixed-bottom footer footerDesktopView py-3">
+                                <span class="text-center footerDesktop"><i class="fas fa-camera"></i> PhotoLog</span>
+                            </footer>`;
 
   // Attach navigation as a footer when in mobile view (static)
-  var footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer py-4">
-                        <a href="/" class="footer"><i class="far fa-user-circle"></i> Profile</a>
-                        <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
-                        <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
-                      </footer>`;
+  var footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer footerMobileView py-4">
+                            <a href="/" class="footer"><i class="far fa-user-circle"></i> Profile</a>
+                            <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
+                            <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
+                          </footer>`;
 
   appendNavigation();
 
@@ -49,6 +51,7 @@ function nav() {
   function appendNavigation() {
     body.insertAdjacentHTML("afterbegin", navbarDesktopView);
     body.insertAdjacentHTML("afterbegin", topBarMobileView);
+    body.insertAdjacentHTML("afterbegin", footerBarDesktopView);
     body.insertAdjacentHTML("afterbegin", footerMobileView);
 
     showHideLocationsLogged();
