@@ -46,7 +46,7 @@ function nav() {
   function appendNavigation() {
     body.insertAdjacentHTML("afterbegin", navbar);
     body.insertAdjacentHTML("afterbegin", topBarMobileView);
-    body.insertAdjacentHTML("afterbegin", footer);
+    body.insertAdjacentHTML("afterbegin", footerMobile);
 
     showHideLocationsLogged();
   }
