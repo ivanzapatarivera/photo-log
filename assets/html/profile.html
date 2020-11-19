@@ -23,9 +23,9 @@
   </head>
   <body id="root">
     <div class="container main mt-4 mb-5 py-5">
-      <h1 class="text-center pt-4">
-        <i class="far fa-user-circle"></i> Profile
-      </h1>
+      <!-- <h1 class="text-center pt-4 profileIcon"> -->
+        <!-- <i class="far fa-user-circle"></i> -->
+      <!-- </h1> -->
 
       <div class="row">
         <!-- Empty column -->
@@ -49,8 +49,8 @@
             <!-- PhotoLog Status update column with entry form  -->
             <div class="col-12 col-md-9">
               <div id="statusText">
-                <div id="status" class="mt-5">
-                  <form action="/status" method="post" id="formStatus">
+                <div id="status" class="mt-4">
+                  <form action="/status" method="post" id="formStatus" class="text-left">
                     <textarea
                       name="statusUpdate"
                       id="statusUpdate"
@@ -85,7 +85,7 @@
           <!-- Section with previous statuses -->
           <div class="row">
             <div class="col-12 my-4">
-              <h3 class="text-center">Timeline</h3>
+              <h3 class="text-center timeline">Timeline</h3>
               <div class="mx-auto px-2" id="previousStatus"></div>
             </div>
           </div>
