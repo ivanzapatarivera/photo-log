@@ -2,7 +2,7 @@ function nav() {
   var body = document.getElementById("root");
 
   // Attach navigation as a navbar when in desktop view (static)
-  var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+  var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
                 <div class="container">
                     <a class="navbar-brand" href="/">PhotoLog</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -27,9 +27,14 @@ function nav() {
                 </div>
                 </nav>`;
 
+  var topBarMobileView = `<nav class="navbar navbar-expand-lg navbar-dark topNavBarMobileView">
+                              <h1 class="text-center">PhotoLog</h1>                      
+                          </nav>
+                          `;
+
   // Attach navigation as a footer when in mobile view (static)
   var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
-                    <a href="/" class="footer"><i class="fas fa-home"></i> PhotoLog</a>
+                    <a href="/" class="footer"><i class="fas fa-home"></i> Profile</a>
                     <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
                     <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
                 </footer>`;
@@ -39,6 +44,7 @@ function nav() {
   // Insert navbar and footer
   function appendNavigation() {
     body.insertAdjacentHTML("afterbegin", navbar);
+    body.insertAdjacentHTML("afterbegin", topBarMobileView);
     body.insertAdjacentHTML("afterbegin", footer);
 
     showHideLocationsLogged();

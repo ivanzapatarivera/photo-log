@@ -133,8 +133,11 @@ h4 {
 }
 
 @media screen and (min-width: 0px) and (max-width: 993px) {
-  .navbar {
+  .navbarDesktop {
     display: none;
+  }
+  .topNavBarMobileView{
+    visibility: visible;
   }
   .footer {
     display: inline-block;
@@ -168,5 +171,9 @@ h4 {
   }
   .navbar {
     display: block;
+  }
+
+  .topNavBarMobileView {
+    visibility: hidden;
   }
 }
