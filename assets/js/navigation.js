@@ -78,10 +78,10 @@ function nav() {
     albumsIconMobile.addEventListener("click", function () {
       if (placesTraveledDiv.style.visibility === "visible") {
         placesTraveledDiv.style.visibility = "hidden";
-        placesTraveledDiv.classList.remove("animate__fadeIn");
+        placesTraveledDiv.classList.remove("animate__fadeInUp");
       } else {
         placesTraveledDiv.style.visibility = "visible";
-        placesTraveledDiv.classList.add("animate__fadeIn");
+        placesTraveledDiv.classList.add("animate__fadeInUp");
       }
     });
   }
