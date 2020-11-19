@@ -198,6 +198,10 @@ h1,
     display: block;
   }
 
+  .placesTraveled{
+    margin-top: 50%;
+  }
+
   .topNavBarMobileView {
     visibility: hidden;
   }
