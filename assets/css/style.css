@@ -1,7 +1,7 @@
 .navbar,
 .footer {
   /* background-color: rgb(255, 138, 96); */
-  background-color: #007CC7;
+  background-color: #007cc7;
   color: white;
 }
 
@@ -20,7 +20,7 @@ body {
 
 .main {
   /* background-color: white; */
-  background-color: #12232E;
+  background-color: #12232e;
   padding-bottom: 500px;
 }
 
@@ -64,6 +64,18 @@ h1,
   color: black;
   border-width: 0;
   border-color: lightblue;
+}
+
+.button,
+.button:active,
+.button:focus {
+  background-color: #4da8da;
+  border: #4da8da;
+}
+
+.button:hover {
+  background-color: #5dc2f8;
+  border: #5dc2f8;
 }
 
 .profilepic {
@@ -175,7 +187,7 @@ h1,
     visibility: hidden;
     position: fixed;
     /* background-color: rgba(255, 255, 255, 0.75); */
-    background-color: #12232E;
+    background-color: #12232e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,8 +210,8 @@ h1,
     display: block;
   }
 
-  .placesTraveled{
-    margin-top: 50%;
+  .placesTraveled {
+    margin-top: 10%;
   }
 
   .topNavBarMobileView {
