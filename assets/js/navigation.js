@@ -29,7 +29,7 @@ function nav() {
 
   // Attach top bar when in mobile view
   var topBarMobileView = `<nav class="text-center navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
-                                <img src="../images/logo-nav.png" />                 
+                                <a href="/"><img src="../images/logo-nav.png" /></a>
                           </nav>
                           `;
 
