@@ -67,10 +67,10 @@ function nav() {
     albumsIcon.addEventListener("click", function () {
       if (placesTraveledDiv.style.visibility === "visible") {
         placesTraveledDiv.style.visibility = "hidden";
-        placesTraveledDiv.classList.remove("animate__fadeInRight");
+        placesTraveledDiv.classList.remove("animate__fadeInRightBig");
       } else {
         placesTraveledDiv.style.visibility = "visible";
-        placesTraveledDiv.classList.add("animate__fadeInRight");
+        placesTraveledDiv.classList.add("animate__fadeInRightBig");
       }
     });
 
@@ -78,10 +78,13 @@ function nav() {
     albumsIconMobile.addEventListener("click", function () {
       if (placesTraveledDiv.style.visibility === "visible") {
         placesTraveledDiv.style.visibility = "hidden";
-        placesTraveledDiv.classList.remove("animate__fadeInUp");
+        placesTraveledDiv.classList.remove("animate__fadeInUpBig");
+        // placesTraveledDiv.classList.add("animate__fadeOutDownBig");
       } else {
         placesTraveledDiv.style.visibility = "visible";
-        placesTraveledDiv.classList.add("animate__fadeInUp");
+        placesTraveledDiv.classList.add("animate__fadeInUpBig");
+        // placesTraveledDiv.classList.remove("animate__fadeOutDownBig");
+        
       }
     });
   }
