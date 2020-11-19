@@ -3,32 +3,33 @@ function nav() {
 
   // Attach navigation as a navbar when in desktop view (static)
   var navbar = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
-                <div class="container">
-                    <a class="navbar-brand" href="/">PhotoLog</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                  <div class="container">
+                      <a class="navbar-brand" href="/">PhotoLog</a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
 
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
-                            </li>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
-                            </li>
-                            <li class="nav-item nav-link">
-                               <span id="locationsLoggedNavbar"><i class="fas fa-map-marker-alt"></i> Albums </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                          <ul class="navbar-nav">
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
+                              </li>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
+                              </li>
+                              <li class="nav-item nav-link">
+                                <span id="locationsLoggedNavbar"><i class="fas fa-map-marker-alt"></i> Albums </span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
                 </nav>`;
 
-  var topBarMobileView = `<nav class="navbar navbar-expand-lg navbar-dark topNavBarMobileView">
-                              <h1 class="text-center">PhotoLog</h1>                      
+  // Attach top bar when in mobile view
+  var topBarMobileView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
+                              <h2 class="text-center py-2"><i class="far fa-user-circle"></i> PhotoLog</h2>                      
                           </nav>
                           `;
 
