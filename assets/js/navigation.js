@@ -4,7 +4,7 @@ function nav() {
   // Attach navigation as a navbar when in desktop view (static)
   var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
                   <div class="container">
-                      <a class="navbar-brand" href="/">PhotoLog</a>
+                      <a class="navbar-brand" href="/"><img src="../images/logo.png"></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
