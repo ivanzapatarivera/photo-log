@@ -29,16 +29,16 @@ function nav() {
 
   // Attach top bar when in mobile view
   var topBarMobileView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
-                              <h2 class="text-center py-2"><i class="far fa-user-circle"></i> PhotoLog</h2>                      
+                              <h2 class="text-center py-2"><i class="fas fa-camera"></i> PhotoLog</h2>                      
                           </nav>
                           `;
 
   // Attach navigation as a footer when in mobile view (static)
-  var footer = `<footer id="footer" class="text-center fixed-bottom footer py-4">
-                    <a href="/" class="footer"><i class="fas fa-home"></i> Profile</a>
-                    <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
-                    <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
-                </footer>`;
+  var footerMobile = `<footer id="footer" class="text-center fixed-bottom footer py-4">
+                        <a href="/" class="footer"><i class="far fa-user-circle"></i> Profile</a>
+                        <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
+                        <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
+                      </footer>`;
 
   appendNavigation();
 
