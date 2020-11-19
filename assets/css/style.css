@@ -1,6 +1,7 @@
 .navbar,
 .footer {
-  background-color: rgb(255, 138, 96);
+  /* background-color: rgb(255, 138, 96); */
+  background-color: #007CC7;
   color: white;
 }
 
@@ -11,6 +12,11 @@
 .nav-link:hover {
   cursor: pointer;
 }
+
+/* .logo-nav {
+  width: 75%;
+  height: auto;
+} */
 
 body {
   background-color: aliceblue;

@@ -4,14 +4,14 @@ function nav() {
   // Attach navigation as a navbar when in desktop view (static)
   var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
                   <div class="container">
-                      <a class="navbar-brand" href="/"><img src="../images/logo.png"></a>
+                      <a class="navbar-brand" href="/"><img src="../images/logo-nav.png" class="logo-nav"></a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                       </button>
 
                       <div class="collapse navbar-collapse" id="navbarNav">
-                          <ul class="navbar-nav">
+                          <ul class="navbar-nav mt-4">
                               <li class="nav-item">
                                   <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
                               </li>
@@ -28,8 +28,8 @@ function nav() {
                 </nav>`;
 
   // Attach top bar when in mobile view
-  var topBarMobileView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
-                              <h2 class="text-center py-2"><i class="fas fa-camera"></i> PhotoLog</h2>                      
+  var topBarMobileView = `<nav class="text-center navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
+                                <img src="../images/logo-nav.png" />                 
                           </nav>
                           `;
 
