@@ -13,17 +13,15 @@
   cursor: pointer;
 }
 
-/* .logo-nav {
-  width: 75%;
-  height: auto;
-} */
+
 
 body {
   background-color: aliceblue;
 }
 
 .main {
-  background-color: white;
+  /* background-color: white; */
+  background-color: #12232E;
 }
 
 input,
@@ -34,9 +32,11 @@ textarea {
   border-width: 1px;
   border-color: lightblue;
 }
+
 .log {
   text-align: right;
 }
+
 label,
 button {
   font-weight: 600;
