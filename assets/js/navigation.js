@@ -35,7 +35,7 @@ function nav() {
 
   // Attach bottom bar when in desktop view
   var footerBarDesktopView = `<footer id="footerDesktop" class="text-center fixed-bottom footer footerDesktopView py-3">
-                                <span class="text-center footerDesktop"><i class="fas fa-camera"></i> PhotoLog</span>
+                                <span class="text-center footerDesktop">&nbsp&nbsp&nbsp&nbsp&copy; Copyright 2020 PhotoLog App</span>
                             </footer>`;
 
   // Attach navigation as a footer when in mobile view (static)
