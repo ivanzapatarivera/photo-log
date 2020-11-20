@@ -16,7 +16,7 @@
 body {
   /* background-color: aliceblue; */
   background-color: #203647;  
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .main {
