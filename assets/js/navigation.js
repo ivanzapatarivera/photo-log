@@ -41,7 +41,7 @@ function nav() {
   // Attach navigation as a footer when in mobile view (static)
   var footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer footerMobileView py-4">
                             <a href="/" class="footer"><i class="far fa-user-circle"></i> Profile</a>
-                            <a href="/LogYourPhoto" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
+                            <a href="/LogYourPhoto" id="imagesMobile" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </a>
                             <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
                           </footer>`;
 
@@ -91,15 +91,28 @@ function nav() {
 
     navbarAlbumsIconShowHide();
     
+    // Change albums icon visibility to hidden 
     function navbarAlbumsIconShowHide() {
-      const albumsIcon = document.querySelector("#locationsLoggedNavbar");
-      const newProfilePic = document.querySelector("#newProfilePic");
+      const albumsIconDesktop = document.querySelector('#locationsLoggedNavbar');
+      const albumsIconMobile = document.querySelector('#locationsLoggedMobile');
+      const imagesMobile = document.querySelector('#imagesMobile');
+      const newProfilePic = document.querySelector('#newProfilePic');
       
+      // On desktop view
       if(newProfilePic) {
-        albumsIcon.style.visibility = 'visible';
+        albumsIconDesktop.style.visibility = 'visible';
+        albumsIconMobile.style.display = 'visible';
+
       } else {
-        albumsIcon.style.visibility = 'hidden'
+        albumsIconDesktop.style.visibility = 'hidden';
+        albumsIconMobile.style.display = 'none';
+        imagesMobile.classList.remove('px-5');
+        imagesMobile.classList.add('pl-5')
       }
+
+      // On mobile view
+
+
     }
 
   }
