@@ -41,7 +41,7 @@ function pictures() {
           // Display dynamically generated albums of traveled places
           eventPictureClick.addEventListener("click", function (event) {
             eventPicDiv.style.visibility = "visible";
-            eventPicDiv.classList.add('flip-in-ver-left'); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in
+            eventPicDiv.classList.add("flip-in-ver-left"); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in
             // eventPicDiv.classList.add("animate__animated"); // animate.css -- DO NOT DELETE
             // eventPicDiv.classList.add("animate__flipInY");  // animate.css -- DO NOT DELETE
             var currentSrc = event.path[0].currentSrc;
@@ -58,7 +58,7 @@ function pictures() {
               if (eventPicDiv) {
                 eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
-                eventPicDiv.classList.remove('flip-in-ver-left'); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in-fwd
+                eventPicDiv.classList.remove("flip-in-ver-left"); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in-fwd
                 // eventPicDiv.classList.remove("animate__animated"); // animate.css -- DO NOT DELETE
                 // eventPicDiv.classList.remove("animate__flipInY");  // animate.css -- DO NOT DELETE
               }
