@@ -1,18 +1,15 @@
 function pictures() {
   const event = document.querySelector("#picturesWall");
   var eventPicDiv = document.querySelector("#pictureDiv");
-  
+
   const API = "/log";
 
-  
   if (event) {
-
     // Rendering the last 6 images posted
     fetch(API)
       .then((res) => res.json(API))
       .then((data) => {
         data = data.slice(Math.max(data.length - 6, 0));
-        
 
         data.map((data) => {
           const title = data.title;
@@ -44,6 +41,8 @@ function pictures() {
           // Display dynamically generated albums of traveled places
           eventPictureClick.addEventListener("click", function (event) {
             eventPicDiv.style.visibility = "visible";
+            eventPicDiv.classList.add("animate__animated");
+            eventPicDiv.classList.add("animate__flipInY");
             var currentSrc = event.path[0].currentSrc;
             // var width = event.toElement.naturalWidth;
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
@@ -58,6 +57,8 @@ function pictures() {
               if (eventPicDiv) {
                 eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
+                eventPicDiv.classList.remove("animate__animated");
+                eventPicDiv.classList.remove("animate__flipInY");
               }
             });
 
