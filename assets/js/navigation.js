@@ -57,6 +57,7 @@ function nav() {
     showHideLocationsLogged();
   }
 
+ 
   // Show and hide places traveled DIV
   function showHideLocationsLogged() {
     const albumsIcon = document.querySelector("#locationsLoggedNavbar");
@@ -87,6 +88,20 @@ function nav() {
         
       }
     });
+
+    navbarAlbumsIconShowHide();
+    
+    function navbarAlbumsIconShowHide() {
+      const albumsIcon = document.querySelector("#locationsLoggedNavbar");
+      const newProfilePic = document.querySelector("#newProfilePic");
+      
+      if(newProfilePic) {
+        albumsIcon.style.visibility = 'visible';
+      } else {
+        albumsIcon.style.visibility = 'hidden'
+      }
+    }
+
   }
 }
 
