@@ -56,6 +56,8 @@ function displayLocations() {
                 const eventPictureClick = document.getElementById(id);
                 eventPictureClick.addEventListener("click", function (event) {
                   eventPicDiv.style.visibility = "visible";
+                  eventPicDiv.classList.add("animate__animated");
+                  eventPicDiv.classList.add("animate__flipInY");
                   var currentSrc = event.path[0].currentSrc;
                   var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
                                       <div id="caption" class="caption mt-0">${description}</div>`;
@@ -68,16 +70,16 @@ function displayLocations() {
                   eventCurrentSrc.addEventListener("click", function () {
                     if (eventPicDiv) {
                       eventPicDiv.style.visibility = "hidden";
+                      eventPicDiv.classList.remove("animate__animated");
+                      eventPicDiv.classList.remove("animate__flipInY");
                       eventPicDiv.innerHTML = "";
                     }
                   });
                 });
               });
             });
-            placesEl.style.visibility = 'hidden';
+          placesEl.style.visibility = "hidden";
         });
-
-         
       });
     });
 }
