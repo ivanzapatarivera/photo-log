@@ -57,8 +57,8 @@ function displayLocations() {
                 eventPictureClick.addEventListener("click", function (event) {
                   eventPicDiv.style.visibility = "visible";
                   eventPicDiv.classList.add('flip-in-ver-left');
-                  // eventPicDiv.classList.add("animate__animated");
-                  // eventPicDiv.classList.add("animate__flipInY");
+                  // eventPicDiv.classList.add("animate__animated");  // animate.css -- DO NOT DELETE
+                  // eventPicDiv.classList.add("animate__flipInY");   // animate.css -- DO NOT DELETE
                   var currentSrc = event.path[0].currentSrc;
                   var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
                                       <div id="caption" class="caption mt-0">${description}</div>`;
@@ -72,8 +72,8 @@ function displayLocations() {
                     if (eventPicDiv) {
                       eventPicDiv.style.visibility = "hidden";
                       eventPicDiv.classList.remove('flip-in-ver-left');
-                      // eventPicDiv.classList.remove("animate__animated");
-                      // eventPicDiv.classList.remove("animate__flipInY");
+                      // eventPicDiv.classList.remove("animate__animated"); // animate.css -- DO NOT DELETE
+                      // eventPicDiv.classList.remove("animate__flipInY");  // animate.css -- DO NOT DELETE
                       eventPicDiv.innerHTML = "";
                     }
                   });

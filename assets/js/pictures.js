@@ -42,8 +42,8 @@ function pictures() {
           eventPictureClick.addEventListener("click", function (event) {
             eventPicDiv.style.visibility = "visible";
             eventPicDiv.classList.add('flip-in-ver-left'); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in
-            // eventPicDiv.classList.add("animate__animated");
-            // eventPicDiv.classList.add("animate__flipInY");
+            // eventPicDiv.classList.add("animate__animated"); // animate.css -- DO NOT DELETE
+            // eventPicDiv.classList.add("animate__flipInY");  // animate.css -- DO NOT DELETE
             var currentSrc = event.path[0].currentSrc;
             // var width = event.toElement.naturalWidth;
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
@@ -59,8 +59,8 @@ function pictures() {
                 eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
                 eventPicDiv.classList.remove('flip-in-ver-left'); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in-fwd
-                // eventPicDiv.classList.remove("animate__animated");
-                // eventPicDiv.classList.remove("animate__flipInY");
+                // eventPicDiv.classList.remove("animate__animated"); // animate.css -- DO NOT DELETE
+                // eventPicDiv.classList.remove("animate__flipInY");  // animate.css -- DO NOT DELETE
               }
             });
 
