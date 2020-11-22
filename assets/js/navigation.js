@@ -67,11 +67,12 @@ function nav() {
     // Event listener when in desktop view
     albumsIcon.addEventListener("click", function () {
       if (placesTraveledDiv.style.visibility === "visible") {
+        placesTraveledDiv.classList.remove("slide-in-top");
+        
         placesTraveledDiv.style.visibility = "hidden";
-        placesTraveledDiv.classList.remove("animate__fadeInRightBig");
       } else {
         placesTraveledDiv.style.visibility = "visible";
-        placesTraveledDiv.classList.add("animate__fadeInRightBig");
+        placesTraveledDiv.classList.add("slide-in-top");
       }
     });
 
