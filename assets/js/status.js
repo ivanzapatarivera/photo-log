@@ -27,7 +27,7 @@ function status(event) {
               dateArray3[0];
 
             let statusText = d.statusUpdate;
-            let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left pt-2 px-4 pb-4" style="border-radius: 15px;" data-id="${id}">
+            let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left pt-2 px-4 pb-4 statusCard" style="border-radius: 15px;" data-id="${id}">
                             <span style="font-size: .8rem;">${timestamp} 
                             <span onClick="delete" class="delete"><i class="far fa-trash-alt text-right delete" data-id=${id}></i>
                             </span></span><br>
