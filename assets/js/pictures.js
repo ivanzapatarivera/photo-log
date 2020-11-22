@@ -15,7 +15,8 @@ function pictures() {
           const title = data.title;
           const id = data._id;
           const description = data.description;
-          const URL = data.URL;
+          const URL = data.URL
+          console.log(URL)
 
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
