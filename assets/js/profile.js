@@ -26,7 +26,7 @@ function profile() {
       .then((d) => {
         var dL = d.length - 1;
         var URL = d[dL].URL;
-        var img = `<img src=${URL} class="profilepic mx-auto">`;
+        var img = `<img src=${URL} class="profilepic">`;
         profile.insertAdjacentHTML("afterbegin", img);
       });
 
