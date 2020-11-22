@@ -1,6 +1,5 @@
 .navbar,
 .footer {
-  /* background-color: rgb(255, 138, 96); */
   background-color: #007cc7;
   color: white;
 }
@@ -14,13 +13,11 @@
 }
 
 body {
-  /* background-color: aliceblue; */
   background-color: #203647;
   overflow-x: hidden;
 }
 
 .main {
-  /* background-color: white; */
   background-color: #12232e;
   padding-bottom: 500px;
 }
@@ -335,31 +332,30 @@ THIS SECTION USES ANIMISTA - CREDITS
  * animation slide-out-top
  * ----------------------------------------
  */
- @-webkit-keyframes slide-out-top {
+@-webkit-keyframes slide-out-top {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
+    transform: translateY(-1000px);
     opacity: 0;
   }
 }
 @keyframes slide-out-top {
   0% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
+    transform: translateY(-1000px);
     opacity: 0;
   }
 }
-
 
 /* 
 ------------------------------------------
