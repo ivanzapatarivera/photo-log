@@ -64,17 +64,38 @@ h1,
   border-color: lightblue;
 }
 
+/* -------------- */
+/* STATUS SECTION */
+/* -------------- */
+
 .status {
   display: none;
 }
 
+.postStatus {
+  background-color: #007cc7;
+  color: white;
+  box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.5);
+  border: hidden;
+  border-radius: 15px;
+  transition: transform 0.2s;
+}
+
+.postStatus:hover {
+  transform: scale(1.075);
+}
+
 .cardStatus {
   border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .statusText {
   font-size: 0.95rem;
 }
+/* --------------------- */
+/* END OF STATUS SECTION */
+/* --------------------- */
 
 .button,
 .button:active,
