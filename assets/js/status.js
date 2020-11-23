@@ -1,4 +1,4 @@
-function status(event) {
+function status() {
   // This section will create HTML to post status box
   const statusBox = document.querySelector("#statusBox");
   const statusEl = `<div id="statusText">
@@ -25,15 +25,15 @@ function status(event) {
   const buttonCancel = document.querySelector("#buttonCancel");
   showHideStatusBox();
   function showHideStatusBox() {
-    statusBtn.addEventListener("click", function() {
+    statusBtn.addEventListener("click", () => {
       statusBox.style.display = "flex";
       statusBox.classList.add("scale-in-center");
     });
-    buttonSubmit.addEventListener("click", function() {
+    buttonSubmit.addEventListener("click", () => {
       statusBox.style.display = "none";
       statusBox.classList.remove("scale-in-center");
     });
-    buttonCancel.addEventListener("click", function() {
+    buttonCancel.addEventListener("click", () => {
       statusBox.style.display = "none";
       statusBox.classList.remove("scale-in-center");
     });
@@ -46,7 +46,7 @@ function status(event) {
 
   if (status) {
     previousStatus();
-    function previousStatus(event) {
+    function previousStatus() {
       fetch(statusAPI)
         .then((res) => res.json(statusAPI))
         .then((d) => {
@@ -85,18 +85,18 @@ function status(event) {
     }
 
     // This section will delete status post
-    previousStats.addEventListener("click", function (e) {
+    previousStats.addEventListener("click", (e) => {
       if (e.target.matches(".delete")) {
-        console.log("you clicked on delete");
-        console.log("this is the element: ", e.target);
+        // console.log("you clicked on delete");
+        // console.log("this is the element: ", e.target);
         var el = e.target;
-        console.log(el);
+        // console.log(el);
         var dataID = el.getAttribute("data-id");
-        console.log(dataID);
+        // console.log(dataID);
         fetch("/deleteStatus/" + dataID, {
           method: "delete",
         }).then(() => {
-          previousStats.innerHTML = '';
+          previousStats.innerHTML = "";
           previousStatus();
         });
       }
