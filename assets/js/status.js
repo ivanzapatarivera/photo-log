@@ -96,7 +96,8 @@ function status(event) {
         fetch("/deleteStatus/" + dataID, {
           method: "delete",
         }).then(() => {
-          location.reload();
+          previousStats.innerHTML = '';
+          previousStatus();
         });
       }
     });
