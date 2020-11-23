@@ -87,12 +87,8 @@ function status() {
     // This section will delete status post
     previousStats.addEventListener("click", (e) => {
       if (e.target.matches(".delete")) {
-        // console.log("you clicked on delete");
-        // console.log("this is the element: ", e.target);
         var el = e.target;
-        // console.log(el);
         var dataID = el.getAttribute("data-id");
-        // console.log(dataID);
         fetch("/deleteStatus/" + dataID, {
           method: "delete",
         }).then(() => {
