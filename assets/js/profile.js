@@ -9,7 +9,7 @@ function profile() {
                                 id="URL"
                                 placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Add your profile picture's URL"
                               /><br />
-                              <button class="button btn btn-primary">Change</button>
+                              <button class="button btn btn-primary"><i class="fas fa-check"></i></button>
                             </form>`;
 
   if (newProfilePic) {
