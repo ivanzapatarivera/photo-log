@@ -1,4 +1,15 @@
 function status(event) {
+  // This section will display the status box
+  const statusBtn = document.querySelector('#postStatus');
+  const statusBox = document.querySelector('#statusBox');
+  showHideStatusBox();
+  function showHideStatusBox() {
+    statusBtn.addEventListener('click', function() {
+      
+    })
+  }
+
+  // This section will load all the previous status post
   const status = document.querySelector("#statusText");
   const previousStats = document.querySelector("#previousStatus");
   const statusAPI = "/status";
@@ -10,7 +21,6 @@ function status(event) {
         .then((res) => res.json(statusAPI))
         .then((d) => {
           d.map((d) => {
-
             let id = d._id;
             let date = d.timestamp;
             let dateArray = date.split("-");
@@ -42,6 +52,7 @@ function status(event) {
         });
     }
 
+    // This section will delete status post
     previousStats.addEventListener("click", function (e) {
       if (e.target.matches(".delete")) {
         console.log("you clicked on delete");
