@@ -67,11 +67,13 @@ function status(event) {
               dateArray3[0];
 
             let statusText = d.statusUpdate;
-            let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left pt-2 px-4 pb-4 cardStatus" data-id="${id}">
+            let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
                               <span style="font-size: .8rem;">${timestamp} 
-                              <span onClick="delete" class="delete"><i class="far fa-trash-alt text-right delete" data-id=${id}></i>
-                              </span></span><br>
-                              <span class="statusText" data-id="${id}">${statusText}</span>
+                                <span onClick="delete" class="delete">
+                                  <i class="far fa-trash-alt text-right delete" data-id=${id}></i>
+                                </span>
+                              </span>
+                              <p class="statusText pt-2" data-id="${id}">${statusText}</p>
                             </div>`;
 
             previousStats.insertAdjacentHTML("afterbegin", statusCard);
