@@ -1,7 +1,5 @@
 function status(event) {
-
   // This section will create HTML to post status box
-
   const statusBox = document.querySelector("#statusBox");
   const statusEl = `<div id="statusText">
                       <div id="status" class="statusForm">
@@ -19,7 +17,7 @@ function status(event) {
                         </form>
                       </div>
                     </div>`;
-  statusBox.insertAdjacentHTML('afterbegin', statusEl);
+  statusBox.insertAdjacentHTML("afterbegin", statusEl);
 
   // This section will display the status box
   const statusBtn = document.querySelector("#postStatus");
