@@ -57,7 +57,6 @@ function nav() {
     showHideLocationsLogged();
   }
 
- 
   // Show and hide places traveled DIV
   function showHideLocationsLogged() {
     const albumsIcon = document.querySelector("#locationsLoggedNavbar");
@@ -65,7 +64,7 @@ function nav() {
     const placesTraveledDiv = document.querySelector("#places");
 
     // Event listener when in desktop view
-    albumsIcon.addEventListener("click", function () {
+    albumsIcon.addEventListener("click", () => {
       if (placesTraveledDiv.style.visibility === "visible") {
         placesTraveledDiv.style.visibility = "hidden";
         placesTraveledDiv.classList.remove("slide-in-top");
@@ -76,7 +75,7 @@ function nav() {
     });
 
     // Event listener when in mobile view
-    albumsIconMobile.addEventListener("click", function () {
+    albumsIconMobile.addEventListener("click", () => {
       if (placesTraveledDiv.style.visibility === "visible") {
         placesTraveledDiv.style.visibility = "hidden";
         placesTraveledDiv.classList.remove("slide-in-bottom");
@@ -85,36 +84,31 @@ function nav() {
         placesTraveledDiv.style.visibility = "visible";
         placesTraveledDiv.classList.add("slide-in-bottom");
         // placesTraveledDiv.classList.remove("animate__fadeOutDownBig");
-        
       }
     });
 
     navbarAlbumsIconShowHide();
-    
-    // Change albums icon visibility to hidden 
+
+    // Change albums icon visibility to hidden
     function navbarAlbumsIconShowHide() {
-      const albumsIconDesktop = document.querySelector('#locationsLoggedNavbar');
-      const albumsIconMobile = document.querySelector('#locationsLoggedMobile');
-      const imagesMobile = document.querySelector('#imagesMobile');
-      const newProfilePic = document.querySelector('#newProfilePic');
-      
+      const albumsIconDesktop = document.querySelector(
+        "#locationsLoggedNavbar"
+      );
+      const albumsIconMobile = document.querySelector("#locationsLoggedMobile");
+      const imagesMobile = document.querySelector("#imagesMobile");
+      const newProfilePic = document.querySelector("#newProfilePic");
+
       // On desktop view
-      if(newProfilePic) {
-        albumsIconDesktop.style.visibility = 'visible';
-        albumsIconMobile.style.display = 'visible';
-
+      if (newProfilePic) {
+        albumsIconDesktop.style.visibility = "visible";
+        albumsIconMobile.style.display = "visible";
       } else {
-        albumsIconDesktop.style.visibility = 'hidden';
-        albumsIconMobile.style.display = 'none';
-        imagesMobile.classList.remove('px-5');
-        imagesMobile.classList.add('pl-5')
+        albumsIconDesktop.style.visibility = "hidden";
+        albumsIconMobile.style.display = "none";
+        imagesMobile.classList.remove("px-5");
+        imagesMobile.classList.add("pl-5");
       }
-
-      // On mobile view
-
-
     }
-
   }
 }
 
