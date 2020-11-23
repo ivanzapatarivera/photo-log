@@ -1,9 +1,7 @@
 function pictures() {
   const event = document.querySelector("#picturesWall");
   var eventPicDiv = document.querySelector("#pictureDiv");
-
   const API = "/log";
-
   if (event) {
     // Rendering the last 6 images posted
     fetch(API)
@@ -15,8 +13,7 @@ function pictures() {
           const title = data.title;
           const id = data._id;
           const description = data.description;
-          const URL = data.URL
-          // console.log(URL)
+          const URL = data.URL;
 
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
@@ -28,25 +25,15 @@ function pictures() {
                         </span></p>
                       </div>`;
 
-          // DO NOT DELETE --- CACHED CODE
-          // <div class="card cards text-center col-2">
-          // <p class="cardTitle mt-4" data-id=${id}>${title}
-          // <span onClick="delete" data-id=${id} class="delete"><i class="far fa-trash-alt delete" data-id=${id}></i></span></p>
-          // <p><img src=${URL} class="cardImage" /><br>
-          // <span>${description}</span>
-          // </p>
-          // </div>
           event.insertAdjacentHTML("beforeend", card);
           const eventPictureClick = document.getElementById(id);
 
           // Display dynamically generated albums of traveled places
-          eventPictureClick.addEventListener("click", function (event) {
+          eventPictureClick.addEventListener("click", (event) => {
             eventPicDiv.style.visibility = "visible";
-            eventPicDiv.classList.add("flip-in-ver-left"); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in
-            // eventPicDiv.classList.add("animate__animated"); // animate.css -- DO NOT DELETE
-            // eventPicDiv.classList.add("animate__flipInY");  // animate.css -- DO NOT DELETE
+            eventPicDiv.classList.add("flip-in-ver-left");
             var currentSrc = event.path[0].currentSrc;
-            // var width = event.toElement.naturalWidth;
+
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
                                 <div id="caption" class="caption mt-0">${description}</div>`;
 
@@ -55,28 +42,22 @@ function pictures() {
             }
 
             // Change albums of traveled places visibility
-            eventPicDiv.addEventListener("click", function () {
+            eventPicDiv.addEventListener("click", () => {
               if (eventPicDiv) {
                 eventPicDiv.style.visibility = "hidden";
                 eventPicDiv.innerHTML = "";
-                eventPicDiv.classList.remove("flip-in-ver-left"); // Using animista URL: https://animista.net/play/entrances/fade-in/fade-in-fwd
-                // eventPicDiv.classList.remove("animate__animated"); // animate.css -- DO NOT DELETE
-                // eventPicDiv.classList.remove("animate__flipInY");  // animate.css -- DO NOT DELETE
+                eventPicDiv.classList.remove("flip-in-ver-left");
               }
             });
-
-            // const eventCurrentSrc = document.getElementById(currentSrc);
           });
         });
       });
   }
 
-  event.addEventListener("click", function (e) {
+  event.addEventListener("click", (e) => {
     if (e.target.matches(".delete")) {
-      // console.log(e.target);
       var el = e.target;
       var dataID = el.getAttribute("data-id");
-      // console.log(dataID);
       fetch("/deleteLog/" + dataID, {
         method: "delete",
       }).then(() => {

@@ -12,6 +12,7 @@ function displayLocations() {
     .then((res) => res.json(API))
     .then((response) => {
       response.map((divResponse) => {
+        
         // Display name of album by each location
         var divLocations = `<div class="col-12 text-center">
                               <h5 id="${divResponse}" class="mt-4 divResponse">${divResponse}</h5>
