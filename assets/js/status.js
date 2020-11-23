@@ -27,6 +27,7 @@ function status(event) {
   function showHideStatusBox() {
     statusBtn.addEventListener("click", function() {
       statusBox.style.display = "flex";
+      statusBox.classList.add("")
     });
     buttonSubmit.addEventListener("click", function() {
       statusBox.style.display = "none";
