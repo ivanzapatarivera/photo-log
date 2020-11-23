@@ -1,7 +1,28 @@
 function status(event) {
+
+  // This section will create HTML to post status box
+
+  const statusBox = document.querySelector("#statusBox");
+  const statusEl = `<div id="statusText">
+                      <div id="status" class="statusForm">
+                        <form action="/status" method="post" id="formStatus" class="text-left">
+                          <textarea
+                            name="statusUpdate"
+                            id="statusUpdate"
+                            cols="100%"
+                            rows="3"
+                            placeholder="What's on your mind?"
+                            class="px-3 py-1"
+                          ></textarea>
+                          <button class="button btn px-2 py-1"><i class="far fa-paper-plane"></i></button>
+                          <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancel"><i class="fas fa-times"></i></span>
+                        </form>
+                      </div>
+                    </div>`;
+  statusBox.insertAdjacentHTML('afterbegin', statusEl);
+
   // This section will display the status box
   const statusBtn = document.querySelector("#postStatus");
-  const statusBox = document.querySelector("#statusBox");
   const buttonCancel = document.querySelector("#buttonCancel");
   showHideStatusBox();
   function showHideStatusBox() {
