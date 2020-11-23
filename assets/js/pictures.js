@@ -16,7 +16,7 @@ function pictures() {
           const id = data._id;
           const description = data.description;
           const URL = data.URL
-          console.log(URL)
+          // console.log(URL)
 
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
@@ -73,10 +73,10 @@ function pictures() {
 
   event.addEventListener("click", function (e) {
     if (e.target.matches(".delete")) {
-      console.log(e.target);
+      // console.log(e.target);
       var el = e.target;
       var dataID = el.getAttribute("data-id");
-      console.log(dataID);
+      // console.log(dataID);
       fetch("/deleteLog/" + dataID, {
         method: "delete",
       }).then(() => {
