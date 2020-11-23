@@ -27,13 +27,15 @@ function status(event) {
   function showHideStatusBox() {
     statusBtn.addEventListener("click", function() {
       statusBox.style.display = "flex";
-      statusBox.classList.add("")
+      statusBox.classList.add("scale-in-center");
     });
     buttonSubmit.addEventListener("click", function() {
       statusBox.style.display = "none";
+      statusBox.classList.remove("scale-in-center");
     });
     buttonCancel.addEventListener("click", function() {
       statusBox.style.display = "none";
+      statusBox.classList.remove("scale-in-center");
     });
   }
 
