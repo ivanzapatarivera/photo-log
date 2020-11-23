@@ -12,7 +12,7 @@ function status(event) {
                             placeholder="What's on your mind?"
                             class="px-3 py-1"
                           ></textarea>
-                          <button class="button btn px-2 py-1"><i class="far fa-paper-plane"></i></button>
+                          <button class="button btn px-2 py-1" id="buttonSubmit"><i class="far fa-paper-plane"></i></button>
                           <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancel"><i class="fas fa-times"></i></span>
                         </form>
                       </div>
@@ -21,13 +21,17 @@ function status(event) {
 
   // This section will display the status box
   const statusBtn = document.querySelector("#postStatus");
+  const buttonSubmit = document.querySelector("#buttonSubmit");
   const buttonCancel = document.querySelector("#buttonCancel");
   showHideStatusBox();
   function showHideStatusBox() {
-    statusBtn.addEventListener("click", function () {
+    statusBtn.addEventListener("click", function() {
       statusBox.style.display = "flex";
     });
-    buttonCancel.addEventListener("click", function () {
+    buttonSubmit.addEventListener("click", function() {
+      statusBox.style.display = "none";
+    });
+    buttonCancel.addEventListener("click", function() {
       statusBox.style.display = "none";
     });
   }
