@@ -1,7 +1,12 @@
-function pictures() {
+function newFunction() {
   const event = document.querySelector("#picturesWall");
   var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
+  return { event, API, eventPicDiv };
+}
+
+function pictures() {
+  var { event, API, eventPicDiv } = newFunction();
   if (event) {
     // Rendering the last 6 images posted
     fetch(API)
