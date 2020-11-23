@@ -451,6 +451,9 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
     overflow-y: scroll;
     z-index: 1000;
   }
+  .statusText {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (min-width: 994px) {
