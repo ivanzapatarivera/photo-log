@@ -82,6 +82,7 @@ h1,
 
 .statusForm {
   padding-top: 175px;
+  max-width: 750px;
 }
 
 .postStatus {
@@ -114,11 +115,33 @@ h1,
 .button:focus {
   background-color: #4da8da;
   border: #4da8da;
+  border: hidden;
+  border-radius: 15px;
+  width: 65px;
+  color: white;
 }
 
 .button:hover {
   background-color: #5dc2f8;
   border: #5dc2f8;
+  color: white;
+}
+
+.buttonCancel,
+.buttonCancel:active,
+.buttonCancel:focus {
+  background-color: red;
+  color: white;
+  border: hidden;
+  border-radius: 15px;
+  margin-top: 8px;
+  width: 65px;
+}
+
+.buttonCancel:hover {
+  background-color: rgb(253, 77, 77);
+  border: rgb(253, 77, 77);;
+  color: white;
 }
 
 .profilepic {

@@ -1,16 +1,16 @@
 function status(event) {
   // This section will display the status box
-  const statusBtn = document.querySelector('#postStatus');
-  const statusBox = document.querySelector('#statusBox');
+  const statusBtn = document.querySelector("#postStatus");
+  const statusBox = document.querySelector("#statusBox");
+  const buttonCancel = document.querySelector("#buttonCancel");
   showHideStatusBox();
   function showHideStatusBox() {
-    statusBtn.addEventListener('click', function() {
-      if (statusBox.style.display === "flex") {
-        statusBox.style.display = "none";
-      } else {
-        statusBox.style.display = "flex";
-      }
-    })
+    statusBtn.addEventListener("click", function () {
+      statusBox.style.display = "flex";
+    });
+    buttonCancel.addEventListener("click", function () {
+      statusBox.style.display = "none";
+    });
   }
 
   // This section will load all the previous status post

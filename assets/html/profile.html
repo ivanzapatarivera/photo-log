@@ -52,9 +52,9 @@
               </button>
             </div>
             <!-- PhotoLog Status update column with entry form  -->
-            <div class="status statusText statusForm text-center" id="statusBox">
-              <div id="statusText ">
-                <div id="status" class="">
+            <div class="status statusText  text-center" id="statusBox">
+              <div id="statusText">
+                <div id="status" class="statusForm">
                   <form action="/status" method="post" id="formStatus" class="text-left">
                     <textarea
                       name="statusUpdate"
@@ -64,7 +64,8 @@
                       placeholder="What's on your mind?"
                       class="px-3 py-1"
                     ></textarea>
-                    <button class="button btn btn-primary"><i class="far fa-paper-plane"></i></button>
+                    <button class="button btn px-2 py-1"><i class="far fa-paper-plane"></i></button>
+                    <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancel"><i class="fas fa-times"></i></span>
                   </form>
                 </div>
               </div>
