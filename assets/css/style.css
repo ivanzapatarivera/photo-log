@@ -72,13 +72,16 @@ h1,
   display: none;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.2);
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  top: 0;
+  top: 0px;
   left: 0px;
   height: 100vh;
   z-index: 1000;
+}
+
+.statusForm {
+  padding-top: 10%;
 }
 
 .postStatus {
