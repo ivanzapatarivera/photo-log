@@ -5,7 +5,11 @@ function status(event) {
   showHideStatusBox();
   function showHideStatusBox() {
     statusBtn.addEventListener('click', function() {
-      
+      if (statusBox.style.display === "flex") {
+        statusBox.style.display = "none";
+      } else {
+        statusBox.style.display = "flex";
+      }
     })
   }
 

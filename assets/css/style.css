@@ -70,6 +70,15 @@ h1,
 
 .status {
   display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0px;
+  height: 100vh;
+  z-index: 1000;
 }
 
 .postStatus {
