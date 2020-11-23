@@ -1,4 +1,4 @@
-function newFunction() {
+function cache() {
   const event = document.querySelector("#picturesWall");
   var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
@@ -6,7 +6,7 @@ function newFunction() {
 }
 
 function pictures() {
-  var { event, API, eventPicDiv } = newFunction();
+  var { event, API, eventPicDiv } = cache();
   if (event) {
     // Rendering the last 6 images posted
     fetch(API)
