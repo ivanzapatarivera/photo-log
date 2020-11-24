@@ -59,6 +59,33 @@ function pictures() {
       });
   }
 
+  var collageDivs = `<div class="row">
+                      <!-- First DIV -->
+                      <div class="col-3 bg-primary">CONTENT</div>
+                      <div class="col-5">
+                        <div class="row">
+                          <!-- Second DIV -->
+                          <div class="col-12 bg-success">CONTENT</div>
+                        </div>
+                        <div class="row">
+                          <!-- Third DIV -->
+                          <div class="col-6 bg-danger">CONTENT</div>
+                          <!-- Fourth DIV -->
+                          <div class="col-6 bg-warning">CONTENT</div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row">
+                          <!-- Fifth DIV -->
+                          <div class="col-12 bg-info">CONTENT</div>
+                        </div>
+                        <div class="row">
+                          <!-- Sixth DIV -->
+                          <div class="col-12 bg-dark">CONTENT</div>
+                        </div>
+                      </div>
+                    </div>`;
+  
   event.addEventListener("click", (e) => {
     if (e.target.matches(".delete")) {
       var el = e.target;
