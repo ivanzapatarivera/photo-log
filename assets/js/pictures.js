@@ -59,6 +59,13 @@ function pictures() {
         });
         console.log(data[0].URL)
         const picturesCollageDIV = document.querySelector('#picturesCollageDIV');
+
+        /* -------------------------------------------------
+        Images loading OK
+        need to update styles as tiles with on hover effects 
+        using animate.css or animista 
+        ----------------------------------------------------
+        */
         var collageDivs = `<div class="row">
                             <!-- First DIV -->
                             <div class="col-3 bg-primary"><img src=${data[0].URL} class="cardImageDIV" /></div>
