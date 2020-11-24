@@ -13,12 +13,13 @@ function pictures() {
       .then((res) => res.json(API))
       .then((data) => {
         data = data.slice(Math.max(data.length - 6, 0));
-
+        
         data.map((data) => {
           const title = data.title;
           const id = data._id;
           const description = data.description;
           const URL = data.URL;
+          
 
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
@@ -56,35 +57,42 @@ function pictures() {
             });
           });
         });
+        console.log(data[0].URL)
+        const picturesCollageDIV = document.querySelector('#picturesCollageDIV');
+        var collageDivs = `<div class="row">
+                            <!-- First DIV -->
+                            <div class="col-3 bg-primary"><img src=${data[0].URL} class="cardImageDIV" /></div>
+                            <div class="col-5">
+                              <div class="row">
+                                <!-- Second DIV -->
+                                <div class="col-12 bg-success"><img src=${data[1].URL} class="cardImageDIV" /></div>
+                              </div>
+                              <div class="row">
+                                <!-- Third DIV -->
+                                <div class="col-6 bg-danger"><img src=${data[2].URL} class="cardImageDIV" /></div>
+                                <!-- Fourth DIV -->
+                                <div class="col-6 bg-warning"><img src=${data[3].URL} class="cardImageDIV" /></div>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <div class="row">
+                                <!-- Fifth DIV -->
+                                <div class="col-12 bg-info"><img src=${data[4].URL} class="cardImageDIV" /></div>
+                              </div>
+                              <div class="row">
+                                <!-- Sixth DIV -->
+                                <div class="col-12 bg-dark"><img src=${data[5].URL} class="cardImageDIV" /></div>
+                              </div>
+                            </div>
+                          </div>`;
+      
+        if(picturesCollageDIV) {
+          picturesCollageDIV.insertAdjacentHTML('afterend', collageDivs)
+        }
+
       });
   }
 
-  var collageDivs = `<div class="row">
-                      <!-- First DIV -->
-                      <div class="col-3 bg-primary">CONTENT</div>
-                      <div class="col-5">
-                        <div class="row">
-                          <!-- Second DIV -->
-                          <div class="col-12 bg-success">CONTENT</div>
-                        </div>
-                        <div class="row">
-                          <!-- Third DIV -->
-                          <div class="col-6 bg-danger">CONTENT</div>
-                          <!-- Fourth DIV -->
-                          <div class="col-6 bg-warning">CONTENT</div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="row">
-                          <!-- Fifth DIV -->
-                          <div class="col-12 bg-info">CONTENT</div>
-                        </div>
-                        <div class="row">
-                          <!-- Sixth DIV -->
-                          <div class="col-12 bg-dark">CONTENT</div>
-                        </div>
-                      </div>
-                    </div>`;
   
   event.addEventListener("click", (e) => {
     if (e.target.matches(".delete")) {
