@@ -1,6 +1,6 @@
 function cache() {
-  const event = document.querySelector("#picturesWall");
-  var eventPicDiv = document.querySelector("#pictureDiv");
+  // const event = document.querySelector("#picturesWall");
+  // var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
   return { event, API, eventPicDiv };
 }
