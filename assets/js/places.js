@@ -24,8 +24,8 @@ function displayLocations() {
         var placesTraveledCityNameEl = document.getElementById(
           `${divResponse}`
         );
-        var photoLogsBoxEl = document.getElementById("recentPhotosLogsBox");
-        var photoLogsImageCardsEl = document.getElementById("picturesWall");
+        var photoLogsBoxEl = document.getElementById("picturesCollage");
+        var photoLogsImageCardsEl = document.getElementById("collageDivs");
         var locationsAPI = API + divResponse;
 
         // Event listener to render image cards on dynamically generated card
@@ -41,6 +41,7 @@ function displayLocations() {
               res.map((res) => {
                 var URL = res.URL;
                 var id = res._id;
+                
                 var title = res.title;
                 var description = res.description;
 
@@ -58,7 +59,9 @@ function displayLocations() {
                 photoLogsImageCardsEl.insertAdjacentHTML("afterbegin", card);
 
                 // Event to enlarge image when clicking on dynamically generated card
+                console.log(id);
                 const eventPictureClick = document.getElementById(id);
+                // console.log(eventPictureClick);
                 eventPictureClick.addEventListener("click", (event) => {
                   eventPicDiv.style.visibility = "visible";
                   eventPicDiv.classList.add("flip-in-ver-left");
