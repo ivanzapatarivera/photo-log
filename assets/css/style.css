@@ -164,6 +164,10 @@ h1,
   transition: transform 0.2s;
 }
 
+.cardImage:hover {
+  transform: scale(1.075);
+}
+
 /* 
 ---------------------- 
 Images collage section
@@ -175,53 +179,43 @@ Images collage section
 
 .firstDiv {
   height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
 }
 
 .secondDiv {
   height: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
 }
 
 .thirdDiv,
 .fourthDiv {
   height: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
 }
 
 .fifthDiv {
   height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
 }
 
 .sixthDiv {
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
 }
-
-/* .collageImageDIV {
+/* 
+.collageImageDIV {
   flex-shrink: 0;
-  
-} */
+  padding: 0;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
 
-.cardImage:hover {
-  transform: scale(1.075);
-}
+} */
 
 .picturesWall {
   width: 100%;

@@ -68,27 +68,27 @@ function pictures() {
         */
         var collageDivs = `<div class="row mainCollageDIV">
                             <!-- First DIV -->
-                            <div class="col-3 firstDiv bg-primary"><img src=${data[0].URL} class="collageImageDIV" /></div>
+                            <div class="col-3 px-0"><img src=${data[0].URL} class="collageImageDIV firstDiv" /></div>
                             <div class="col-5">
                               <div class="row">
                                 <!-- Second DIV -->
-                                <div class="col-12 secondDiv bg-success"><img src=${data[1].URL} class="collageImageDIV" /></div>
+                                <div class="col-12 px-0"><img src=${data[1].URL} class="collageImageDIV secondDiv" /></div>
                               </div>
                               <div class="row">
                                 <!-- Third DIV -->
-                                <div class="col-6 thirdDiv bg-danger"><img src=${data[2].URL} class="collageImageDIV" /></div>
+                                <div class="col-6 px-0"><img src=${data[2].URL} class="collageImageDIV thirdDiv" /></div>
                                 <!-- Fourth DIV -->
-                                <div class="col-6 fourthDiv bg-warning"><img src=${data[3].URL} class="collageImageDIV" /></div>
+                                <div class="col-6 px-0"><img src=${data[3].URL} class="collageImageDIV fourthDiv" /></div>
                               </div>
                             </div>
                             <div class="col-4">
                               <div class="row">
                                 <!-- Fifth DIV -->
-                                <div class="col-12 fifthDiv bg-info"><img src=${data[4].URL} class="collageImageDIV" /></div>
+                                <div class="col-12 px-0"><img src=${data[4].URL} class="collageImageDIV fifthDiv" /></div>
                               </div>
                               <div class="row">
                                 <!-- Sixth DIV -->
-                                <div class="col-12 sixthDiv bg-dark"><img src=${data[5].URL} class="collageImageDIV" /></div>
+                                <div class="col-12 px-0"><img src=${data[5].URL} class="collageImageDIV sixthDiv" /></div>
                               </div>
                             </div>
                           </div>`;
