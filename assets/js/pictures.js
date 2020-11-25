@@ -57,14 +57,7 @@ function pictures() {
           picturesCollageHeading.insertAdjacentHTML('afterend', collageDivs)
         }
 
-        // for(var i = 0; i < data.length; i++) {
-        //   const eventPictureClick = document.getElementById(data[i]._id);
-        //   eventPictureClick.addEventListener('click', (event) => {
-        //     for(var i = 0; i < data.length; i++) {
-        //       console.log(`You've clicked on image `, data[i].title)
-        //     }
-        //   })
-        // }
+
 
         data.map((data) => {
           const title = data.title;
@@ -72,7 +65,7 @@ function pictures() {
           const description = data.description;
           const URL = data.URL;
           
-/*
+
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
                         <p><img src=${URL} class="cardImage" /><br></p> 
@@ -82,7 +75,7 @@ function pictures() {
                           </span>
                         </span></p>
                       </div>`;
-*/
+
 
           // event.insertAdjacentHTML("beforeend", card);
          
@@ -96,10 +89,29 @@ function pictures() {
             var currentSrc = event.path[0].currentSrc;
 
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
-                                <div id="caption" class="caption mt-0">${description}</div>`;
+                                <div id="caption" class="caption mt-0">${description}
+                                  <span onClick="delete" data-id=${id} class="delete">
+                                    <i class="far fa-trash-alt delete" data-id=${id}></i>
+                                  </span>
+                                </div>`;
 
             if (eventPicDiv) {
               eventPicDiv.innerHTML = enlargedImage;
+              console.log(eventPicDiv);
+              eventPicDiv.addEventListener("click", (e) => {
+                console.log(e);
+                if (e.target.matches(".delete")) {
+                  var el = e.target;
+                  console.log(el);
+                  var dataID = el.getAttribute("data-id");
+                  fetch("/deleteLog/" + dataID, {
+                    method: "delete",
+                  }).then(() => {
+                    location.reload();
+                  });
+                }
+              });
+
             }
 
             // Change albums of traveled places visibility
@@ -117,18 +129,19 @@ function pictures() {
       });
   }
 
-  
-  event.addEventListener("click", (e) => {
-    if (e.target.matches(".delete")) {
-      var el = e.target;
-      var dataID = el.getAttribute("data-id");
-      fetch("/deleteLog/" + dataID, {
-        method: "delete",
-      }).then(() => {
-        location.reload();
-      });
-    }
-  });
+  // event.addEventListener("click", (e) => {
+  //   console.log(e);
+  //   if (e.target.matches(".delete")) {
+  //     var el = e.target;
+  //     console.log(el);
+  //     var dataID = el.getAttribute("data-id");
+  //     fetch("/deleteLog/" + dataID, {
+  //       method: "delete",
+  //     }).then(() => {
+  //       location.reload();
+  //     });
+  //   }
+  // });
 }
 
 export { pictures };

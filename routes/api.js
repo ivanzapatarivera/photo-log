@@ -65,7 +65,7 @@ app.delete("/deleteLog/:id", (req, res) => {
       if (err) {
         res.send(error);
       } else {
-        res.send(data);
+        res.status(200).send(data);
       }
     })
     .catch((err) => {
