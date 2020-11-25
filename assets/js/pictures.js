@@ -1,12 +1,12 @@
 function cache() {
-  // const event = document.querySelector("#picturesWall");
+  const event = document.querySelector("#picturesCollage");
   // var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
-  return { event, API, eventPicDiv };
+  return { event, API };
 }
 
 function pictures() {
-  var { event, API, eventPicDiv } = cache();
+  var { event, API } = cache();
   if (event) {
     // Rendering the last 6 images posted
     fetch(API)
