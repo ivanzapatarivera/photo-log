@@ -3,11 +3,9 @@ function cache() {
   var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
   return { event, API, eventPicDiv };
-
 }
 
 function pictures() {
-
   var { event, API, eventPicDiv } = cache();
   if (event) {
     // Rendering the last 6 images posted
@@ -16,9 +14,7 @@ function pictures() {
       .then((data) => {
         var data = data.slice(Math.max(data.length - 6, 0));
 
-        const collageDivsEl = document.querySelector(
-          "#collageDivs"
-        );
+        const collageDivsEl = document.querySelector("#collageDivs");
 
         /* -------------------------------------------------
         Images loading OK
@@ -91,30 +87,12 @@ function pictures() {
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
                                 <div id="caption" class="caption mt-0">${description}
                                   <button onClick="delete" data-id=${id} class="delete buttonCancel ml-3">
-                                    <i class="far fa-trash-alt delete" data-id=${id}></i>
+                                    <i class="far fa-trash-alt" data-id=${id}></i>
                                   </button>
                                 </div>`;
 
             if (eventPicDiv) {
               eventPicDiv.innerHTML = enlargedImage;
-              
-              eventPicDiv.addEventListener("click", (e) => {
-                if (e.target.matches(".delete")) {
-                  var el = e.target;
-                  var dataID = el.getAttribute("data-id");
-                  var thisVar = confirm('Would you like to delete this image?');
-                  if(thisVar) {
-                    fetch("/deleteLog/" + dataID, {
-                      method: "delete",
-                    }).then(() => {
-                      eventPicDiv.style.visibility = "hidden";
-                      eventPicDiv.innerHTML = "";
-                      eventPicDiv.classList.remove("flip-in-ver-left");
-                      location.reload();
-                    });
-                  }
-                }
-              });
             }
 
             // Change albums of traveled places visibility
@@ -144,6 +122,27 @@ function pictures() {
   //     });
   //   }
   // });
+  eventPicDiv.addEventListener("click", (e) => {
+    if (e.target.matches(".delete")) {
+      var el = e.target;
+      var dataID = el.getAttribute("data-id");
+      var thisVar = confirm("Would you like to delete this image?");
+      if (thisVar) {
+        fetch("/deleteLog/" + dataID, {
+          method: "delete",
+        }).then(() => {
+          eventPicDiv.style.visibility = "hidden";
+          eventPicDiv.innerHTML = "";
+          eventPicDiv.classList.remove("flip-in-ver-left");
+          thisVar = "";
+          location.reload();
+        });
+      } else {
+        thisVar = "";
+        console.log(thisVar);
+      }
+    }
+  });
 }
 
 export { pictures };

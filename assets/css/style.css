@@ -175,23 +175,23 @@ Images collage section
 */
 
 .firstDiv {
-  height: 250px;
+  height: 350px;
   border-radius: 15px 0 0 15px;
 }
 
 .secondDiv,
 .thirdDiv,
 .fourthDiv {
-  height: 125px;
+  height: 175px;
 }
 
 .fifthDiv {
-  height: 150px;
+  height: 200px;
   border-radius: 0 15px 0 0;
 }
 
 .sixthDiv {
-  height: 100px;
+  height: 150px;
   border-radius: 0 0 15px 0;
 }
 
