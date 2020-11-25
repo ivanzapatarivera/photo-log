@@ -14,13 +14,13 @@ function pictures() {
       .then((data) => {
         data = data.slice(Math.max(data.length - 6, 0));
         
-        data.map((data) => {
-          const title = data.title;
-          const id = data._id;
-          const description = data.description;
-          const URL = data.URL;
+        // data.map((data) => {
+        //   const title = data.title;
+        //   const id = data._id;
+        //   const description = data.description;
+        //   const URL = data.URL;
           
-
+/*
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
                         <p><img src=${URL} class="cardImage" /><br></p> 
@@ -31,7 +31,10 @@ function pictures() {
                         </span></p>
                       </div>`;
 
+
           event.insertAdjacentHTML("beforeend", card);
+         
+
           const eventPictureClick = document.getElementById(id);
 
           // Display dynamically generated albums of traveled places
@@ -55,9 +58,10 @@ function pictures() {
                 eventPicDiv.classList.remove("flip-in-ver-left");
               }
             });
-          });
-        });
-        console.log(data[0].URL)
+          }); */
+        // });
+      
+        console.log(data);
         const picturesCollageHeading = document.querySelector('#picturesCollageHeading');
 
         /* -------------------------------------------------
