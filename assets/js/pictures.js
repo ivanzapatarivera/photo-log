@@ -58,7 +58,7 @@ function pictures() {
           });
         });
         console.log(data[0].URL)
-        const picturesCollageDIV = document.querySelector('#picturesCollageDIV');
+        const picturesCollageHeading = document.querySelector('#picturesCollageHeading');
 
         /* -------------------------------------------------
         Images loading OK
@@ -66,35 +66,35 @@ function pictures() {
         using animate.css or animista 
         ----------------------------------------------------
         */
-        var collageDivs = `<div class="row">
+        var collageDivs = `<div class="row mainCollageDIV">
                             <!-- First DIV -->
-                            <div class="col-3 bg-primary"><img src=${data[0].URL} class="cardImageDIV" /></div>
+                            <div class="col-3 firstDiv bg-primary"><img src=${data[0].URL} class="collageImageDIV" /></div>
                             <div class="col-5">
                               <div class="row">
                                 <!-- Second DIV -->
-                                <div class="col-12 bg-success"><img src=${data[1].URL} class="cardImageDIV" /></div>
+                                <div class="col-12 secondDiv bg-success"><img src=${data[1].URL} class="collageImageDIV" /></div>
                               </div>
                               <div class="row">
                                 <!-- Third DIV -->
-                                <div class="col-6 bg-danger"><img src=${data[2].URL} class="cardImageDIV" /></div>
+                                <div class="col-6 thirdDiv bg-danger"><img src=${data[2].URL} class="collageImageDIV" /></div>
                                 <!-- Fourth DIV -->
-                                <div class="col-6 bg-warning"><img src=${data[3].URL} class="cardImageDIV" /></div>
+                                <div class="col-6 fourthDiv bg-warning"><img src=${data[3].URL} class="collageImageDIV" /></div>
                               </div>
                             </div>
                             <div class="col-4">
                               <div class="row">
                                 <!-- Fifth DIV -->
-                                <div class="col-12 bg-info"><img src=${data[4].URL} class="cardImageDIV" /></div>
+                                <div class="col-12 fifthDiv bg-info"><img src=${data[4].URL} class="collageImageDIV" /></div>
                               </div>
                               <div class="row">
                                 <!-- Sixth DIV -->
-                                <div class="col-12 bg-dark"><img src=${data[5].URL} class="cardImageDIV" /></div>
+                                <div class="col-12 sixthDiv bg-dark"><img src=${data[5].URL} class="collageImageDIV" /></div>
                               </div>
                             </div>
                           </div>`;
       
-        if(picturesCollageDIV) {
-          picturesCollageDIV.insertAdjacentHTML('afterend', collageDivs)
+        if(picturesCollageHeading) {
+          picturesCollageHeading.insertAdjacentHTML('afterend', collageDivs)
         }
 
       });

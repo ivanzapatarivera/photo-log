@@ -111,8 +111,6 @@ h1,
 /* END OF STATUS SECTION */
 /* --------------------- */
 
-
-
 .button,
 .button:active,
 .button:focus {
@@ -166,15 +164,50 @@ h1,
   transition: transform 0.2s;
 }
 
-/* .cardImageDIV {
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
+/* 
+---------------------- 
+Images collage section
+----------------------
+*/
+.mainCollageDIV {
+  height: 250px;
+}
 
-} */
+.firstDiv {
+  height: 250px;
+  /* width: auto; */
+  object-fit: cover;
+}
+
+.secondDiv {
+  height: 125px;
+  /* width: auto; */
+  object-fit: cover;
+}
+
+.thirdDiv,
+.fourthDiv {
+  height: 125px;
+  /* width: 50%; */
+  object-fit: cover;
+}
+
+.fifthDiv {
+  height: 150px;
+  /* width: auto; */
+  object-fit: cover;
+}
+
+.sixthDiv {
+  height: 100px;
+  /* width: auto; */
+  object-fit: cover;
+}
+
+.collageImageDIV {
+  width: 100%;
+  height: auto;
+}
 
 .cardImage:hover {
   transform: scale(1.075);
