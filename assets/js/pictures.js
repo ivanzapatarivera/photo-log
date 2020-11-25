@@ -3,9 +3,11 @@ function cache() {
   // var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
   return { event, API };
+  // add eventPicDiv to return
 }
 
 function pictures() {
+  // add eventPicDiv to return
   var { event, API } = cache();
   if (event) {
     // Rendering the last 6 images posted
