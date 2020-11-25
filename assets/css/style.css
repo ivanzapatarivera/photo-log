@@ -173,13 +173,11 @@ h1,
 Images collage section
 ----------------------
 */
-.mainCollageDIV {
-  height: 250px;
-}
 
 .firstDiv {
   height: 250px;
   width: 100%;
+  border-radius: 15px 0 0 15px;
   object-fit: cover;
 }
 
@@ -199,12 +197,14 @@ Images collage section
 .fifthDiv {
   height: 150px;
   width: 100%;
+  border-radius: 0 15px 0 0;
   object-fit: cover;
 }
 
 .sixthDiv {
   height: 100px;
   width: 100%;
+  border-radius: 0 0 15px 0;
   object-fit: cover;
 }
 /* 

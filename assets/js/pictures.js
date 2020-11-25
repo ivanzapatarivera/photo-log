@@ -66,7 +66,7 @@ function pictures() {
         using animate.css or animista 
         ----------------------------------------------------
         */
-        var collageDivs = `<div class="row mainCollageDIV">
+        var collageDivs = `<div class="row p-3 mainCollageDIV">
                             <!-- First DIV -->
                             <div class="col-3 px-0"><img src=${data[0].URL} class="collageImageDIV firstDiv" /></div>
                             <div class="col-5">
