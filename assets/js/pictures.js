@@ -17,6 +17,7 @@ function pictures() {
         data = data.slice(Math.max(data.length - 6, 0));
         
         console.log(data);
+        console.log(`Data length is: ${data.length}`)
         const picturesCollageHeading = document.querySelector('#picturesCollageHeading');
         
         /* -------------------------------------------------
@@ -56,13 +57,20 @@ function pictures() {
           picturesCollageHeading.insertAdjacentHTML('afterend', collageDivs)
         }
 
+        // for(var i = 0; i < data.length; i++) {
+        //   const eventPictureClick = document.getElementById(data[i]._id);
+        //   eventPictureClick.addEventListener('click', (event) => {
+        //     for(var i = 0; i < data.length; i++) {
+        //       console.log(`You've clicked on image `, data[i].title)
+        //     }
+        //   })
+        // }
 
-
-        // data.map((data) => {
-        //   const title = data.title;
-        //   const id = data._id;
-        //   const description = data.description;
-        //   const URL = data.URL;
+        data.map((data) => {
+          const title = data.title;
+          const id = data._id;
+          const description = data.description;
+          const URL = data.URL;
           
 /*
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
@@ -106,7 +114,7 @@ function pictures() {
         });
       
 
-      // });
+      });
   }
 
   
