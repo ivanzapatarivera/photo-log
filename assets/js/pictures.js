@@ -3,30 +3,33 @@ function cache() {
   var eventPicDiv = document.querySelector("#pictureDiv");
   const API = "/log";
   return { event, API, eventPicDiv };
-  // add eventPicDiv to return
+
 }
 
 function pictures() {
-  // add eventPicDiv to return
+
   var { event, API, eventPicDiv } = cache();
   if (event) {
     // Rendering the last 6 images posted
     fetch(API)
       .then((res) => res.json(API))
       .then((data) => {
-        data = data.slice(Math.max(data.length - 6, 0));
-        
-        console.log(data);
-        console.log(`Data length is: ${data.length}`)
-        const picturesCollageHeading = document.querySelector('#picturesCollageHeading');
-        
+        var data = data.slice(Math.max(data.length - 6, 0));
+
+        const collageDivsEl = document.querySelector(
+          "#collageDivs"
+        );
+
         /* -------------------------------------------------
         Images loading OK
         need to update styles as tiles with on hover effects 
         using animate.css or animista 
         ----------------------------------------------------
         */
-        var collageDivs = `<div class="row p-3 mainCollageDIV">
+        collageDivs(data);
+        function collageDivs(data) {
+          console.log(data);
+          var collageDivsImages = `
                             <!-- First DIV -->
                             <div class="col-3 px-0"><img src=${data[0].URL} id=${data[0]._id} class="collageImageDIV firstDiv" /></div>
                             <div class="col-5">
@@ -51,24 +54,23 @@ function pictures() {
                                 <div class="col-12 px-0"><img src=${data[5].URL} id=${data[5]._id} class="collageImageDIV sixthDiv" /></div>
                               </div>
                             </div>
-                          </div>`;
-        
-        if(picturesCollageHeading) {
-          picturesCollageHeading.insertAdjacentHTML('afterend', collageDivs)
+                          `;
+
+          if (collageDivsEl) {
+            collageDivsEl.insertAdjacentHTML("afterbegin", collageDivsImages);
+          }
         }
 
+        data.map((dataMap) => {
+          const title = dataMap.title;
+          const id = dataMap._id;
+          const description = dataMap.description;
+          const URL = dataMap.URL;
 
-
-        data.map((data) => {
-          const title = data.title;
-          const id = data._id;
-          const description = data.description;
-          const URL = data.URL;
-          
           // PREVIOUS CARDS CARROUSEL LAYOUT --- DO NOT DELETE
           // var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
           //               <p class="mt-4" data-id=${id}>
-          //               <p><img src=${URL} class="cardImage" /><br></p> 
+          //               <p><img src=${URL} class="cardImage" /><br></p>
           //               <span class="cardTitle">${title}&nbsp;<br>
           //                 <span onClick="delete" data-id=${id} class="delete">
           //                   <i class="far fa-trash-alt delete" data-id=${id}></i>
@@ -76,9 +78,7 @@ function pictures() {
           //               </span></p>
           //             </div>`;
 
-
           // event.insertAdjacentHTML("beforeend", card);
-         
 
           const eventPictureClick = document.getElementById(id);
 
@@ -90,28 +90,31 @@ function pictures() {
 
             var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
                                 <div id="caption" class="caption mt-0">${description}
-                                  <span onClick="delete" data-id=${id} class="delete">
+                                  <button onClick="delete" data-id=${id} class="delete buttonCancel ml-3">
                                     <i class="far fa-trash-alt delete" data-id=${id}></i>
-                                  </span>
+                                  </button>
                                 </div>`;
 
             if (eventPicDiv) {
               eventPicDiv.innerHTML = enlargedImage;
-              console.log(eventPicDiv);
+              
               eventPicDiv.addEventListener("click", (e) => {
-                console.log(e);
                 if (e.target.matches(".delete")) {
                   var el = e.target;
-                  console.log(el);
                   var dataID = el.getAttribute("data-id");
-                  fetch("/deleteLog/" + dataID, {
-                    method: "delete",
-                  }).then(() => {
-                    location.reload();
-                  });
+                  var thisVar = confirm('Would you like to delete this image?');
+                  if(thisVar) {
+                    fetch("/deleteLog/" + dataID, {
+                      method: "delete",
+                    }).then(() => {
+                      eventPicDiv.style.visibility = "hidden";
+                      eventPicDiv.innerHTML = "";
+                      eventPicDiv.classList.remove("flip-in-ver-left");
+                      location.reload();
+                    });
+                  }
                 }
               });
-
             }
 
             // Change albums of traveled places visibility
@@ -122,10 +125,8 @@ function pictures() {
                 eventPicDiv.classList.remove("flip-in-ver-left");
               }
             });
-          }); 
+          });
         });
-      
-
       });
   }
 
