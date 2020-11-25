@@ -9,7 +9,9 @@ function places() {
 const API = "/getLocations/";
 function displayLocations() {
   fetch(API)
-    .then((res) => res.json(API))
+    .then((res) => {
+      return res.json(API);
+    })
     .then((response) => {
       response.map((divResponse) => {
         // Display name of album by each location
@@ -32,7 +34,9 @@ function displayLocations() {
           photoLogsBoxEl.innerHTML = divResponse;
           photoLogsImageCardsEl.innerHTML = "";
           fetch(locationsAPI)
-            .then((res) => res.json())
+            .then((res) => {
+              return res.json();
+            })
             .then((res) => {
               res.map((res) => {
                 var URL = res.URL;
@@ -77,6 +81,7 @@ function displayLocations() {
                 });
               });
             });
+          
           placesEl.style.visibility = "hidden";
         });
       });
