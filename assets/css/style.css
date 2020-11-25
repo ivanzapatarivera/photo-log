@@ -176,36 +176,43 @@ Images collage section
 
 .firstDiv {
   height: 250px;
-  width: 100%;
   border-radius: 15px 0 0 15px;
-  object-fit: cover;
 }
 
-.secondDiv {
-  height: 125px;
-  width: 100%;
-  object-fit: cover;
-}
-
+.secondDiv,
 .thirdDiv,
 .fourthDiv {
   height: 125px;
-  width: 100%;
-  object-fit: cover;
 }
 
 .fifthDiv {
   height: 150px;
-  width: 100%;
   border-radius: 0 15px 0 0;
-  object-fit: cover;
 }
 
 .sixthDiv {
   height: 100px;
-  width: 100%;
   border-radius: 0 0 15px 0;
+}
+
+.firstDiv,
+.secondDiv,
+.thirdDiv,
+.fourthDiv,
+.fifthDiv,
+.sixthDiv {
+  width: 100%;
   object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.firstDiv:hover,
+.secondDiv:hover,
+.thirdDiv:hover,
+.fourthDiv:hover,
+.fifthDiv:hover,
+.sixthDiv:hover {
+  transform: scale(1.075);
 }
 /* 
 .collageImageDIV {
