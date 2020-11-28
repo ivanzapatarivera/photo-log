@@ -32,7 +32,7 @@ function displayLocations() {
         // Event listener to render image cards on dynamically generated card
         placesTraveledCityNameEl.addEventListener("click", () => {
           placesEl.classList.remove("slide-in-top");
-          photoLogsBoxEl.innerHTML = divResponse;
+          photoLogsBoxEl.innerHTML = `<h3>${divResponse}</h3>`;
           photoLogsImageCardsEl.innerHTML = "";
           fetch(locationsAPI)
             .then((res) => {
@@ -49,18 +49,19 @@ function displayLocations() {
                 console.log(`This is title: `, title);
                 console.log(`This is description: `, description);
 
-                // var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
-                //                 <p class="mt-4" data-id=${id}>
-                //                   <p><img src=${URL} class="cardImage" /><br></p>
-                //                   <span class="cardTitle">${title}&nbsp;<br>
-                //                     <span onClick="delete" data-id=${id} class="delete">
-                //                       <i class="far fa-trash-alt delete" data-id=${id}></i>
-                //                     </span>
-                //                   </span>
-                //                 </p>
-                //               </div>`;
 
-                // photoLogsImageCardsEl.insertAdjacentHTML("afterbegin", card);
+                var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
+                                <p class="mt-4" data-id=${id}>
+                                  <p><img src=${URL} class="cardImage" /><br></p>
+                                  <span class="cardTitle">${title}&nbsp;<br>
+                                    <span onClick="delete" data-id=${id} class="delete">
+                                      <i class="far fa-trash-alt delete" data-id=${id}></i>
+                                    </span>
+                                  </span>
+                                </p>
+                              </div>`;
+
+                photoLogsBoxEl.insertAdjacentHTML('beforeend', card);
 
                 // Event to enlarge image when clicking on dynamically generated card
                 // console.log(id);
