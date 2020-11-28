@@ -32,7 +32,7 @@ function displayLocations() {
         // Event listener to render image cards on dynamically generated card
         placesTraveledCityNameEl.addEventListener("click", () => {
           placesEl.classList.remove("slide-in-top");
-          photoLogsBoxEl.innerHTML = `<h3>${divResponse}</h3>`;
+          photoLogsBoxEl.innerHTML = `<h4 class="text-center my-3">${divResponse}</h4>`;
           photoLogsImageCardsEl.innerHTML = "";
           fetch(locationsAPI)
             .then((res) => {
