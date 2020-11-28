@@ -224,6 +224,9 @@ Images collage section
 
 } */
 
+.collageImageDIV {
+  padding: 2.5px;
+}
 .picturesWall {
   width: 100%;
   background-color: rgb(240, 240, 240);

@@ -44,10 +44,10 @@ function displayLocations() {
                 var id = res._id;                
                 var title = res.title;
                 var description = res.description;
-                console.log(`This is URL: `, URL);
-                console.log(`This is id: `, id);
-                console.log(`This is title: `, title);
-                console.log(`This is description: `, description);
+                // console.log(`This is URL: `, URL);
+                // console.log(`This is id: `, id);
+                // console.log(`This is title: `, title);
+                // console.log(`This is description: `, description);
 
 
                 var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
@@ -65,28 +65,30 @@ function displayLocations() {
 
                 // Event to enlarge image when clicking on dynamically generated card
                 // console.log(id);
-                // const eventPictureClick = document.getElementById(id);
+                const eventPictureClick = document.getElementById(`${id}`);
                 // console.log(eventPictureClick);
-                // eventPictureClick.addEventListener("click", (event) => {
-                //   eventPicDiv.style.visibility = "visible";
-                //   eventPicDiv.classList.add("flip-in-ver-left");
-                //   var currentSrc = event.path[0].currentSrc;
-                //   var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
-                //                       <div id="caption" class="caption mt-0">${description}</div>`;
-                //   if (eventPicDiv) {
-                //     eventPicDiv.innerHTML = enlargedImage;
-                //   }
+                eventPictureClick.addEventListener("click", (event) => {
+                    // console.log(event)
+                  eventPicDiv.style.visibility = "visible";
+                  eventPicDiv.classList.add("flip-in-ver-left");
+                  var currentSrc = event.path[0].currentSrc;
+                  console.log(currentSrc);
+                  var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
+                                      <div id="caption" class="caption mt-0">${description}</div>`;
+                  if (eventPicDiv) {
+                    eventPicDiv.innerHTML = enlargedImage;
+                  }
 
                 //   // Event listener to change visbility of dynamically created image DIVs
-                //   const eventCurrentSrc = document.getElementById(currentSrc);
-                //   eventCurrentSrc.addEventListener("click", () => {
-                //     if (eventPicDiv) {
-                //       eventPicDiv.style.visibility = "hidden";
-                //       eventPicDiv.classList.remove("flip-in-ver-left");
-                //       eventPicDiv.innerHTML = "";
-                //     }
-                //   });
-                // });
+                  const eventCurrentSrc = document.getElementById(currentSrc);
+                  eventCurrentSrc.addEventListener("click", () => {
+                    if (eventPicDiv) {
+                      eventPicDiv.style.visibility = "hidden";
+                      eventPicDiv.classList.remove("flip-in-ver-left");
+                      eventPicDiv.innerHTML = "";
+                    }
+                  });
+                });
               });
             });
           
