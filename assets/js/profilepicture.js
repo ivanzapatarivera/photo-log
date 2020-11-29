@@ -28,7 +28,7 @@ function profile() {
   const profileAPI = "/profilepic";
 
   if (profilePicture) {
-    fetchAPI();
+    fetchAPI()
   }
 
   function fetchAPI() {
