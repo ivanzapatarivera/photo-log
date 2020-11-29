@@ -21,29 +21,29 @@ function profile() {
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm);
   }
 
-  const profile = document.querySelector("#profilepic");
-  const profileapi = "/profilepic";
+  const profilePicture = document.querySelector("#profilepic");
+  const profileAPI = "/profilepic";
 
-  if (profile) {
-    fetch(profileapi)
+  if (profilePicture) {
+    fetch(profileAPI)
       .then((res) => {
-        return res.json(profileapi);
+        return res.json(profileAPI);
       })
       .then((d) => {
         var dL = d.length - 1;
         var URL = d[dL].URL;
         var img = `<img src=${URL} class="profilepic">`;
-        profile.insertAdjacentHTML("afterbegin", img);
+        profilePicture.insertAdjacentHTML("afterbegin", img);
       });
 
     const profilePictureDiv = document.querySelector("#show");
-    const form = document.querySelector("#form");
+    const profilePictureUpdateForm = document.querySelector("#form");
 
     profilePictureDiv.addEventListener("click", () => {
-      if (form.style.display === "block") {
-        form.style.display = "none";
+      if (profilePictureUpdateForm.style.display === "block") {
+        profilePictureUpdateForm.style.display = "none";
       } else {
-        form.style.display = "block";
+        profilePictureUpdateForm.style.display = "block";
       }
     });
   }
