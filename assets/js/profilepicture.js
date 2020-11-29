@@ -15,10 +15,12 @@ function profile() {
                                     placeholder="Add your profile picture's URL"
                                     class="pl-3"
                                     /><br />
-                                    <button class="button btn btn-primary"><i class="fas fa-check"></i></button>
+                                    <button class="button btn btn-primary" id="buttonSumbit"><i class="fas fa-check"></i></button>
+                                    <span class="buttonCancel btn px-2 ml-1" id="buttonCancel"><i class="fas fa-times"></i></span>
                                 </form>`;
 
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm);
+    buttonClickedEventListener();
   }
 
   // Display the latest posted image as profile picture
@@ -28,7 +30,7 @@ function profile() {
   const profileAPI = "/profilepic";
 
   if (profilePicture) {
-    fetchAPI()
+    fetchAPI();
   }
 
   // Retrieve and display hte latest image from /profilepic
@@ -54,6 +56,15 @@ function profile() {
       } else {
         profilePictureUpdateForm.style.display = "block";
       }
+    });
+  }
+
+  // Event Listener to close div when clicking on cancel button
+  function buttonClickedEventListener() {
+    const buttonCancel = document.querySelector("#buttonCancel");
+    buttonCancel.addEventListener("click", () => {
+      console.log("buttonCancel clicked");
+      profilePictureUpdateForm.style.display = "none";
     });
   }
 }
