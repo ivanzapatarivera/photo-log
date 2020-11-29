@@ -3,7 +3,6 @@ function nav() {
 
   navbarGenerator();
   function navbarGenerator() {
-
     // Attach navigation as a navbar when in desktop view (static)
     var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
     <div class="container">
@@ -24,11 +23,10 @@ function nav() {
                           </li>
                           <li class="nav-item nav-link">
                           <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown button
-                            </button>
-                            <div class="dropdown-menu shadow fade-in locationsLoggedNavbar" aria-labelledby="dropdownMenuButton" id="locationsLoggedNavbar">
-                              
+                            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-map-marker-alt"></i> Albums
+                            </div>
+                            <div class="dropdown-menu shadow fade-in locationsLoggedNavbar" aria-labelledby="dropdownMenuButton" id="locationsLoggedNavbar">                              
                             </div>
                           </div>
                           </li>
@@ -67,13 +65,16 @@ function nav() {
             displayMenuOfAlbumsByLocations();
 
             // Display name of album by each location
-
             function displayMenuOfAlbumsByLocations() {
-              const locationsLoggedNavbar = document.querySelector('#locationsLoggedNavbar')
-              var divLocations = `<div id="${divResponse}" class="dropdown-item locationsLoggedNavbar" href="">${divResponse}</div>`
-              locationsLoggedNavbar.insertAdjacentHTML("beforeend", divLocations);
+              const locationsLoggedNavbar = document.querySelector(
+                "#locationsLoggedNavbar"
+              );
+              var divLocations = `<div id="${divResponse}" class="dropdown-item locationsLoggedNavbar" href="">${divResponse}</div>`;
+              locationsLoggedNavbar.insertAdjacentHTML(
+                "beforeend",
+                divLocations
+              );
             }
-          
           });
         });
     }

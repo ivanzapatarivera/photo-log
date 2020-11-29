@@ -15,6 +15,7 @@ function displayLocations() {
     .then((response) => {
       
       response.map((divResponse) => {
+        displayImagesByLocation();
         displayMenuOfAlbumsByLocations();
 
         // Display name of album by each location
@@ -22,8 +23,7 @@ function displayLocations() {
           var divLocations = `<div class="col-12 text-center">
                               <h5 id="${divResponse}" class="mt-4 divResponse">${divResponse}</h5>
                             </div>`;
-          // placesEl.insertAdjacentHTML("beforeend", divLocations);
-          displayImagesByLocation();
+          placesEl.insertAdjacentHTML("beforeend", divLocations);
         }
 
         // Display all images contained in each album
