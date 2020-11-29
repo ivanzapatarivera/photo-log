@@ -53,8 +53,10 @@ function profile() {
     profilePictureDiv.addEventListener("click", () => {
       if (profilePictureUpdateForm.style.display === "block") {
         profilePictureUpdateForm.style.display = "none";
+        profilePictureUpdateForm.classList.remove('scale-in-center');
       } else {
         profilePictureUpdateForm.style.display = "block";
+        profilePictureUpdateForm.classList.add('scale-in-center');
       }
     });
   }
