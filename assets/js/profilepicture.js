@@ -21,10 +21,17 @@ function profile() {
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm);
   }
 
+  // Display the latest posted image as profile picture
   const profilePicture = document.querySelector("#profilepic");
+  const profilePictureDiv = document.querySelector("#show");
+  const profilePictureUpdateForm = document.querySelector("#form");
   const profileAPI = "/profilepic";
 
   if (profilePicture) {
+    fetchAPI();
+  }
+
+  function fetchAPI() {
     fetch(profileAPI)
       .then((res) => {
         return res.json(profileAPI);
@@ -34,11 +41,11 @@ function profile() {
         var URL = d[dL].URL;
         var img = `<img src=${URL} class="profilepic">`;
         profilePicture.insertAdjacentHTML("afterbegin", img);
+        profilePictureDivEventListener();
       });
+  }
 
-    const profilePictureDiv = document.querySelector("#show");
-    const profilePictureUpdateForm = document.querySelector("#form");
-
+  function profilePictureDivEventListener() {
     profilePictureDiv.addEventListener("click", () => {
       if (profilePictureUpdateForm.style.display === "block") {
         profilePictureUpdateForm.style.display = "none";
