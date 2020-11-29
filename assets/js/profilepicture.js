@@ -61,9 +61,12 @@ function profile() {
 
   // Event Listener to close div when clicking on cancel button
   function buttonClickedEventListener() {
+    const buttonSumbit = document.querySelector("#buttonSumbit");
     const buttonCancel = document.querySelector("#buttonCancel");
     buttonCancel.addEventListener("click", () => {
-      console.log("buttonCancel clicked");
+      profilePictureUpdateForm.style.display = "none";
+    });
+    buttonSumbit.addEventListener("click", () => {
       profilePictureUpdateForm.style.display = "none";
     });
   }
