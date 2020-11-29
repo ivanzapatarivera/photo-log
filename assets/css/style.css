@@ -585,6 +585,9 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
     height: auto;
     border-radius: 50%;
   }
+  .newProfilePic{
+    padding-top: 50%;
+  }
   .placesTraveled {
     visibility: hidden;
     position: fixed;

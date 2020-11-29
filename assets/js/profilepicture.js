@@ -7,12 +7,12 @@ function profile() {
 
   function enterNewProfilePicture() {
     const newProfilePicForm = `<form action="/profilepic" method="post" class="hidden col-10 col-md-6 mx-auto" id="form">
-                                    <label for="URL">URL</label><br />
+                                    
                                     <input
                                     type="text"
                                     name="URL"
                                     id="URL"
-                                    placeholder="Add your profile picture's URL"
+                                    placeholder="New profile picture's URL"
                                     class="pl-3"
                                     /><br />
                                     <button class="button btn btn-primary" id="buttonSumbitProfilePicture"><i class="fas fa-check"></i></button>
