@@ -27,7 +27,7 @@ function nav() {
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Dropdown button
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="locationsLoggedNavbar">
+                            <div class="dropdown-menu shadow fade-in locationsLoggedNavbar" aria-labelledby="dropdownMenuButton" id="locationsLoggedNavbar">
                               
                             </div>
                           </div>
@@ -70,7 +70,7 @@ function nav() {
 
             function displayMenuOfAlbumsByLocations() {
               const locationsLoggedNavbar = document.querySelector('#locationsLoggedNavbar')
-              var divLocations = `<div id="${divResponse}" class="dropdown-item" href="">${divResponse}</div>`
+              var divLocations = `<div id="${divResponse}" class="dropdown-item locationsLoggedNavbar" href="">${divResponse}</div>`
               locationsLoggedNavbar.insertAdjacentHTML("beforeend", divLocations);
             }
           
@@ -97,15 +97,15 @@ function nav() {
       const placesTraveledDiv = document.querySelector("#places");
 
       // Event listener when in desktop view
-      albumsIcon.addEventListener("click", () => {
-        if (placesTraveledDiv.style.visibility === "visible") {
-          placesTraveledDiv.style.visibility = "hidden";
-          placesTraveledDiv.classList.remove("slide-in-top");
-        } else {
-          placesTraveledDiv.style.visibility = "visible";
-          placesTraveledDiv.classList.add("slide-in-top");
-        }
-      });
+      // albumsIcon.addEventListener("click", () => {
+      //   if (placesTraveledDiv.style.visibility === "visible") {
+      //     placesTraveledDiv.style.visibility = "hidden";
+      //     placesTraveledDiv.classList.remove("slide-in-top");
+      //   } else {
+      //     placesTraveledDiv.style.visibility = "visible";
+      //     placesTraveledDiv.classList.add("slide-in-top");
+      //   }
+      // });
 
       // Event listener when in mobile view
       albumsIconMobile.addEventListener("click", () => {

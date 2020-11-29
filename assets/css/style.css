@@ -1,22 +1,22 @@
+body {
+  background-color: #203647;
+  overflow-x: hidden;
+}
 .navbar,
 .footer {
   background-color: #007cc7;
   color: white;
 }
-
 .navbar {
   display: block;
 }
-
 .nav-link:hover {
   cursor: pointer;
 }
-
-body {
-  background-color: #203647;
-  overflow-x: hidden;
+.locationsLoggedNavbar {
+background-color: #12232e;
+color: white;
 }
-
 .main {
   background-color: #12232e;
   padding-bottom: 500px;
@@ -129,6 +129,11 @@ h1,
 /* END OF STATUS SECTION */
 /* --------------------- */
 
+
+
+/* --------------- */
+/* BUTTONS SECTION */
+/* --------------- */
 .button,
 .button:active,
 .button:focus {
@@ -163,15 +168,15 @@ h1,
   color: white;
 }
 
+/* ---------------------- */
+/* END OF BUTTONS SECTION */
+/* ---------------------- */
+
 .profilepic {
   width: 100%;
   height: auto;
   border-radius: 50%;
 }
-
-/* .hidden {
-  display: none;
-} */
 
 .cardImage {
   width: 100%;
