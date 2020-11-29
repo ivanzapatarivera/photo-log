@@ -6,7 +6,7 @@ function profile() {
   }
 
   function enterNewProfilePicture() {
-    const newProfilePicForm = `<form action="/profilepic" method="post" class="hidden" id="form">
+    const newProfilePicForm = `<form action="/profilepic" method="post" class="hidden col-10 col-md-6 mx-auto" id="form">
                                     <label for="URL">URL</label><br />
                                     <input
                                     type="text"
@@ -24,7 +24,7 @@ function profile() {
   // Display the latest posted image as profile picture
   const profilePicture = document.querySelector("#profilepic");
   const profilePictureDiv = document.querySelector("#show");
-  const profilePictureUpdateForm = document.querySelector("#form");
+  const profilePictureUpdateForm = document.querySelector("#newProfilePic");
   const profileAPI = "/profilepic";
 
   if (profilePicture) {
