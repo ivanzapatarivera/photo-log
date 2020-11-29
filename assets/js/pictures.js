@@ -110,7 +110,6 @@ function pictures() {
 
   // Delete images from database
   eventPicDiv.addEventListener("click", (e) => {
-    console.log(`This is eventPicDiv.`)
 
     // Conditional to delete image based on 'delete' class
     if (e.target.matches(".delete")) {

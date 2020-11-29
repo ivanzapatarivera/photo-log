@@ -44,7 +44,7 @@ function displayLocations() {
                 var title = res.title;
                 var description = res.description;
 
-                var card = `<div class="cards mx-auto text-center col-4 col-lg-4" id=${id}>
+                var card = `<div class="cards mx-auto text-center col-4 col-lg-4" data-id=${id} id=${id}>
                                 <p class="mt-4" data-id=${id}>
                                   <p><img src=${URL} class="cardImage" /><br></p>
                                   <span class="cardTitle">${title}&nbsp;<br>
