@@ -31,6 +31,7 @@ function profile() {
     fetchAPI()
   }
 
+  // Retrieve and display hte latest image from /profilepic
   function fetchAPI() {
     fetch(profileAPI)
       .then((res) => {
@@ -45,6 +46,7 @@ function profile() {
       });
   }
 
+  // Display form to post new profile picture
   function profilePictureDivEventListener() {
     profilePictureDiv.addEventListener("click", () => {
       if (profilePictureUpdateForm.style.display === "block") {
