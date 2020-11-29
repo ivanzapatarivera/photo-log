@@ -13,6 +13,7 @@ function displayLocations() {
       return res.json(API);
     })
     .then((response) => {
+      
       response.map((divResponse) => {
         displayMenuOfAlbumsByLocations();
 
@@ -21,7 +22,7 @@ function displayLocations() {
           var divLocations = `<div class="col-12 text-center">
                               <h5 id="${divResponse}" class="mt-4 divResponse">${divResponse}</h5>
                             </div>`;
-          placesEl.insertAdjacentHTML("beforeend", divLocations);
+          // placesEl.insertAdjacentHTML("beforeend", divLocations);
           displayImagesByLocation();
         }
 
