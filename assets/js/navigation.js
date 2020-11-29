@@ -100,10 +100,10 @@ function nav() {
 
       // On desktop view
       if (newProfilePic) {
-        albumsIconDesktop.style.visibility = "visible";
-        albumsIconMobile.style.display = "visible";
+        albumsIconDesktop.style.display = "show";
+        albumsIconMobile.style.display = "show";
       } else {
-        albumsIconDesktop.style.visibility = "hidden";
+        albumsIconDesktop.style.display = "none";
         albumsIconMobile.style.display = "none";
         imagesMobile.classList.remove("px-5");
         imagesMobile.classList.add("pl-5");
