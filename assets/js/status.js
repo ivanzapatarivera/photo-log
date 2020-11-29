@@ -12,8 +12,8 @@ function status() {
                             placeholder="What's on your mind?"
                             class="px-3 py-1"
                           ></textarea>
-                          <button class="button btn px-2 py-1" id="buttonSubmit"><i class="far fa-paper-plane"></i></button>
-                          <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancel"><i class="fas fa-times"></i></span>
+                          <button class="button btn px-2 py-1" id="buttonSubmitStatus"><i class="far fa-paper-plane"></i></button>
+                          <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancelStatus"><i class="fas fa-times"></i></span>
                         </form>
                       </div>
                     </div>`;
@@ -21,8 +21,8 @@ function status() {
 
   // This section will display the status box
   const statusBtn = document.querySelector("#postStatusBtn");
-  const buttonSubmit = document.querySelector("#buttonSubmit");
-  const buttonCancel = document.querySelector("#buttonCancel");
+  const buttonSubmit = document.querySelector("#buttonSubmitStatus");
+  const buttonCancel = document.querySelector("#buttonCancelStatus");
   showHideStatusBox();
   function showHideStatusBox() {
     statusBtn.addEventListener("click", () => {

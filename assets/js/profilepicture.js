@@ -15,8 +15,8 @@ function profile() {
                                     placeholder="Add your profile picture's URL"
                                     class="pl-3"
                                     /><br />
-                                    <button class="button btn btn-primary" id="buttonSumbit"><i class="fas fa-check"></i></button>
-                                    <span class="buttonCancel btn px-2 ml-1" id="buttonCancel"><i class="fas fa-times"></i></span>
+                                    <button class="button btn btn-primary" id="buttonSumbitProfilePicture"><i class="fas fa-check"></i></button>
+                                    <span class="buttonCancel btn px-2 ml-1" id="buttonCancelProfilePicture"><i class="fas fa-times"></i></span>
                                 </form>`;
 
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm);
@@ -63,8 +63,8 @@ function profile() {
 
   // Event Listener to close div when clicking on cancel button
   function buttonClickedEventListener() {
-    const buttonSumbit = document.querySelector("#buttonSumbit");
-    const buttonCancel = document.querySelector("#buttonCancel");
+    const buttonSumbit = document.querySelector("#buttonSumbitProfilePicture");
+    const buttonCancel = document.querySelector("#buttonCancelProfilePicture");
     buttonCancel.addEventListener("click", () => {
       profilePictureUpdateForm.style.display = "none";
     });

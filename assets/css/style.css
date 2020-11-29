@@ -26,6 +26,10 @@ body {
   font-size: 2.5rem;
 }
 
+.profilepic:hover {
+  cursor: pointer;
+}
+
 .newProfilePic {
   display: none;
   position: fixed;
