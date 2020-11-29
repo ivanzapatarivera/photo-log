@@ -27,7 +27,7 @@ body {
 }
 
 .newProfilePic {
-  
+
 }
 
 input,
@@ -89,7 +89,7 @@ h1,
   max-width: 750px;
 }
 
-.postStatus {
+.postStatusBtn {
   background-color: #007cc7;
   color: white;
   box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.5);
@@ -98,7 +98,7 @@ h1,
   transition: transform 0.2s;
 }
 
-.postStatus:hover {
+.postStatusBtn:hover {
   transform: scale(1.075);
 }
 

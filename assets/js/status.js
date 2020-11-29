@@ -20,7 +20,7 @@ function status() {
   statusBox.insertAdjacentHTML("afterbegin", statusEl);
 
   // This section will display the status box
-  const statusBtn = document.querySelector("#postStatus");
+  const statusBtn = document.querySelector("#postStatusBtn");
   const buttonSubmit = document.querySelector("#buttonSubmit");
   const buttonCancel = document.querySelector("#buttonCancel");
   showHideStatusBox();
