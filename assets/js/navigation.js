@@ -22,11 +22,11 @@ function nav() {
                           <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
                           </li>
                           <li class="nav-item nav-link">
-                          <div class="dropdown">
+                          <div class="dropdown" id="locationsLoggedNavbarBtn">
                             <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="fas fa-map-marker-alt"></i> Albums
                             </div>
-                            <div class="dropdown-menu shadow fade-in locationsLoggedNavbar" aria-labelledby="dropdownMenuButton" id="locationsLoggedNavbar">                              
+                            <div class="dropdown-menu shadow fade-in locationsLoggedDropdownMenu" aria-labelledby="dropdownMenuButton" id="locationsLoggedDropdownMenu">                              
                             </div>
                           </div>
                           </li>
@@ -66,11 +66,11 @@ function nav() {
 
             // Display name of album by each location
             function displayMenuOfAlbumsByLocations() {
-              const locationsLoggedNavbar = document.querySelector(
-                "#locationsLoggedNavbar"
+              const locationsLoggedDropdownMenu = document.querySelector(
+                "#locationsLoggedDropdownMenu"
               );
-              var divLocations = `<div id="${divResponse}" class="dropdown-item locationsLoggedNavbar" href="">${divResponse}</div>`;
-              locationsLoggedNavbar.insertAdjacentHTML(
+              var divLocations = `<div id="${divResponse}" class="dropdown-item locationsLoggedDropdownMenu" href="">${divResponse}</div>`;
+              locationsLoggedDropdownMenu.insertAdjacentHTML(
                 "beforeend",
                 divLocations
               );
@@ -93,20 +93,8 @@ function nav() {
 
     // Show and hide places traveled DIV
     function showHideLocationsLogged() {
-      const albumsIcon = document.querySelector("#locationsLoggedNavbar");
       const albumsIconMobile = document.querySelector("#locationsLoggedMobile");
       const placesTraveledDiv = document.querySelector("#places");
-
-      // Event listener when in desktop view
-      // albumsIcon.addEventListener("click", () => {
-      //   if (placesTraveledDiv.style.visibility === "visible") {
-      //     placesTraveledDiv.style.visibility = "hidden";
-      //     placesTraveledDiv.classList.remove("slide-in-top");
-      //   } else {
-      //     placesTraveledDiv.style.visibility = "visible";
-      //     placesTraveledDiv.classList.add("slide-in-top");
-      //   }
-      // });
 
       // Event listener when in mobile view
       albumsIconMobile.addEventListener("click", () => {
@@ -126,7 +114,7 @@ function nav() {
       // Change albums icon visibility to hidden
       function navbarAlbumsIconShowHide() {
         const albumsIconDesktop = document.querySelector(
-          "#locationsLoggedNavbar"
+          "#locationsLoggedNavbarBtn"
         );
         const albumsIconMobile = document.querySelector(
           "#locationsLoggedMobile"

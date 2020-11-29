@@ -13,7 +13,7 @@ body {
 .nav-link:hover {
   cursor: pointer;
 }
-.locationsLoggedNavbar {
+.locationsLoggedDropdownMenu {
 background-color: #12232e;
 color: white;
 }
