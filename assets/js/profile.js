@@ -20,7 +20,7 @@ function profile() {
 
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm);
   }
-  
+
   const profile = document.querySelector("#profilepic");
   const profileapi = "/profilepic";
 
@@ -36,10 +36,10 @@ function profile() {
         profile.insertAdjacentHTML("afterbegin", img);
       });
 
-    const changePro = document.querySelector("#show");
+    const profilePictureDiv = document.querySelector("#show");
     const form = document.querySelector("#form");
 
-    changePro.addEventListener("click", () => {
+    profilePictureDiv.addEventListener("click", () => {
       if (form.style.display === "block") {
         form.style.display = "none";
       } else {
