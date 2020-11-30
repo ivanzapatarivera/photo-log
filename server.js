@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/PhotoLog", {
 });
 
 app.use(require('./routes/html-route'));
-app.use(require('./routes/api'));
+app.use(require('./routes/apiLogs'));
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {console.log(`App running on http://localhost:${PORT}`)})
