@@ -5,35 +5,34 @@ function nav() {
   function navbarGenerator() {
     // Attach navigation as a navbar when in desktop view (static)
     var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
-    <div class="container">
-    <a class="navbar-brand" href="/"><img src="../images/logo-nav.png" class="logo-nav"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                          </button>
-                          
-                          <div class="collapse navbar-collapse" id="navbarNav">
-                          <ul class="navbar-nav mt-4">
-                          <li class="nav-item">
-                          <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
-                          </li>
-                          </li>
-                          <li class="nav-item">
-                          <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
-                          </li>
-                          <li class="nav-item nav-link">
-                          <div class="dropdown" id="locationsLoggedNavbarBtn">
-                            <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-map-marker-alt"></i> Albums
-                            </div>
-                            <div class="dropdown-menu shadow fade-in locationsLoggedDropdownMenu" aria-labelledby="dropdownMenuButton" id="locationsLoggedDropdownMenu">                              
-                            </div>
-                          </div>
-                          </li>
-                          </ul>
-                          </div>
-                          </div>
-                          </nav>`;
+                              <div class="container">
+                              <a class="navbar-brand" href="/"><img src="../images/logo-nav.png" class="logo-nav"></a>
+                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav mt-4">
+                              <li class="nav-item">
+                              <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
+                              </li>
+                              </li>
+                              <li class="nav-item">
+                              <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
+                              </li>
+                              <li class="nav-item nav-link">
+                              <div class="dropdown" id="locationsLoggedNavbarBtn">
+                                <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fas fa-map-marker-alt"></i> Albums
+                                </div>
+                                <div class="dropdown-menu shadow fade-in locationsLoggedDropdownMenu" aria-labelledby="dropdownMenuButton" id="locationsLoggedDropdownMenu">                              
+                                </div>
+                              </div>
+                              </li>
+                              </ul>
+                              </div>
+                              </div>
+                              </nav>`;
 
     // Attach top bar when in mobile view
     var topBarMobileView = `<nav class="text-center navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
