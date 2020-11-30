@@ -5,7 +5,7 @@ function photoLogger() {
     }
 
     function readForm() {
-        
+        console.log(`You're in readForm().`)
     }
 }
 
