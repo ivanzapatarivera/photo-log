@@ -1,11 +1,12 @@
 function photoLogger() {
+  const body = document.querySelector("#root");
   const logNewPhoto = document.querySelector("#logNewPhoto");
   if (logNewPhoto) {
     readForm();
   }
 
   function readForm() {
-    const logNewPhotoForm = `<div class="row p-1 logNewPhotoForm">
+    const logNewPhotoForm = `<div class="row p-1 logNewPhotoForm" id="logNewPhotoFormBtnDesktop">
                                     <div class="col-12 col-md-6 card mx-auto">
                                         <div class="card-body">
                                             <h5 class="text-center">Log your Photo!</h5>
@@ -23,12 +24,22 @@ function photoLogger() {
                                         </div>
                                     </div>
                                     </div>`;
+    body.insertAdjacentHTML('afterbegin', logNewPhotoForm);
     showHidePhotoForm(logNewPhotoForm);
   }
 
   function showHidePhotoForm() {
+    const logNewPhotoFormBtnDesktop = document.querySelector(
+      "#logNewPhotoFormBtnDesktop"
+    );
     logNewPhoto.addEventListener("click", () => {
-        
+      if (logNewPhotoFormBtnDesktop.style.display === "flex") {
+        logNewPhotoFormBtnDesktop.style.display = "none";
+        logNewPhotoFormBtnDesktop.classList.remove("scale-in-center");
+      } else {
+        logNewPhotoFormBtnDesktop.style.display = "flex";
+        logNewPhotoFormBtnDesktop.classList.add("scale-in-center");
+      }
     });
   }
 }
