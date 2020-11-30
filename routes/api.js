@@ -37,17 +37,6 @@ app.get("/log", (req, res) => {
 });
 
 
-
-// app.get('/page/:word', (req, res) => {
-//   collection.find({ word : req.params.word }).toArray().then(results => {
-//     if (results.length) {
-//       ...word found...
-//     } else {
-//       ...word not found...
-//     }
-//   });
-// });
-
 // These are the routes to find/delete logs by ID
 app.get("/findLog/:id", (req, res) => {
   logs.findOne({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
