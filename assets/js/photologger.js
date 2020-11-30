@@ -27,7 +27,9 @@ function photoLogger() {
   }
 
   function showHidePhotoForm() {
-      
+    logNewPhoto.addEventListener("click", () => {
+        
+    });
   }
 }
 
