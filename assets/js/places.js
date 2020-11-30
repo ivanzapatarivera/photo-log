@@ -15,25 +15,26 @@ function displayLocations() {
     .then((response) => {
       
       response.map((divResponse) => {
-        displayImagesByLocation();
+        var divResponseMobile = divResponse + " Mobile"
+        // console.log(divResponseMobile)
+        
         displayMenuOfAlbumsByLocations();
 
         // Display name of album by each location
         function displayMenuOfAlbumsByLocations() {
           var divLocations = `<div class="col-12 text-center">
-                              <h5 id="${divResponse}" class="mt-4 divResponse">${divResponse}</h5>
+                              <h5 id="${divResponseMobile}" class="mt-4 divResponse">${divResponse}</h5>
                             </div>`;
           placesEl.insertAdjacentHTML("beforeend", divLocations);
+          displayImagesByLocation(divResponseMobile);
         }
 
         // Display all images contained in each album
-        function displayImagesByLocation() {
-          const placesTraveledCityNameEl = document.getElementById(
-            `${divResponse}`
-          );
-          const photoLogsBoxEl = document.getElementById("picturesCollage");
-          const photoLogsImageCardsEl = document.getElementById("collageDivs");
-          const locationsAPI = API + divResponse;
+        function displayImagesByLocation(divResponseMobile) {
+          var placesTraveledCityNameEl = document.getElementById(divResponseMobile)
+          var photoLogsBoxEl = document.getElementById("picturesCollage");
+          var photoLogsImageCardsEl = document.getElementById("collageDivs");
+          var locationsAPI = API + divResponse;
 
           // Event listener to render image cards on dynamically generated card
           placesTraveledCityNameEl.addEventListener("click", () => {
