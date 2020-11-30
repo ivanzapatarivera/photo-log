@@ -19,7 +19,8 @@ function photoLogger() {
                                                 <input class="px-3 py-1" type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
                                                 <label for="description">Description</label><br>
                                                 <textarea class="px-3 py-1" type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
-                                                <button class="button btn btn-primary">Log</button>
+                                                <button class="button btn">Log</button>
+                                                <span class="button buttonCancel btn ml-1" id="logNewPhotoFormCancelBtn"><i class="fas fa-times"></i></span>
                                             </form>
                                         </div>
                                     </div>
@@ -40,6 +41,16 @@ function photoLogger() {
         logNewPhotoFormBtnDesktop.style.display = "flex";
         logNewPhotoFormBtnDesktop.classList.add("scale-in-center");
       }
+    });
+    logNewPhotoFormCancel(logNewPhotoFormBtnDesktop);
+  }
+
+  function logNewPhotoFormCancel() {
+    const logNewPhotoFormCancelBtn = document.querySelector(
+      "#logNewPhotoFormCancelBtn"
+    );
+    logNewPhotoFormCancelBtn.addEventListener("click", () => {
+      logNewPhotoFormBtnDesktop.style.display = "none";
     });
   }
 }
