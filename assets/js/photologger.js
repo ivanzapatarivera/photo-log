@@ -5,7 +5,7 @@ function photoLogger() {
   }
 
   function readForm() {
-    const logNewPhotoForm = `<div class="row p-1">
+    const logNewPhotoForm = `<div class="row p-1 logNewPhotoForm">
                                     <div class="col-12 col-md-6 card mx-auto">
                                         <div class="card-body">
                                             <h5 class="text-center">Log your Photo!</h5>
@@ -23,7 +23,11 @@ function photoLogger() {
                                         </div>
                                     </div>
                                     </div>`;
-    console.log(logNewPhotoForm)
+    showHidePhotoForm(logNewPhotoForm);
+  }
+
+  function showHidePhotoForm() {
+      
   }
 }
 
