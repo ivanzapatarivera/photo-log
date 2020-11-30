@@ -38,7 +38,6 @@ function displayLocations() {
           var photoLogsBoxEl = document.getElementById("picturesCollage");
           var photoLogsImageCardsEl = document.getElementById("collageDivs");
           var locationsAPI = API + divResponse;
-          console.log(locationsAPI);
 
           // Event listener to render image cards on dynamically generated card on mobile
           placesTraveledCityNameElMobile.addEventListener("click", () => {
