@@ -18,11 +18,9 @@ function nav() {
                               </li>
                               </li>
                               <li class="nav-item">
-                              <a class="nav-link" href="/LogYourPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
+                              <a class="nav-link" id="logNewPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
                               </li>
-                              <li class="nav-item">
-                              <span class="nav-link" id="logNewPhoto"><i class="fas fa-camera"></i> Test Button</span>
-                              </li>
+                             
                               <li class="nav-item nav-link">
                               <div class="dropdown" id="locationsLoggedNavbarBtn">
                                 <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
