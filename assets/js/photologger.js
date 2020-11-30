@@ -24,7 +24,7 @@ function photoLogger() {
                                         </div>
                                     </div>
                                     </div>`;
-    body.insertAdjacentHTML('afterbegin', logNewPhotoForm);
+    body.insertAdjacentHTML("afterbegin", logNewPhotoForm);
     showHidePhotoForm(logNewPhotoForm);
   }
 
