@@ -58,6 +58,11 @@ color: white;
   z-index: 1000;
 }
 
+.logNewPhotoFormDiv {
+  margin-top: 100px;
+  max-height: 500px;
+}
+
 input,
 textarea {
   width: 100%;
