@@ -13,11 +13,9 @@ function displayLocations() {
       return res.json(API);
     })
     .then((response) => {
-      
       response.map((divResponse) => {
-        var divResponseMobile = divResponse + " Mobile"
-        // console.log(divResponseMobile)
-        
+        var divResponseMobile = divResponse + " Mobile";
+
         displayMenuOfAlbumsByLocations();
 
         // Display name of album by each location
@@ -31,33 +29,47 @@ function displayLocations() {
 
         // Display all images contained in each album
         function displayImagesByLocation(divResponseMobile) {
-          var placesTraveledCityNameEl = document.getElementById(divResponseMobile)
+          var placesTraveledCityNameElMobile = document.getElementById(
+            divResponseMobile
+          );
+          var placesTraveledCityNameElDesktop = document.getElementById(
+            divResponse
+          );
           var photoLogsBoxEl = document.getElementById("picturesCollage");
           var photoLogsImageCardsEl = document.getElementById("collageDivs");
           var locationsAPI = API + divResponse;
+          console.log(locationsAPI);
 
-          // Event listener to render image cards on dynamically generated card
-          placesTraveledCityNameEl.addEventListener("click", () => {
-            placesEl.classList.remove("slide-in-top");
+          // Event listener to render image cards on dynamically generated card on mobile
+          placesTraveledCityNameElMobile.addEventListener("click", () => {
+            placesEl.classList.remove("slide-in-bottom");
+            placesEl.style.visibility = "hidden";
             photoLogsBoxEl.innerHTML = `<h4 class="text-center my-3">${divResponse}</h4>`;
             photoLogsImageCardsEl.innerHTML = "";
-            fetchLocationsAPI();
+            fetchLocationsAPI(locationsAPI);
+          });
 
-            function fetchLocationsAPI() {
-              fetch(locationsAPI)
-                .then((res) => {
-                  return res.json();
-                })
-                .then((res) => {
-                  res.map((res) => {
-                    var URL = res.URL;
-                    var id = res._id;
-                    var title = res.title;
-                    var description = res.description;
-                    insertCardHTML();
+          placesTraveledCityNameElDesktop.addEventListener("click", () => {
+            photoLogsBoxEl.innerHTML = `<h4 class="text-center my-3">${divResponse}</h4>`;
+            photoLogsImageCardsEl.innerHTML = "";
+            fetchLocationsAPI(locationsAPI);
+          });
 
-                    function insertCardHTML() {
-                      var card = `<div class="cards mx-auto text-center col-4 col-lg-4" data-id=${id} id=${id}>
+          function fetchLocationsAPI() {
+            fetch(locationsAPI)
+              .then((res) => {
+                return res.json();
+              })
+              .then((res) => {
+                res.map((res) => {
+                  var URL = res.URL;
+                  var id = res._id;
+                  var title = res.title;
+                  var description = res.description;
+                  insertCardHTML();
+
+                  function insertCardHTML() {
+                    var card = `<div class="cards mx-auto text-center col-4 col-lg-4" data-id=${id} id=${id}>
                                 <p class="mt-4" data-id=${id}>
                                   <p><img src=${URL} class="cardImage" /><br></p>
                                   <span class="cardTitle">${title}&nbsp;<br>
@@ -68,46 +80,43 @@ function displayLocations() {
                                 </p>
                               </div>`;
 
-                      photoLogsBoxEl.insertAdjacentHTML("beforeend", card);
-                      pictureClickEventListener();
-                    }
+                    photoLogsBoxEl.insertAdjacentHTML("beforeend", card);
+                    pictureClickEventListener();
+                  }
 
-                    // Event to enlarge image when clicking on dynamically generated card
-                    function pictureClickEventListener() {
-                      const eventPictureClick = document.getElementById(
-                        `${id}`
-                      );
-                      eventPictureClick.addEventListener("click", (event) => {
-                        eventPicDiv.style.visibility = "visible";
-                        eventPicDiv.classList.add("flip-in-ver-left");
-                        var currentSrc = event.path[0].currentSrc;
-                        var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
+                  // Event to enlarge image when clicking on dynamically generated card
+                  function pictureClickEventListener() {
+                    const eventPictureClick = document.getElementById(`${id}`);
+                    eventPictureClick.addEventListener("click", (event) => {
+                      eventPicDiv.style.visibility = "visible";
+                      eventPicDiv.classList.add("flip-in-ver-left");
+                      var currentSrc = event.path[0].currentSrc;
+                      var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
                                       <div id="caption" class="caption mt-0">${description}</div>`;
-                        if (eventPicDiv) {
-                          eventPicDiv.innerHTML = enlargedImage;
-                          eventPicVisibility();
-                        }
+                      if (eventPicDiv) {
+                        eventPicDiv.innerHTML = enlargedImage;
+                        eventPicVisibility();
+                      }
 
-                        // Event listener to change visbility of dynamically created image DIVs
-                        function eventPicVisibility() {
-                          const eventCurrentSrc = document.getElementById(
-                            currentSrc
-                          );
-                          eventCurrentSrc.addEventListener("click", () => {
-                            if (eventPicDiv) {
-                              eventPicDiv.style.visibility = "hidden";
-                              eventPicDiv.classList.remove("flip-in-ver-left");
-                              eventPicDiv.innerHTML = "";
-                            }
-                          });
-                        }
-                      });
-                    }
-                  });
+                      // Event listener to change visbility of dynamically created image DIVs
+                      function eventPicVisibility() {
+                        const eventCurrentSrc = document.getElementById(
+                          currentSrc
+                        );
+                        eventCurrentSrc.addEventListener("click", () => {
+                          if (eventPicDiv) {
+                            eventPicDiv.style.visibility = "hidden";
+                            eventPicDiv.classList.remove("flip-in-ver-left");
+                            eventPicDiv.innerHTML = "";
+                          }
+                        });
+                      }
+                    });
+                  }
                 });
-            }
-            placesEl.style.visibility = "hidden";
-          });
+              });
+          }
+          placesEl.style.visibility = "hidden";
         }
       });
     });
