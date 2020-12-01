@@ -36,10 +36,10 @@ function photoLogger() {
     logNewPhoto.addEventListener("click", () => {
       if (logNewPhotoFormBtnDesktop.style.display === "flex") {
         logNewPhotoFormBtnDesktop.style.display = "none";
-        logNewPhotoFormBtnDesktop.classList.remove("scale-in-center");
+        logNewPhotoFormBtnDesktop.classList.remove("fade-in");
       } else {
         logNewPhotoFormBtnDesktop.style.display = "flex";
-        logNewPhotoFormBtnDesktop.classList.add("scale-in-center");
+        logNewPhotoFormBtnDesktop.classList.add("fade-in");
       }
     });
     logNewPhotoFormCancel(logNewPhotoFormBtnDesktop);
