@@ -26,10 +26,11 @@ function photoLogger() {
                                     </div>
                                     </div>`;
     body.insertAdjacentHTML("afterbegin", logNewPhotoForm);
-    showHidePhotoForm(logNewPhotoForm);
+    showHidePhotoFormDesktop(logNewPhotoForm);
+    showHidePhotoFormMobile(logNewPhotoForm);
   }
 
-  function showHidePhotoForm() {
+  function showHidePhotoFormDesktop() {
     const logNewPhotoFormBtnDesktop = document.querySelector(
       "#logNewPhotoFormBtnDesktop"
     );
@@ -43,6 +44,13 @@ function photoLogger() {
       }
     });
     logNewPhotoFormCancel(logNewPhotoFormBtnDesktop);
+  }
+
+  function showHidePhotoFormMobile() {
+    const logNewPhotoFormBtnMobile = document.querySelector('#imagesMobile')
+    logNewPhotoFormBtnMobile.addEventListener('click', () => {
+      console.log(`You've clicked on log mobile icon.`)
+    })
   }
 
   function logNewPhotoFormCancel() {
