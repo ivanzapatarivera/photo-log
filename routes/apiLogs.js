@@ -8,12 +8,6 @@ const app = express();
 app.post("/log", ({ body }, res) => {
   logs
     .create(body)
-    // .then((db) => {
-    //   console.log(db);
-    // })
-    // .then((db) => {
-    //   res.redirect("/thankyou");
-    // })
     .then((db) => {
       res.redirect("/profile");
     })
