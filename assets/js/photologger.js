@@ -6,7 +6,7 @@ function photoLogger() {
   }
 
   function readForm() {
-    const logNewPhotoForm = `<div class="row p-1 logNewPhotoForm" id="logNewPhotoFrame">
+    const logNewPhotoForm = `<div class="row mx-auto p-1 logNewPhotoForm" id="logNewPhotoFrame">
                                     <div class="col-12 col-md-6 card mx-auto logNewPhotoFormDiv">
                                         <div class="card-body">
                                             <h5 class="text-center">Log your Photo!</h5>
