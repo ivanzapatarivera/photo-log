@@ -1,12 +1,12 @@
 function photoLogger() {
   const body = document.querySelector("#root");
-  const logNewPhoto = document.querySelector("#logNewPhoto");
-  if (logNewPhoto) {
+  const logNewPhotoDesktop = document.querySelector("#logNewPhoto");
+  if (logNewPhotoDesktop) {
     readForm();
   }
 
   function readForm() {
-    const logNewPhotoForm = `<div class="row p-1 logNewPhotoForm" id="logNewPhotoFormBtnDesktop">
+    const logNewPhotoForm = `<div class="row p-1 logNewPhotoForm" id="logNewPhotoFrame">
                                     <div class="col-12 col-md-6 card mx-auto logNewPhotoFormDiv">
                                         <div class="card-body">
                                             <h5 class="text-center">Log your Photo!</h5>
@@ -26,31 +26,36 @@ function photoLogger() {
                                     </div>
                                     </div>`;
     body.insertAdjacentHTML("afterbegin", logNewPhotoForm);
-    showHidePhotoFormDesktop(logNewPhotoForm);
-    showHidePhotoFormMobile(logNewPhotoForm);
+    const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
+    showHidePhotoFormDesktop(logNewPhotoForm, logNewPhotoFrame);
+    showHidePhotoFormMobile(logNewPhotoForm, logNewPhotoFrame);
   }
 
   function showHidePhotoFormDesktop() {
-    const logNewPhotoFormBtnDesktop = document.querySelector(
-      "#logNewPhotoFormBtnDesktop"
-    );
-    logNewPhoto.addEventListener("click", () => {
-      if (logNewPhotoFormBtnDesktop.style.display === "flex") {
-        logNewPhotoFormBtnDesktop.style.display = "none";
-        logNewPhotoFormBtnDesktop.classList.remove("fade-in");
+    logNewPhotoDesktop.addEventListener("click", () => {
+      if (logNewPhotoFrame.style.display === "flex") {
+        logNewPhotoFrame.style.display = "none";
+        logNewPhotoFrame.classList.remove("fade-in");
       } else {
-        logNewPhotoFormBtnDesktop.style.display = "flex";
-        logNewPhotoFormBtnDesktop.classList.add("fade-in");
+        logNewPhotoFrame.style.display = "flex";
+        logNewPhotoFrame.classList.add("fade-in");
       }
     });
-    logNewPhotoFormCancel(logNewPhotoFormBtnDesktop);
+    logNewPhotoFormCancel(logNewPhotoFrame);
   }
 
   function showHidePhotoFormMobile() {
-    const logNewPhotoFormBtnMobile = document.querySelector('#imagesMobile')
-    logNewPhotoFormBtnMobile.addEventListener('click', () => {
-      console.log(`You've clicked on log mobile icon.`)
-    })
+    const logNewPhotoMobile = document.querySelector("#imagesMobile");
+    logNewPhotoMobile.addEventListener("click", () => {
+      if (logNewPhotoFrame.style.display === "flex") {
+        logNewPhotoFrame.style.display = "none";
+        logNewPhotoFrame.classList.remove("fade-in");
+      } else {
+        logNewPhotoFrame.style.display = "flex";
+        logNewPhotoFrame.classList.add("fade-in");
+      }
+    });
+    logNewPhotoFormCancel(logNewPhotoFrame);
   }
 
   function logNewPhotoFormCancel() {
@@ -58,7 +63,7 @@ function photoLogger() {
       "#logNewPhotoFormCancelBtn"
     );
     logNewPhotoFormCancelBtn.addEventListener("click", () => {
-      logNewPhotoFormBtnDesktop.style.display = "none";
+      logNewPhotoFrame.style.display = "none";
     });
   }
 }
