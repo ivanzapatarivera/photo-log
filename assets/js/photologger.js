@@ -1,6 +1,8 @@
 function photoLogger() {
   const body = document.querySelector("#root");
   const logNewPhotoDesktop = document.querySelector("#logNewPhoto");
+  const logNewPhotoMobile = document.querySelector("#imagesMobile");
+  
   if (logNewPhotoDesktop) {
     readForm();
   }
@@ -22,13 +24,16 @@ function photoLogger() {
                                                 <button class="button btn">Log</button>
                                                 <span class="button buttonCancel btn ml-1" id="logNewPhotoFormCancelBtn"><i class="fas fa-times"></i></span>
                                             </form>
-                                        </div>
-                                    </div>
-                                    </div>`;
+                                            </div>
+                                            </div>
+                                            </div>`;
     body.insertAdjacentHTML("afterbegin", logNewPhotoForm);
     const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
-    showHidePhotoFormDesktop(logNewPhotoForm, logNewPhotoFrame);
-    showHidePhotoFormMobile(logNewPhotoForm, logNewPhotoFrame);
+    const logNewPhotoFormCancelBtn = document.querySelector(
+      "#logNewPhotoFormCancelBtn"
+    );
+    showHidePhotoFormDesktop(logNewPhotoForm, logNewPhotoFrame, logNewPhotoFormCancelBtn);
+    showHidePhotoFormMobile(logNewPhotoForm, logNewPhotoFrame, logNewPhotoFormCancelBtn);
   }
 
   function showHidePhotoFormDesktop() {
@@ -45,7 +50,6 @@ function photoLogger() {
   }
 
   function showHidePhotoFormMobile() {
-    const logNewPhotoMobile = document.querySelector("#imagesMobile");
     logNewPhotoMobile.addEventListener("click", () => {
       if (logNewPhotoFrame.style.display === "flex") {
         logNewPhotoFrame.style.display = "none";
@@ -59,9 +63,6 @@ function photoLogger() {
   }
 
   function logNewPhotoFormCancel() {
-    const logNewPhotoFormCancelBtn = document.querySelector(
-      "#logNewPhotoFormCancelBtn"
-    );
     logNewPhotoFormCancelBtn.addEventListener("click", () => {
       logNewPhotoFrame.style.display = "none";
     });
