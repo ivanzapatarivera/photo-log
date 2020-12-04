@@ -4,7 +4,7 @@
 
 ## Description 
  
-This app will allow the user to log their pictures by location.  
+This is a Node.js app that will allow the user to log their pictures by location.
 
 
 ## Table of Contents 
