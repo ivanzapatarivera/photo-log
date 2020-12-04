@@ -32,11 +32,11 @@ function photoLogger() {
     const logNewPhotoFormCancelBtn = document.querySelector(
       "#logNewPhotoFormCancelBtn"
     );
-    showHidePhotoFormDesktop(logNewPhotoForm, logNewPhotoFrame, logNewPhotoFormCancelBtn);
-    showHidePhotoFormMobile(logNewPhotoForm, logNewPhotoFrame, logNewPhotoFormCancelBtn);
+    showHidePhotoForm(logNewPhotoForm, logNewPhotoFrame);
+    logNewPhotoFormCancel(logNewPhotoFrame, logNewPhotoFormCancelBtn);
   }
 
-  function showHidePhotoFormDesktop() {
+  function showHidePhotoForm() {
     logNewPhotoDesktop.addEventListener("click", () => {
       if (logNewPhotoFrame.style.display === "flex") {
         logNewPhotoFrame.style.display = "none";
@@ -46,10 +46,6 @@ function photoLogger() {
         logNewPhotoFrame.classList.add("fade-in");
       }
     });
-    logNewPhotoFormCancel(logNewPhotoFrame);
-  }
-
-  function showHidePhotoFormMobile() {
     logNewPhotoMobile.addEventListener("click", () => {
       if (logNewPhotoFrame.style.display === "flex") {
         logNewPhotoFrame.style.display = "none";
@@ -59,7 +55,6 @@ function photoLogger() {
         logNewPhotoFrame.classList.add("fade-in");
       }
     });
-    logNewPhotoFormCancel(logNewPhotoFrame);
   }
 
   function logNewPhotoFormCancel() {
