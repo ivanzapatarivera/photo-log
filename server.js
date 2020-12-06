@@ -21,6 +21,21 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/PhotoLog", {
   useUnifiedTopology: true,
 });
 
+// Connecting GridFS
+let conn = mongoose.createConnection(
+  process.env.MONGODB_URI || "mongodb://localhost/imageUpload",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
+conn.once("open", () => {
+  //initialize our stream
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection("imageUpload");
+});
+
 app.use(require("./routes/html-route"));
 app.use(require("./routes/apiLogs"));
 app.use(require("./routes/apiProfilePic"));
