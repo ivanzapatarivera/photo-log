@@ -1,12 +1,16 @@
-const express = require("express");
-const mongoose = require("mongoose");
 const logger = require("morgan");
 const nodemon = require("nodemon");
-const app = express();
 const bodyParser = require("body-parser");
 
-const fs = require("fs");
+const express = require("express");
 const path = require("path");
+const crypto = require("crypto"); //to generate file name
+const mongoose = require("mongoose");
+const mongojs = require("mongojs");
+const multer = require("multer");
+const GridFsStorage = require("multer-gridfs-storage");
+const Grid = require("gridfs-stream");
+const app = express();
 
 app.use(logger("dev"));
 
