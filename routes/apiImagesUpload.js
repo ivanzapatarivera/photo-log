@@ -1,7 +1,16 @@
+const logger = require("morgan");
+const nodemon = require("nodemon");
+const bodyParser = require("body-parser");
+
 const express = require("express");
-const app = express();
+const path = require("path");
+const crypto = require("crypto"); //to generate file name
+const mongoose = require("mongoose");
+const mongojs = require("mongojs");
 const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
+const Grid = require("gridfs-stream");
+const app = express();
 
 const mongoURI = process.env.MONGODB_URI || "mongodb://localhost/PhotoLog";
 
@@ -21,7 +30,7 @@ let storage = new GridFsStorage({
 const upload = multer({ storage });
 
 app.post("/upload", upload.single("upload"), (req, res) => {
-  res.json({ file: req.file })
+  // res.json({ file: req.file })
   // res.redirect("/");
 });
 
@@ -34,7 +43,7 @@ app.get("/files", (req, res) => {
     //   });
     // }
     // files exist
-    res.json(files)
+    res.json(files);
   });
 });
 
