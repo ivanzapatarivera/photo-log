@@ -165,7 +165,7 @@ function pictures() {
 
       // Dialog to confirm deleting image
       var thisVar = confirm("Would you like to delete this image?");
-      if (thisVar) {
+      if (thisVar) { 
         fetch("/deleteLog/" + dataID, {
           method: "delete",
         }).then(() => {
