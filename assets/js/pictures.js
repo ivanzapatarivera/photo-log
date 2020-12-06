@@ -32,31 +32,38 @@ function pictures() {
             // Assigns img src and id dynamically as per images logged by user
             var collageDivsImages = `
                             <!-- First DIV -->
-                            <div class="col-3 px-0"><img src=${data[0].URL} id=${data[0].URL} class="collageImageDIV firstDiv" /></div>
+                            <div class="col-3 px-0"><img src=${data[0].URL} id=${data[0]._id} class="collageImageDIV firstDiv" /></div>
                             <div class="col-5">
                               <div class="row">
                                 <!-- Second DIV -->
-                                <div class="col-12 px-0"><img src=${data[1].URL} id=${data[1].URL} class="collageImageDIV secondDiv" /></div>
+                                <div class="col-12 px-0"><img src=${data[1].URL} id=${data[1]._id} class="collageImageDIV secondDiv" /></div>
                               </div>
                               <div class="row">
                                 <!-- Third DIV -->
-                                <div class="col-6 px-0"><img src=${data[2].URL} id=${data[2].URL} class="collageImageDIV thirdDiv" /></div>
+                                <div class="col-6 px-0"><img src=${data[2].URL} id=${data[2]._id} class="collageImageDIV thirdDiv" /></div>
                                 <!-- Fourth DIV -->
-                                <div class="col-6 px-0"><img src=${data[3].URL} id=${data[3].URL} class="collageImageDIV fourthDiv" /></div>
+                                <div class="col-6 px-0"><img src=${data[3].URL} id=${data[3]._id} class="collageImageDIV fourthDiv" /></div>
                               </div>
                             </div>
                             <div class="col-4">
                               <div class="row">
                                 <!-- Fifth DIV -->
-                                <div class="col-12 px-0"><img src=${data[4].URL} id=${data[4].URL} class="collageImageDIV fifthDiv" /></div>
+                                <div class="col-12 px-0"><img src=${data[4].URL} id=${data[4]._id} class="collageImageDIV fifthDiv" /></div>
                               </div>
                               <div class="row">
                                 <!-- Sixth DIV -->
-                                <div class="col-12 px-0"><img src=${data[5].URL} id=${data[5].URL} class="collageImageDIV sixthDiv" /></div>
+                                <div class="col-12 px-0"><img src=${data[5].URL} id=${data[5]._id} class="collageImageDIV sixthDiv" /></div>
                               </div>
                             </div>
                           `;
-            insertImageCards(collageDivsImages);
+                          // Attaches dynamically generated images into DIV
+              if (collageDivsEl) {
+                collageDivsEl.insertAdjacentHTML(
+                  "beforeend",
+                  collageDivsImages
+                );
+              }
+            
           } else {
             data.map((res) => {
               // console.log(res);
@@ -76,10 +83,6 @@ function pictures() {
                                           </span></p>
                                         </div>`;
               // console.log(collageDivsImages);
-              insertImageCards(collageDivsImages);
-              // collageDivsEl.insertAdjacentHTML("beforeend", collageDivsImages);
-            });
-            function insertImageCards(collageDivsImages) {
               // Attaches dynamically generated images into DIV
               if (collageDivsEl) {
                 collageDivsEl.insertAdjacentHTML(
@@ -87,7 +90,11 @@ function pictures() {
                   collageDivsImages
                 );
               }
-            }
+              // collageDivsEl.insertAdjacentHTML("beforeend", collageDivsImages);
+            });
+            
+              
+            
           }
         }
 
