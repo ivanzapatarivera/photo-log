@@ -3,7 +3,7 @@ const app = express();
 const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 
-const mongoURI = "mongodb://localhost/imageUpload";
+const mongoURI = "mongodb://localhost/PhotoLog";
 
 let storage = new GridFsStorage({
   url: mongoURI,

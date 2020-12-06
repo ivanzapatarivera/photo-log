@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/PhotoLog", {
 
 // Connecting GridFS
 let conn = mongoose.createConnection(
-  process.env.MONGODB_URI || "mongodb://localhost/imageUpload",
+  process.env.MONGODB_URI || "mongodb://localhost/PhotoLog",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
