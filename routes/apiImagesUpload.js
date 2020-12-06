@@ -7,7 +7,6 @@ const mongoURI = process.env.MONGODB_URI || "mongodb://localhost/PhotoLog";
 
 let storage = new GridFsStorage({
   url: mongoURI,
-  // db: mongoURI,
   file: (req, file) => {
     return new Promise((resolve, reject) => {
       const fileInfo = {
@@ -28,27 +27,14 @@ app.post("/upload", upload.single("upload"), (req, res) => {
 
 app.get("/files", (req, res) => {
   gfs.files.find().toArray((err, files) => {
-    //check if filess exist
-    if (!files || files.length == 0) {
-      return res.status(404).json({
-        err: "No files exist",
-      });
-    }
-    //file exist
-    res.json(files);
-  });
-});
-
-app.get("/files", (req, res) => {
-  gfs.files.find().toArray((err, files) => {
     //check if files exist
-    if (!files || files.length == 0) {
-      return res.status(404).json({
-        err: "No files exist",
-      });
-    }
+    // if (!files || files.length == 0) {
+    //   return res.status(404).json({
+    //     err: "No files exist",
+    //   });
+    // }
     // files exist
-    return res.json(files);
+    res.json(files)
   });
 });
 
