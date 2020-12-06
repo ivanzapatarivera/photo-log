@@ -76,10 +76,7 @@ function pictures() {
               var collageDivsImages = `<div class="cards mx-auto text-center col-4 col-lg-4" id="${id}">
                                           <p class="mt-4" data-id=${id}>
                                           <p><img src="${URL}" class="cardImage" /><br></p>
-                                          <span class="cardTitle">${title}&nbsp;<br>
-                                            <span onClick="delete" data-id=${id} class="delete">
-                                              <i class="far fa-trash-alt delete" data-id=${id}></i>
-                                            </span>
+                                          <span class="cardTitle">${title}&nbsp;                                           
                                           </span></p>
                                         </div>`;
               // console.log(collageDivsImages);
