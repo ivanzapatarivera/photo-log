@@ -3,15 +3,16 @@ const app = express();
 const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 
-const mongoURI = "mongodb://localhost/PhotoLog";
+const mongoURI = process.env.MONGODB_URI || "mongodb://localhost/PhotoLog";
 
 let storage = new GridFsStorage({
   url: mongoURI,
+  // db: mongoURI,
   file: (req, file) => {
     return new Promise((resolve, reject) => {
       const fileInfo = {
         filename: file.originalname,
-        bucketName: "PhotoLog",
+        bucketName: "imageUpload",
       };
       resolve(fileInfo);
     });

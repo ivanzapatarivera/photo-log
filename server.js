@@ -26,13 +26,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/PhotoLog", {
 });
 
 // Connecting GridFS
-let conn = mongoose.createConnection(
-  process.env.MONGODB_URI || "mongodb://localhost/PhotoLog",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const conn = mongoose.connection;
+let gfs;
+
+// let conn = mongoose.createConnection(
+//   process.env.MONGODB_URI || "mongodb://localhost/PhotoLog",
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }
+// );
 
 conn.once("open", () => {
   //initialize our stream
