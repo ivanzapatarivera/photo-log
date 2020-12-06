@@ -9,8 +9,8 @@ function photoLogger() {
 
   function readForm() {
     const logNewPhotoForm = `<div class="row mx-auto p-1 logNewPhotoForm" id="logNewPhotoFrame">
-                              <div class="col-12 col-md-6 card mx-auto logNewPhotoFormDiv">
-                                <div class="card-body">
+                              <div class="col-12 col-md-6 mx-auto">
+                                <div class="card-body logNewPhotoFormDiv">
                                 <h5 class="text-center">Log your Photo!</h5>
                                 <form action="/upload" method="post" enctype="multipart/form-data">
                                   <label class="btn btn-primary">
@@ -39,24 +39,10 @@ function photoLogger() {
       previewFileName.innerText = `Would you like to upload ${fileName} ?`;
     });
 
-    const newImageSubmitEl = document.querySelector('#newImageSubmit');
+    const newImageSubmitEl = document.querySelector("#newImageSubmit");
     const imagesEl = document.querySelector("#images");
     const API = "/files/";
-    newImageSubmitEl.addEventListener('click', () => {
-
-    })
-   
-
-
-
-
-
-
-
-
-
-
-
+    newImageSubmitEl.addEventListener("click", () => {});
 
     const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
     const logNewPhotoFormCancelBtn = document.querySelector(

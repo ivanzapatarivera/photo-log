@@ -13,6 +13,7 @@ function pictures() {
       .then((res) => res.json(API))
       .then((data) => {
         var data = data.slice(Math.max(data.length - 6, 0));
+        console.log(data);
 
         const collageDivsEl = document.querySelector("#collageDivs");
 
@@ -24,8 +25,12 @@ function pictures() {
         */
         collageDivs(data);
         function collageDivs(data) {
-          // Assigns img src and id dynamically as per images logged by user
-          var collageDivsImages = `
+          var dataLength = data.length;
+          console.log(dataLength);
+
+          if (dataLength > 5) {
+            // Assigns img src and id dynamically as per images logged by user
+            var collageDivsImages = `
                             <!-- First DIV -->
                             <div class="col-3 px-0"><img src=${data[0].URL} id=${data[0].URL} class="collageImageDIV firstDiv" /></div>
                             <div class="col-5">
@@ -51,21 +56,55 @@ function pictures() {
                               </div>
                             </div>
                           `;
-
-          // Attaches dynamically generated images into DIV
-          if (collageDivsEl) {
-            collageDivsEl.insertAdjacentHTML("afterbegin", collageDivsImages);
+            insertImageCards(collageDivsImages);
+          } else {
+            data.map((res) => {
+              // console.log(res);
+              const id = res._id;
+              // console.log(id);
+              const URL = res.URL;
+              // console.log(URL);
+              const title = res.title;
+              // console.log(title);
+              var collageDivsImages = `<div class="cards mx-auto text-center col-4 col-lg-4" id="${id}">
+                                          <p class="mt-4" data-id=${id}>
+                                          <p><img src="${URL}" class="cardImage" /><br></p>
+                                          <span class="cardTitle">${title}&nbsp;<br>
+                                            <span onClick="delete" data-id=${id} class="delete">
+                                              <i class="far fa-trash-alt delete" data-id=${id}></i>
+                                            </span>
+                                          </span></p>
+                                        </div>`;
+              // console.log(collageDivsImages);
+              insertImageCards(collageDivsImages);
+              // collageDivsEl.insertAdjacentHTML("beforeend", collageDivsImages);
+            });
+            function insertImageCards(collageDivsImages) {
+              // Attaches dynamically generated images into DIV
+              if (collageDivsEl) {
+                collageDivsEl.insertAdjacentHTML(
+                  "beforeend",
+                  collageDivsImages
+                );
+              }
+            }
           }
         }
 
         // Maps the last 6 images posted in database
-        data.map((dataMap) => {
-          const title = dataMap.title;
-          const id = dataMap._id;
-          const description = dataMap.description;
-          const URL = dataMap.URL;
+        // console.log(data);
+        eventPictureFunction(data);
+        function eventPictureFunction(data) {
+          // console.log(data);
+          data.map((dataMap) => {
+            const title = dataMap.title;
+            // console.log(title);
+            const id = dataMap._id;
+            const description = dataMap.description;
+            const URL = dataMap.URL;
+            // console.log(id);
 
-          /*        PREVIOUS CARDS CARROUSEL LAYOUT --- DO NOT DELETE
+            /*        PREVIOUS CARDS CARROUSEL LAYOUT --- DO NOT DELETE
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
                         <p class="mt-4" data-id=${id}>
                         <p><img src=${URL} class="cardImage" /><br></p>
@@ -79,38 +118,39 @@ function pictures() {
           event.insertAdjacentHTML("beforeend", card);
 */
 
-          // Displays fullscreen DIV with dynamically generated albums of traveled places
-          const eventPictureClick = document.getElementById(URL);
-          eventPictureClick.addEventListener("click", (event) => {
-            eventPicDiv.style.visibility = "visible";
-            eventPicDiv.classList.add("flip-in-ver-left");
-            var currentSrc = event.path[0].currentSrc;
-            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
+            // Displays fullscreen DIV with dynamically generated albums of traveled places
+            const eventPictureClick = document.getElementById(id);
+            eventPictureClick.addEventListener("click", (event) => {
+              console.log("You clicked on eventPictureClick");
+              eventPicDiv.style.visibility = "visible";
+              eventPicDiv.classList.add("flip-in-ver-left");
+              var currentSrc = event.path[0].currentSrc;
+              var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
                                 <div id="caption" class="caption mt-0">${description}
                                   <button onClick="delete" data-id=${id} class="delete buttonCancel ml-3">
                                     <i class="far fa-trash-alt delete" data-id=${id}></i>
                                   </button>
                                 </div>`;
-            if (eventPicDiv) {
-              eventPicDiv.innerHTML = enlargedImage;
-            }
-
-            // Changes albums of traveled places visibility
-            eventPicDiv.addEventListener("click", () => {
               if (eventPicDiv) {
-                eventPicDiv.style.visibility = "hidden";
-                eventPicDiv.innerHTML = "";
-                eventPicDiv.classList.remove("flip-in-ver-left");
+                eventPicDiv.innerHTML = enlargedImage;
               }
+
+              // Changes albums of traveled places visibility
+              eventPicDiv.addEventListener("click", () => {
+                if (eventPicDiv) {
+                  eventPicDiv.style.visibility = "hidden";
+                  eventPicDiv.innerHTML = "";
+                  eventPicDiv.classList.remove("flip-in-ver-left");
+                }
+              });
             });
           });
-        });
+        }
       });
   }
 
   // Delete images from database
   eventPicDiv.addEventListener("click", (e) => {
-
     // Conditional to delete image based on 'delete' class
     if (e.target.matches(".delete")) {
       var el = e.target;
@@ -128,7 +168,7 @@ function pictures() {
           thisVar = "";
           location.reload();
         });
-      } 
+      }
     }
   });
 }
