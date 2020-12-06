@@ -37,7 +37,7 @@ let conn = mongoose.createConnection(
 conn.once("open", () => {
   //initialize our stream
   gfs = Grid(conn.db, mongoose.mongo);
-  gfs.collection("imageUpload");
+  gfs.collection("PhotoLog");
 });
 
 app.use(require("./routes/html-route"));
