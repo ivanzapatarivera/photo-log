@@ -8,7 +8,6 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 
-
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -26,8 +25,7 @@ app.use(require("./routes/html-route"));
 app.use(require("./routes/apiLogs"));
 app.use(require("./routes/apiProfilePic"));
 app.use(require("./routes/apiStatusUpdate"));
-app.use(require("./routes/apiImagesUpload"))
-
+app.use(require("./routes/apiImagesUpload"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
