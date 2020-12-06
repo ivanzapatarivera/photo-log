@@ -156,6 +156,9 @@ h1,
 .button,
 .button:active,
 .button:focus {
+/* ::-webkit-file-upload-button,
+::-webkit-file-upload-button:active,
+::-webkit-file-upload-button:focus { */
   background-color: #4da8da;
   border: #4da8da;
   border: hidden;
@@ -164,11 +167,16 @@ h1,
   color: white;
 }
 
+/* ::-webkit-file-upload-button:hover, */
 .button:hover {
   background-color: #5dc2f8;
   border: #5dc2f8;
   color: white;
 }
+
+/* ::-webkit-file-upload-button {
+  content: "File"
+} */
 
 .buttonCancel,
 .buttonCancel:active,
@@ -186,6 +194,7 @@ h1,
   border: rgb(253, 77, 77);
   color: white;
 }
+
 
 /* ---------------------- */
 /* END OF BUTTONS SECTION */
