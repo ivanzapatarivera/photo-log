@@ -31,7 +31,7 @@ const upload = multer({ storage });
 
 app.post("/upload", upload.single("upload"), (req, res) => {
   // res.json({ file: req.file })
-  // res.redirect("/");
+  res.redirect("/LogYourPhoto");
 });
 
 app.get("/files", (req, res) => {
