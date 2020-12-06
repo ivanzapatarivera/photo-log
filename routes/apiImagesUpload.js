@@ -21,7 +21,8 @@ let storage = new GridFsStorage({
 const upload = multer({ storage });
 
 app.post("/upload", upload.single("upload"), (req, res) => {
-  res.redirect("/");
+  res.json({ file: req.file })
+  // res.redirect("/");
 });
 
 app.get("/files", (req, res) => {
