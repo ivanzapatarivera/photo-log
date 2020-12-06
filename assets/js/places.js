@@ -91,7 +91,11 @@ function displayLocations() {
                       eventPicDiv.classList.add("flip-in-ver-left");
                       var currentSrc = event.path[0].currentSrc;
                       var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage">
-                                      <div id="caption" class="caption mt-0">${description}</div>`;
+                                      <div id="caption" class="caption mt-0">${description}
+                                      <button onClick="delete" data-id=${id} class="delete buttonCancel ml-3">
+                                        <i class="far fa-trash-alt delete" data-id=${id}></i>
+                                      </button>
+                                      </div>`;
                       if (eventPicDiv) {
                         eventPicDiv.innerHTML = enlargedImage;
                         eventPicVisibility();
@@ -119,6 +123,8 @@ function displayLocations() {
         }
       });
     });
+
+    
 }
 
 export { places };
