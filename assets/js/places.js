@@ -68,12 +68,12 @@ function displayLocations() {
                   insertCardHTML();
 
                   function insertCardHTML() {
-                    var card = `<div class="cards mx-auto text-center col-4 col-lg-4" data-id=${id} id=${id}>
-                                <p class="mt-4" data-id=${id}>
-                                  <p><img src=${URL} class="cardImage" /><br></p>
+                    var card = `<div class="cards mx-auto text-center col-4 col-lg-4" data-id="${id}" id="${id}">
+                                <p class="mt-4" data-id="${id}">
+                                  <p><img src="${URL}" class="cardImage" /><br></p>
                                   <span class="cardTitle">${title}&nbsp;<br>
-                                    <span onClick="delete" data-id=${id} class="delete">
-                                      <i class="far fa-trash-alt delete" data-id=${id}></i>
+                                    <span onClick="delete" data-id="${id}" class="delete">
+                                      <i class="far fa-trash-alt delete" data-id="${id}"></i>
                                     </span>
                                   </span>
                                 </p>
