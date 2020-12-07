@@ -13,8 +13,6 @@ function pictures() {
       .then((res) => res.json(API))
       .then((data) => {
         var data = data.slice(Math.max(data.length - 6, 0));
-        console.log(data);
-
         const collageDivsEl = document.querySelector("#collageDivs");
 
         /* -------------------------------------------------
@@ -26,7 +24,6 @@ function pictures() {
         collageDivs(data);
         function collageDivs(data) {
           var dataLength = data.length;
-          console.log(dataLength);
 
           if (dataLength > 5) {
             // Assigns img src and id dynamically as per images logged by user
@@ -62,20 +59,19 @@ function pictures() {
             }
           } else {
             data.map((res) => {
-              // console.log(res);
+            
               const id = res._id;
-              // console.log(id);
               const URL = res.URL;
-              console.log(URL);
               const title = res.title;
-              // console.log(title);
+            
+              // Dynamically generated cards
               var collageDivsImages = `<div class="cards mx-auto text-center col-4 col-lg-4" id="${id}">
                                           <p class="mt-4" data-id="${id}">
                                           <p><img src="${URL}" class="cardImage" /><br></p>
                                           <span class="cardTitle">${title}&nbsp;                                           
                                           </span></p>
                                         </div>`;
-              // console.log(collageDivsImages);
+            
               // Attaches dynamically generated images into DIV
               if (collageDivsEl) {
                 collageDivsEl.insertAdjacentHTML(
@@ -83,23 +79,19 @@ function pictures() {
                   collageDivsImages
                 );
               }
-              // collageDivsEl.insertAdjacentHTML("beforeend", collageDivsImages);
             });
           }
         }
 
-        // Maps the last 6 images posted in database
-        // console.log(data);
+        // Maps the last 6 images posted in database      
         eventPictureFunction(data);
         function eventPictureFunction(data) {
-          // console.log(data);
+        
           data.map((dataMap) => {
-            const title = dataMap.title;
-            // console.log(title);
+            const title = dataMap.title;          
             const id = dataMap._id;
             const description = dataMap.description;
-            const URL = dataMap.URL;
-            // console.log(id);
+            const URL = dataMap.URL;          
 
             /*        PREVIOUS CARDS CARROUSEL LAYOUT --- DO NOT DELETE
           var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
@@ -118,7 +110,6 @@ function pictures() {
             // Displays fullscreen DIV with dynamically generated albums of traveled places
             const eventPictureClick = document.getElementById(id);
             eventPictureClick.addEventListener("click", (event) => {
-              console.log("You clicked on eventPictureClick");
               eventPicDiv.style.visibility = "visible";
               eventPicDiv.classList.add("flip-in-ver-left");
               var currentSrc = event.path[0].currentSrc;
