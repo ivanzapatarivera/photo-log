@@ -56,14 +56,10 @@ function pictures() {
                               </div>
                             </div>
                           `;
-                          // Attaches dynamically generated images into DIV
-              if (collageDivsEl) {
-                collageDivsEl.insertAdjacentHTML(
-                  "beforeend",
-                  collageDivsImages
-                );
-              }
-            
+            // Attaches dynamically generated images into DIV
+            if (collageDivsEl) {
+              collageDivsEl.insertAdjacentHTML("beforeend", collageDivsImages);
+            }
           } else {
             data.map((res) => {
               // console.log(res);
@@ -89,9 +85,6 @@ function pictures() {
               }
               // collageDivsEl.insertAdjacentHTML("beforeend", collageDivsImages);
             });
-            
-              
-            
           }
         }
 
@@ -162,7 +155,7 @@ function pictures() {
 
       // Dialog to confirm deleting image
       var thisVar = confirm("Would you like to delete this image?");
-      if (thisVar) { 
+      if (thisVar) {
         fetch("/deleteLog/" + dataID, {
           method: "delete",
         }).then(() => {
