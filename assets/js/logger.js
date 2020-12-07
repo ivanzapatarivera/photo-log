@@ -15,23 +15,25 @@ function logger() {
         const lastItem = res.length - 1;
         const itemSelected = res[lastItem];
         const itemSelectedID = itemSelected._id;
-        const URL = "../image/" + itemSelected.filename;
+        const itemSelectedFileName = itemSelected.filename
+        const URL = `../image/${itemSelectedFileName}`
+        console.log(URL);
         var image = `<div class="row mt-5">
                     <div class="col-12 col-lg-8 mx-auto text-center">
-                    <img src="${URL}" class="shadow-sm" id="${itemSelectedID}" style="max-width: 500px;">
+                    <img src="${URL}" class="shadow-sm" id="${itemSelectedID}" style="width: 100%; max-width: 500px;">
                     </div>
                   </div>`;
 
         imagesEl.insertAdjacentHTML("afterend", image);
 
-        const form = `<form class="py-5 col-12 col-lg-8 mx-auto" action="/log" method="post">
+        const form = `<form class="pb-5 col-12 col-lg-8 mx-auto" action="/log" method="post">
                             <label class="text-white" for="title">Title</label><br>
-                            <input class="px-3 pt-2" type="text" name="title" id="title" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;How would you like to name this picture?"><br>
+                            <input class="px-3" type="text" name="title" id="title" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;How would you like to name this picture?"><br>
+                            <label class="text-white" for="location">Location</label><br>
+                            <input class="px-3" type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
+                            <label class="text-white" for="description">Description</label><br>
+                            <textarea class="px-3" type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
                             <input class="" type="text" name="URL" id="URL" value="${URL}" style="display: none"><br>
-                            <label class="text-white pb-1" for="location">Location</label><br>
-                            <input class="px-3 " type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
-                            <label class="text-white pt-4" for="description">Description</label><br>
-                            <textarea class="px-3 py-1" type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
                             <button class="button btn btn-primary mb-5">Log</button>
                         </form>`;
 
