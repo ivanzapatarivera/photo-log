@@ -48,9 +48,9 @@ function nav() {
 
     // Attach navigation as a footer when in mobile view (static)
     var footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer footerMobileView py-4">
-                          <a href="/" class="footer"><i class="far fa-user-circle"></i> Profile</a>
-                          <span id="imagesMobile" class="footer px-5"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </span>
-                          <span id="locationsLoggedMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
+                          <a href="/" class="footer imagesMobile"><i class="far fa-user-circle"></i> Profile</a>
+                          <span id="imagesMobile" class="footer px-5 imagesMobile"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </span>
+                          <span id="locationsLoggedMobile" class="imagesMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
                           </footer>`;
 
     displayLocations();

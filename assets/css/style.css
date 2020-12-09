@@ -13,6 +13,13 @@ body {
 .nav-link:hover {
   cursor: pointer;
 }
+.imagesMobile {
+  color: white;
+}
+.imagesMobile:hover, .imagesMobile:active {
+  cursor: pointer;
+  color: rgb(225, 225, 225);
+}
 .locationsLoggedDropdownMenu {
 background-color: #12232e;
 color: white;
