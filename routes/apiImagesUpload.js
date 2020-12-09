@@ -30,19 +30,11 @@ let storage = new GridFsStorage({
 const upload = multer({ storage });
 
 app.post("/upload", upload.single("upload"), (req, res) => {
-  // res.json({ file: req.file })
   res.redirect("/LogYourPhoto");
 });
 
 app.get("/files", (req, res) => {
   gfs.files.find().toArray((err, files) => {
-    //check if files exist
-    // if (!files || files.length == 0) {
-    //   return res.status(404).json({
-    //     err: "No files exist",
-    //   });
-    // }
-    // files exist
     res.json(files);
   });
 });

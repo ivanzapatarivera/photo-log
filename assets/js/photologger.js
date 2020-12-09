@@ -33,9 +33,11 @@ function photoLogger() {
       uploadBtnArr = uploadBtnArr.split("\\");
       var i = uploadBtnArr.length - 1;
       var fileName = uploadBtnArr[i];
+      var fileNameArr = fileName.split(" ");
+      fileNameArr = fileNameArr.join("");
       console.log(uploadBtnArr);
       console.log(fileName);
-      // console.log(fileNameArr)
+      console.log(fileNameArr)
       console.log(`You've selected this file: `, uploadBtn.value);
       previewFileName.innerText = `Would you like to upload ${fileName} ?`;
     });
