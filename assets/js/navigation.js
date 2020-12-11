@@ -1,7 +1,7 @@
 function nav() {
-  var body = document.querySelector('body');
-
+  var body = document.querySelector("body");
   navbarGenerator();
+
   function navbarGenerator() {
     // Attach navigation as a navbar when in desktop view (static)
     var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">

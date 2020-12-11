@@ -1,113 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Enter your description here" />
-    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicons">
-    <link rel="apple-touch-icon" sizes="60x60" href="../images/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../images/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../images/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../images/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="../images/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <title>PhotoLog - Profile</title>
-  </head>
+
+<head>
   
-  <body>
-    <div class="container main mt-4 mb-5 py-5">
-      <div class="row">
-       
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Description" content="Enter your description here" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-        <!-- Column with profile content -->
-        <div class="col-12 col-md-8 mx-auto">
-          <!-- This is the first row with profile picture and form to update Timeline -->
-          <div class="row mt-5 text-center">
-            <!-- Profile picture column -->
-            <div class="col-12 mb-3 mx-auto">
-              <!-- Profile Picture -->
-              <div id="show" class="col-12 col-md-3 mb-3 mx-auto">
-                <div id="profilepic"></div>
-              </div>
+  <link rel="apple-touch-icon" sizes="57x57" href="../images/favicons">
+  <link rel="apple-touch-icon" sizes="60x60" href="../images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicons/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-              <!-- Profile picture update form -->
-              <div id="newProfilePic" class="col-12 col-md-6 mb-3 mx-auto newProfilePic"></div>
+  <title>PhotoLog - Profile</title>
+
+</head>
+
+<body>
+  <div class="container main mt-4 mb-5 py-5">
+    <div class="row">
+
+
+      <!-- Column with profile content -->
+      <div class="col-12 col-md-8 mx-auto">
+        <!-- This is the first row with profile picture and form to update Timeline -->
+        <div class="row mt-5 text-center">
+          <!-- Profile picture column -->
+          <div class="col-12 mb-3 mx-auto">
+            <!-- Profile Picture -->
+            <div id="show" class="col-12 col-md-3 mb-3 mx-auto">
+              <div id="profilepic"></div>
             </div>
 
-            <div class="col-12 mx-auto">
-              <button class="px-4 py-1 postStatusBtn" id="postStatusBtn">
-                <i class="fas fa-feather-alt"></i>
-              </button>
-            </div>
-
-            <!-- PhotoLog Status update column with entry form  -->
-            <div class="status statusText text-center" id="statusBox"></div>
+            <!-- Profile picture update form -->
+            <div id="newProfilePic" class="col-12 col-md-6 mb-3 mx-auto newProfilePic"></div>
           </div>
 
-            <!-- Picture Collage -->
-          <div class="row picturesWall" id="picturesCollage">
-            <div class="col-12">
-              <h4 class="text-center pt-3" id="picturesCollageHeading">Recent PhotoLogs</h4>
-              <div class="row p-3 mainCollageDIV" id="collageDivs"></div>
-            </div>
+          <div class="col-12 mx-auto">
+            <button class="px-4 py-1 postStatusBtn" id="postStatusBtn">
+              <i class="fas fa-feather-alt"></i>
+            </button>
           </div>
 
-          <!-- Full Screen Div -->
-          <div class="row">
-            <div
-              class="col-12 col-md-12 mx-auto text-center fullScreenDiv"
-              id="pictureDiv"
-            ></div>
-          </div>
+          <!-- PhotoLog Status update column with entry form  -->
+          <div class="status statusText text-center" id="statusBox"></div>
+        </div>
 
-          <!-- Section with previous statuses -->
-          <div class="row">
-            <div class="col-12 my-4">
-              <h3 class="text-center timeline">Timeline</h3>
-              <div class="mx-auto px-2" id="previousStatus"></div>
-            </div>
+        <!-- Picture Collage -->
+        <div class="row picturesWall" id="picturesCollage">
+          <div class="col-12">
+            <h4 class="text-center pt-3" id="picturesCollageHeading">Recent PhotoLogs</h4>
+            <div class="row p-3 mainCollageDIV" id="collageDivs"></div>
           </div>
         </div>
 
-        <!-- Column with links of places traveled -->
+        <!-- Full Screen Div -->
+        <div class="row">
+          <div class="col-12 col-md-12 mx-auto text-center fullScreenDiv" id="pictureDiv"></div>
+        </div>
+
+        <!-- Section with previous statuses -->
         <div class="row">
           <div class="col-12 my-4">
-            <h4 class="text-center placesTraveled" id="places">
-              Albums by Location
-            </h4>
+            <h3 class="text-center timeline">Timeline</h3>
+            <div class="mx-auto px-2" id="previousStatus"></div>
           </div>
         </div>
-        
       </div>
-      
+
+      <!-- Column with links of places traveled -->
+      <div class="row">
+        <div class="col-12 my-4">
+          <h4 class="text-center placesTraveled" id="places">
+            Albums by Location
+          </h4>
+        </div>
+      </div>
+
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
-    <script type="module" src="./js/script.js"></script>
-  </body>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
+  <script type="module" src="./js/script.js"></script>
+</body>
+
 </html>
