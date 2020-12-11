@@ -2,9 +2,9 @@ function nav() {
   var body = document.querySelector("body");
 
   navbarGenerator();
-  function navbarGenerator() {
+  function navbarGenerator(navbarDesktopView, topBarMobileView, footerBarDesktopView, footerMobileView) {
     // Navbar when in desktop view
-    var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
+    navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
                               <div class="container">
                                 <a class="navbar-brand" href="/">
                                   <img src="../images/logo-nav.png" class="logo-nav">
@@ -36,19 +36,19 @@ function nav() {
                             </nav>`;
 
     // Top bar when in mobile view
-    var topBarMobileView = `<nav class="text-center navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
+    topBarMobileView = `<nav class="text-center navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
                               <a href="/">
                                 <img src="../images/logo-nav.png" />
                               </a>
                             </nav>`;
 
     // Bottom bar when in desktop view
-    var footerBarDesktopView = `<footer id="footerDesktop" class="text-center fixed-bottom footer footerDesktopView py-3">
+    footerBarDesktopView = `<footer id="footerDesktop" class="text-center fixed-bottom footer footerDesktopView py-3">
                                   <span class="text-center footerDesktop">&nbsp&nbsp&nbsp&nbsp&copy; Copyright 2020 PhotoLog App</span>
                                 </footer>`;
 
     // Footer navigation when in mobile view
-    var footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer footerMobileView py-4">
+    footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer footerMobileView py-4">
                               <a href="/" class="footer imagesMobile">
                                 <i class="far fa-user-circle"></i> Profile
                               </a>
@@ -61,8 +61,8 @@ function nav() {
                             </footer>`;
 
     displayLocations();
-    function displayLocations() {
-      const API = "/getLocations/";
+    function displayLocations(API, generatedLocationsDropdownMenu, generatedLocations) {
+      API = "/getLocations/";
       fetch(API)
         .then((res) => {
           return res.json(API);
@@ -70,10 +70,10 @@ function nav() {
         .then((response) => {
           response.map((generatedLocation) => {
             // Display name of album by each location generated
-            const generatedLocationsDropdownMenu = document.querySelector(
+            generatedLocationsDropdownMenu = document.querySelector(
               "#generatedLocationsDropdownMenu"
             );
-            var generatedLocations = `<div id="${generatedLocation}" class="dropdown-item locationsLoggedDropdownMenu" href="">
+            generatedLocations = `<div id="${generatedLocation}" class="dropdown-item locationsLoggedDropdownMenu" href="">
                                         ${generatedLocation}
                                       </div>`;
             generatedLocationsDropdownMenu.insertAdjacentHTML(
@@ -97,9 +97,9 @@ function nav() {
     }
 
     // Show and hide places traveled DIV
-    function showHideLocationsLogged() {
-      const albumsIconMobile = document.querySelector("#locationsLoggedMobile");
-      const placesTraveledDiv = document.querySelector("#places");
+    function showHideLocationsLogged(albumsIconMobile, placesTraveledDiv) {
+      albumsIconMobile = document.querySelector("#locationsLoggedMobile");
+      placesTraveledDiv = document.querySelector("#places");
 
       // Event listener when in mobile view
       albumsIconMobile.addEventListener("click", () => {

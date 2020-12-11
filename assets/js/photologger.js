@@ -1,5 +1,5 @@
 function photoLogger() {
-  const body = document.querySelector("#root");
+  const body = document.querySelector("body");
   const logNewPhotoDesktop = document.querySelector("#logNewPhoto");
   const logNewPhotoMobile = document.querySelector("#imagesMobile");
 
