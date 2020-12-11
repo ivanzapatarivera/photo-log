@@ -1,58 +1,66 @@
 function nav() {
   var body = document.querySelector("body");
-  navbarGenerator();
 
+  navbarGenerator();
   function navbarGenerator() {
-    // Attach navigation as a navbar when in desktop view (static)
+    // Navbar when in desktop view
     var navbarDesktopView = `<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
                               <div class="container">
-                              <a class="navbar-brand" href="/"><img src="../images/logo-nav.png" class="logo-nav"></a>
-                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
-                              </button>
-                              <div class="collapse navbar-collapse" id="navbarNav">
-                              <ul class="navbar-nav mt-4">
-                              <li class="nav-item">
-                              <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
-                              </li>
-                              </li>
-                              <li class="nav-item">
-                              <a class="nav-link" id="logNewPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
-                              </li>
-                             
-                              <li class="nav-item nav-link">
-                              <div class="dropdown" id="locationsLoggedNavbarBtn">
-                                <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-map-marker-alt"></i> Albums
+                                <a class="navbar-brand" href="/">
+                                  <img src="../images/logo-nav.png" class="logo-nav">
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                  <ul class="navbar-nav mt-4">
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" id="logNewPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
+                                    </li> 
+                                    <li class="nav-item nav-link">
+                                      <div class="dropdown" id="locationsLoggedNavbarBtn">
+                                        <div class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <i class="fas fa-map-marker-alt"></i> Albums
+                                        </div>
+                                        <div class="dropdown-menu shadow fade-in locationsLoggedDropdownMenu" aria-labelledby="dropdownMenuButton" id="generatedLocationsDropdownMenu">                              
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <div class="dropdown-menu shadow fade-in locationsLoggedDropdownMenu" aria-labelledby="dropdownMenuButton" id="locationsLoggedDropdownMenu">                              
-                                </div>
                               </div>
-                              </li>
-                              </ul>
-                              </div>
-                              </div>
-                              </nav>`;
+                            </nav>`;
 
-    // Attach top bar when in mobile view
+    // Top bar when in mobile view
     var topBarMobileView = `<nav class="text-center navbar navbar-expand-lg navbar-dark fixed-top topNavBarMobileView">
-                          <a href="/"><img src="../images/logo-nav.png" /></a>
-                          </nav>
-                          `;
+                              <a href="/">
+                                <img src="../images/logo-nav.png" />
+                              </a>
+                            </nav>`;
 
-    // Attach bottom bar when in desktop view
+    // Bottom bar when in desktop view
     var footerBarDesktopView = `<footer id="footerDesktop" class="text-center fixed-bottom footer footerDesktopView py-3">
-                          <span class="text-center footerDesktop">&nbsp&nbsp&nbsp&nbsp&copy; Copyright 2020 PhotoLog App</span>
-                          </footer>`;
+                                  <span class="text-center footerDesktop">&nbsp&nbsp&nbsp&nbsp&copy; Copyright 2020 PhotoLog App</span>
+                                </footer>`;
 
-    // Attach navigation as a footer when in mobile view (static)
+    // Footer navigation when in mobile view
     var footerMobileView = `<footer id="footer" class="text-center fixed-bottom footer footerMobileView py-4">
-                          <a href="/" class="footer imagesMobile"><i class="far fa-user-circle"></i> Profile</a>
-                          <span id="imagesMobile" class="footer px-5 imagesMobile"><i class="far fa-images"></i>&nbsp&nbsp&nbspLog </span>
-                          <span id="locationsLoggedMobile" class="imagesMobile"><i class="fas fa-map-marker-alt"></i> Albums </span>
-                          </footer>`;
+                              <a href="/" class="footer imagesMobile">
+                                <i class="far fa-user-circle"></i> Profile
+                              </a>
+                              <span id="imagesMobile" class="footer px-5 imagesMobile">
+                                <i class="far fa-images"></i>&nbsp&nbsp&nbspLog 
+                              </span>
+                              <span id="locationsLoggedMobile" class="imagesMobile">
+                                <i class="fas fa-map-marker-alt"></i> Albums 
+                              </span>
+                            </footer>`;
 
+    
     displayLocations();
     function displayLocations() {
       const API = "/getLocations/";
@@ -61,18 +69,18 @@ function nav() {
           return res.json(API);
         })
         .then((response) => {
-          response.map((divResponse) => {
-            displayMenuOfAlbumsByLocations();
+          response.map((generatedLocation) => {
+            displayGeneratedLocationToDropdownMenu();
 
-            // Display name of album by each location
-            function displayMenuOfAlbumsByLocations() {
-              const locationsLoggedDropdownMenu = document.querySelector(
-                "#locationsLoggedDropdownMenu"
+            // Display name of album by each location generated
+            function displayGeneratedLocationToDropdownMenu() {
+              const generatedLocationsDropdownMenu = document.querySelector(
+                "#generatedLocationsDropdownMenu"
               );
-              var divLocations = `<div id="${divResponse}" class="dropdown-item locationsLoggedDropdownMenu" href="">${divResponse}</div>`;
-              locationsLoggedDropdownMenu.insertAdjacentHTML(
+              var generatedLocations = `<div id="${generatedLocation}" class="dropdown-item locationsLoggedDropdownMenu" href="">${generatedLocation}</div>`;
+              generatedLocationsDropdownMenu.insertAdjacentHTML(
                 "beforeend",
-                divLocations
+                generatedLocations
               );
             }
           });
@@ -101,11 +109,9 @@ function nav() {
         if (placesTraveledDiv.style.visibility === "visible") {
           placesTraveledDiv.style.visibility = "hidden";
           placesTraveledDiv.classList.remove("slide-in-bottom");
-          // placesTraveledDiv.classList.add("animate__fadeOutDownBig");
         } else {
           placesTraveledDiv.style.visibility = "visible";
           placesTraveledDiv.classList.add("slide-in-bottom");
-          // placesTraveledDiv.classList.remove("animate__fadeOutDownBig");
         }
       });
 

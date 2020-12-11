@@ -53,7 +53,7 @@ app.delete("/deleteLog/:id", (req, res) => {
     });
 });
 
-// Will get all logs by unrepeated locations
+// Will get all logs by distinct location
 app.get("/getLocations", (req, res) => {
   logs
     .distinct("location")
