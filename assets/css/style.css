@@ -211,6 +211,8 @@ h1,
 
 .profilepic {
   width: 100%;
+  min-width: 160px;
+  max-width: 250px;
   height: auto;
   border-radius: 50%;
 }
@@ -611,7 +613,7 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
 ------------------------------------------
 */
 
-@media screen and (min-width: 0px) and (max-width: 993px) {
+@media screen and (min-width: 0px) and (max-width: 896px) {
   .navbarDesktop,
   .footerDesktopView {
     display: none;
@@ -650,7 +652,7 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
   }
 }
 
-@media screen and (min-width: 994px) {
+@media screen and (min-width: 897px) {
   .footer {
     display: none;
   }

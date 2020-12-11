@@ -1,5 +1,5 @@
 function nav() {
-  var body = document.getElementById("root");
+  var body = document.querySelector('body');
 
   navbarGenerator();
   function navbarGenerator() {
