@@ -112,18 +112,13 @@ function nav() {
         }
       });
 
-      navbarAlbumsIconShowHide();
+      navbarAlbumsIconShowHide(albumsIconMobile);
 
       // Change albums icon visibility to hidden
-      function navbarAlbumsIconShowHide() {
-        const albumsIconDesktop = document.querySelector(
-          "#locationsLoggedNavbarBtn"
-        );
-        const albumsIconMobile = document.querySelector(
-          "#locationsLoggedMobile"
-        );
-        const imagesMobile = document.querySelector("#imagesMobile");
-        const newProfilePic = document.querySelector("#newProfilePic");
+      function navbarAlbumsIconShowHide(albumsIconDesktop, imagesMobile, newProfilePic) {
+        albumsIconDesktop = document.querySelector("#locationsLoggedNavbarBtn");
+        imagesMobile = document.querySelector("#imagesMobile");
+        newProfilePic = document.querySelector("#newProfilePic");
 
         // On desktop view
         if (newProfilePic) {
