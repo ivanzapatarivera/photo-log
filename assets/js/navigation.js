@@ -60,7 +60,6 @@ function nav() {
                               </span>
                             </footer>`;
 
-    
     displayLocations();
     function displayLocations() {
       const API = "/getLocations/";
@@ -70,19 +69,17 @@ function nav() {
         })
         .then((response) => {
           response.map((generatedLocation) => {
-            displayGeneratedLocationToDropdownMenu();
-
             // Display name of album by each location generated
-            function displayGeneratedLocationToDropdownMenu() {
-              const generatedLocationsDropdownMenu = document.querySelector(
-                "#generatedLocationsDropdownMenu"
-              );
-              var generatedLocations = `<div id="${generatedLocation}" class="dropdown-item locationsLoggedDropdownMenu" href="">${generatedLocation}</div>`;
-              generatedLocationsDropdownMenu.insertAdjacentHTML(
-                "beforeend",
-                generatedLocations
-              );
-            }
+            const generatedLocationsDropdownMenu = document.querySelector(
+              "#generatedLocationsDropdownMenu"
+            );
+            var generatedLocations = `<div id="${generatedLocation}" class="dropdown-item locationsLoggedDropdownMenu" href="">
+                                        ${generatedLocation}
+                                      </div>`;
+            generatedLocationsDropdownMenu.insertAdjacentHTML(
+              "beforeend",
+              generatedLocations
+            );
           });
         });
     }
