@@ -27,15 +27,15 @@ function logger() {
         imagesEl.insertAdjacentHTML("afterend", image);
 
         const form = `<form class="pb-5 col-12 col-lg-8 mx-auto" action="/log" method="post">
-                            <label class="text-white" for="title">Title</label><br>
-                            <input class="px-3" type="text" name="title" id="title" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;How would you like to name this picture?"><br>
-                            <label class="text-white" for="location">Location</label><br>
-                            <input class="px-3" type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
-                            <label class="text-white" for="description">Description</label><br>
-                            <textarea class="px-3" type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
-                            <input class="" type="text" name="URL" id="URL" value="${URL}" style="display: none"><br>
-                            <button class="button btn btn-primary mb-5">Log</button>
-                        </form>`;
+                        <label class="text-white" for="title">Title</label><br>
+                          <input class="px-3" type="text" name="title" id="title" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;How would you like to name this picture?"><br>
+                        <label class="text-white" for="location">Location</label><br>
+                          <input class="px-3" type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
+                        <label class="text-white" for="description">Description</label><br>
+                          <textarea class="px-3" type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
+                        <input class="" type="text" name="URL" id="URL" value="${URL}" style="display: none"><br>
+                        <button class="button btn btn-primary mb-5">Log</button>
+                      </form>`;
 
         const formLocation = document.getElementById(`${itemSelectedID}`);
         formLocation.insertAdjacentHTML("afterend", form);
