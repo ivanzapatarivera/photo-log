@@ -33,7 +33,7 @@ function logger() {
                           <input class="px-3" type="text" name="location" id="location" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Where was this picture taken?"><br>
                         <label class="text-white" for="description">Description</label><br>
                           <textarea class="px-3" type="text" name="description" id="description" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Would you like to say something about this picture?"></textarea><br>
-                        <input class="" type="text" name="URL" id="URL" value="${URL}" style="display: none"><br>
+                        <input class="displayHidden" type="text" name="URL" id="URL" value="${URL}"><br>
                         <button class="button btn btn-primary mb-5">Log</button>
                       </form>`;
 

@@ -270,9 +270,7 @@ Images collage section
 .fourthDiv,
 .fifthDiv,
 .sixthDiv {
-  /* flex-shrink: 0; */
   width: 100%;
-  /* height: auto; */
   object-fit: cover;
   transition: transform 0.2s;
 }
