@@ -1,7 +1,7 @@
-function photoLogger() {
-  const body = document.querySelector("body");
-  const logNewPhotoDesktop = document.querySelector("#logNewPhoto");
-  const logNewPhotoMobile = document.querySelector("#imagesMobile");
+function photoLogger(body, logNewPhotoDesktop, logNewPhotoMobile) {
+  body = document.querySelector("body");
+  logNewPhotoDesktop = document.querySelector("#logNewPhoto");
+  logNewPhotoMobile = document.querySelector("#imagesMobile");
 
   if (logNewPhotoDesktop) {
     readForm();
@@ -37,14 +37,12 @@ function photoLogger() {
       fileNameArr = fileNameArr.join("");
       console.log(uploadBtnArr);
       console.log(fileName);
-      console.log(fileNameArr)
+      console.log(fileNameArr);
       console.log(`You've selected this file: `, uploadBtn.value);
       previewFileName.innerText = `Would you like to upload ${fileName} ?`;
     });
 
     const newImageSubmitEl = document.querySelector("#newImageSubmit");
-    const imagesEl = document.querySelector("#images");
-    const API = "/files/";
     newImageSubmitEl.addEventListener("click", () => {});
 
     const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
