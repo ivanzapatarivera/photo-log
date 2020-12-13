@@ -16,4 +16,5 @@ window.onload = function () {
   places();
   photoLogger();
   profilepicturelogger();
+  console.log(arguments);
 };
