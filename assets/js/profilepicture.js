@@ -22,7 +22,6 @@ function profile() {
 
   // Display the latest posted image as profile picture
   const profilePicture = document.querySelector("#profilepic");
-  profilePicture.style.backgroundColor = "red";
   const profilePictureDiv = document.querySelector("#show");
   const profilePictureUpdateForm = document.querySelector("#newProfilePic");
   const profileAPI = "/profilepicturelog";
