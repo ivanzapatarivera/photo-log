@@ -631,11 +631,11 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
   .footerMobileView {
     display: inline-block;
   }
-  .profilepic {
+  /* .profilepic {
     width: 45%;
     height: auto;
     border-radius: 50%;
-  }
+  } */
   .newProfilePic{
     padding-top: 50%;
   }
