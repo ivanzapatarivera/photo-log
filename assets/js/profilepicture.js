@@ -38,19 +38,18 @@ function profile() {
   const profilePictureUpdateForm = document.querySelector("#newProfilePic");
   const profileAPI = "/profilepic";
 
-  if (profilePicture && profilePicture.innerText !== "") {
+  if (profilePicture && profilePicture.innerHTML !== "") {
     fetchAPI();
-  } else {
+  } else if(profilePicture && profilePicture.innerHTML === "") {
+    profilePictureDiv.parentElement.style.backgroundColor = "white";
     var createProfilePictureForm = `<h4>Create Profile Picture</h4>
                                     <form action="/uploadprofile" method="post" enctype="multipart/form-data">
                                       <label class="btn btn-primary">
                                         <i class="fa fa-image"></i> Photo 
-                                        <input type="file" name="uploadprofile" id="uploadprofile" style="display: none;">
+                                        <input type="file" name="uploadprofile" id="uploadprofile" onchange="this.form.submit();" style="display: none;">
                                       </label>
-                                      <div id="previewFileName"></div>
-                                      <button class="button btn" type="submit"><i class="fas fa-check"></i></button>
                                     </form>`;
-    profilePicture.insertAdjacentHTML("afterbegin", createProfilePictureForm)                            
+    profilePicture.insertAdjacentHTML("afterbegin", createProfilePictureForm);                     
   }
 
   // Retrieve and display hte latest image from /profilepic

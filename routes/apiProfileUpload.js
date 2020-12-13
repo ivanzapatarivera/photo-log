@@ -1,11 +1,11 @@
 const express = require("express");
 const mongojs = require("mongojs");
 
-const logs = require("../models/logs.js");
+const ProfilePic = require("../models/profilepic.js");
 const app = express();
 
-app.post("/uploadprofile", ({ body }, res => {
-  logs
+app.post("/profilepicturelog", ({ body }, res => {
+  ProfilePic
     .create(body)
     .then((db) => {
       res.redirect("/LogYourProfilePicture")
@@ -15,8 +15,8 @@ app.post("/uploadprofile", ({ body }, res => {
     })
 }))
 
-app.get("/uploadprofile", (req, res) => {
-  logs
+app.get("/profilepicturelog", (req, res) => {
+  ProfilePic
     .find({ category: "profile" })
     .then((cb) => {
       res.json(cb);
@@ -26,8 +26,8 @@ app.get("/uploadprofile", (req, res) => {
     })
 })
 
-app.get("/uploadprofile/:id", (req, res) => {
-  logs
+app.get("/profilepicturelog/:id", (req, res) => {
+  ProfilePic
     .findOne({ _id: mongojs.ObjectId(req.params.id) }, (err, data) => {
       res.send(data);
     })

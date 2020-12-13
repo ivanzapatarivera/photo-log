@@ -3,10 +3,18 @@ const Schema = mongoose.Schema;
 
 const profilepic = new Schema ({
  
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: false
+    },
     URL: {
         type: String,
         required: true
-    } 
+    }
   
 });
 
