@@ -41,8 +41,15 @@ function profile() {
   if (profilePicture && profilePicture.innerText !== "") {
     fetchAPI();
   } else {
-    var createProfilePictureForm = `
-                                    `
+    var createProfilePictureForm = `<h4>Create Profile Picture</h4>
+                                    <form action="/uploadprofile" method="post" enctype="multipart/form-data">
+                                      <label class="btn btn-primary">
+                                        <i class="fa fa-image"></i> Photo 
+                                        <input type="file" name="uploadprofile" id="uploadprofile" style="display: none;">
+                                      </label>
+                                      <div id="previewFileName"></div>
+                                      <button class="button btn" type="submit"><i class="fas fa-check"></i></button>
+                                    </form>`;
     profilePicture.insertAdjacentHTML("afterbegin", createProfilePictureForm)                            
   }
 
