@@ -48,7 +48,7 @@ app.post("/upload", upload.single("upload"), (req, res) => {
   res.redirect("/LogYourPhoto");
 });
 
-app.post("/uploadprofile", upload.single("upload"), (req, res) => {
+app.post("/uploadprofile", upload.single("uploadprofile"), (req, res) => {
   res.redirect("/LogYourProfilePicture");
 });
 

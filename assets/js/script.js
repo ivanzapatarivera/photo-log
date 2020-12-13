@@ -1,5 +1,6 @@
 import { nav } from "./navigation.js";
 import { logger } from "./logger.js";
+import { profilepicturelogger } from './profilepicturelogger.js';
 import { profile } from "./profilepicture.js";
 import { status } from "./status.js";
 import { pictures } from "./pictures.js";
@@ -14,4 +15,5 @@ window.onload = function () {
   pictures();
   places();
   photoLogger();
+  profilepicturelogger();
 };

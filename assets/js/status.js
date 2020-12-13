@@ -1,6 +1,12 @@
+const statusBox = document.querySelector("#statusBox");
 function status() {
+  if (statusBox) {
+    statusFunction();
+  }
+}
+
+function statusFunction() {
   // This section will create HTML to post status box
-  const statusBox = document.querySelector("#statusBox");
   const statusEl = `<div id="statusText">
                       <div id="status" class="statusForm">
                         <form action="/status" method="post" id="formStatus" class="text-left">

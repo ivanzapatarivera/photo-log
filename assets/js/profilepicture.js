@@ -18,14 +18,15 @@ function profile() {
     //                                 <button class="button btn btn-primary" id="buttonSumbitProfilePicture"><i class="fas fa-check"></i></button>
     //                                 <span class="buttonCancel btn px-2 ml-1" id="buttonCancelProfilePicture"><i class="fas fa-times"></i></span>
     //                             </form>`;
-    const newProfilePicForm = `<form action="/" method="post" enctype="multipart/form-data" class="hidden col-10 col-md-6 mx-auto" id="form">
+    const newProfilePicForm = `<form action="/uploadprofile" method="post" enctype="multipart/form-data">
                                 <label class="btn btn-primary">
                                   <i class="fa fa-image"></i> Photo 
                                   <input type="file" name="uploadprofile" id="uploadprofile" style="display: none;">
-                                </label><br>                                
+                                </label>
+                                <div id="previewFileNameProfile"></div>
                                 <button class="button btn" type="submit" id="buttonSumbitProfilePicture"><i class="fas fa-check"></i></button>
                                 <span class="button buttonCancel btn ml-1" id="buttonCancelProfilePicture"><i class="fas fa-times"></i></span>
-                              </form>     `
+                              </form>`;
 
     newProfilePic.insertAdjacentHTML("afterbegin", newProfilePicForm);
     buttonClickedEventListener();

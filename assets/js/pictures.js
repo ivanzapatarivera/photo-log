@@ -138,6 +138,7 @@ function pictures() {
   }
 
   // Delete images from database
+  if(eventPicDiv){
   eventPicDiv.addEventListener("click", (e) => {
     // Conditional to delete image based on 'delete' class
     if (e.target.matches(".delete")) {
@@ -159,6 +160,7 @@ function pictures() {
       }
     }
   });
+}
 }
 
 export { pictures };
