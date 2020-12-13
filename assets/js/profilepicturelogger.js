@@ -20,17 +20,19 @@ function profilepicturelogger() {
           const URL = `../image/${itemSelectedFileName}`
           console.log(URL);
           var image = `<div class="row mt-5">
-                      <div class="col-12 col-lg-8 mx-auto text-center">
-                      <img src="${URL}" class="shadow-sm" id="${itemSelectedID}" style="width: 100%; max-width: 500px;">
-                      </div>
-                    </div>`;
+                         <div class="col-12 col-lg-8 mx-auto text-center">
+                          <img src="${URL}" class="shadow-sm" id="${itemSelectedID}" style="width: 100%; max-width: 500px;">
+                         </div>
+                      </div>`;
   
                     profilepicturelogger.insertAdjacentHTML("afterend", image);
   
           const form = `<form class="pb-5 col-12 col-lg-8 mx-auto" action="/profilepicturelog" method="post">
-                          <input class="px-3 displayHidden" type="text" name="title" id="title" value="Profile Picture No. ${responseLength}"><br>
-                          <textarea class="px-3" type="text" name="description" id="description" placeholder="Would you like to say something about your profile picture?"></textarea><br>
-                          <input class="displayHidden" type="text" name="URL" id="URL" value="${URL}"><br>
+                          <label for="title" class="displayHidden">Title</label>
+                          <input class="displayHidden" type="text" name="title" id="title" value="Profile Picture No. ${responseLength}">
+                          <label for="description" class="displayHidden">Say Something</label>
+                          <textarea class="px-3 mt-4" type="text" name="description" id="description" placeholder="Would you like to say something about your profile picture?"></textarea>
+                          <input class="displayHidden" type="text" name="URL" id="URL" value="${URL}">
                           <button class="button btn btn-primary mb-5">Post</button>
                         </form>`;
   

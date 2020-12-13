@@ -34,7 +34,6 @@ function logger() {
                         <label class="text-white" for="description">Description</label><br>
                           <textarea class="px-3" type="text" name="description" id="description" placeholder="Would you like to say something about this picture?"></textarea><br>
                         <input class="displayHidden" type="text" name="URL" id="URL" value="${URL}"><br>
-                        <input class="" type="text" name="category" id="category" value="log"><br>
                         <button class="button btn btn-primary mb-5">Log</button>
                       </form>`;
 

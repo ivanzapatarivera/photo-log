@@ -35,7 +35,7 @@ app.use(require("./routes/apiLogs"));
 app.use(require("./routes/apiProfilePic"));
 app.use(require("./routes/apiStatusUpdate"));
 app.use(require("./routes/apiImagesUpload"));
-// app.use(require("./routes/apiProfileUpload"));
+app.use(require("./routes/apiProfileUpload"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

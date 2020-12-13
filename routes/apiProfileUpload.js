@@ -4,20 +4,20 @@ const mongojs = require("mongojs");
 const ProfilePic = require("../models/profilepic.js");
 const app = express();
 
-app.post("/profilepicturelog", ({ body }, res => {
+app.post("/profilepicturelog", ({ body }, res) => {
   ProfilePic
     .create(body)
     .then((db) => {
-      res.redirect("/LogYourProfilePicture")
+      res.redirect("/profile");
     })
     .catch((err) => {
       res.json(err);
-    })
-}))
+    });
+});
 
 app.get("/profilepicturelog", (req, res) => {
   ProfilePic
-    .find({ category: "profile" })
+    .find({})
     .then((cb) => {
       res.json(cb);
     })
