@@ -34,8 +34,7 @@ function profile() {
                                       <input type="file" name="uploadprofile" id="uploadprofile" onchange="this.form.submit();" class="displayHidden">
                                     </label>
                                   </form>`;
-  fetchAPI();
-  
+  fetchAPI();  
   
   // Retrieve and display hte latest image from /profilepic
   function fetchAPI() {
@@ -44,14 +43,14 @@ function profile() {
       return res.json(profileAPI);
     })
     .then((d) => {
-      var dL = d.length - 1;
-      var URL = d[dL].URL;
-      var img = `<img src="${URL}" class="profilepic">`;
-      
-      if(d.length == 0){
+      console.log(d.length)
+      if(d.length < 1){
         profilePicture.insertAdjacentHTML("afterbegin", createProfilePictureForm); 
         profilePictureDiv.parentElement.style.backgroundColor = "white";
       } else {                   
+        var dL = d.length - 1;
+        var URL = d[dL].URL;
+        var img = `<img src="${URL}" class="profilepic">`;
         profilePicture.insertAdjacentHTML("afterbegin", img);
         profilePictureDivEventListener();
       }
