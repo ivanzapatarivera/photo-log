@@ -14,7 +14,8 @@ function photoLogger(body, logNewPhotoDesktop, logNewPhotoMobile) {
                                 <h5 class="text-center">Log your Photo!</h5>
                                 <form action="/upload" method="post" enctype="multipart/form-data">
                                   <label class="btn btn-primary">
-                                    <i class="fa fa-image"></i> Photo <input type="file" name="upload" id="upload" style="display: none;">
+                                    <i class="fa fa-image"></i> Photo 
+                                    <input type="file" name="upload" id="upload" style="display: none;">
                                   </label>
                                   <div id="previewFileName"></div>
                                   <button class="button btn" type="submit" id="newImageSubmit"><i class="fas fa-check"></i></button>

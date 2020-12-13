@@ -8,5 +8,5 @@ var images = new Schema(
             contentType: String }
     }
   );
-  var Image = mongoose.model('Images', images);
+  var Image = mongoose.model('imageUpload', images);
   module.exports = Image;

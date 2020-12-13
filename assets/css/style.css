@@ -620,7 +620,7 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
 ------------------------------------------
 */
 
-@media screen and (min-width: 0px) and (max-width: 896px) {
+@media screen and (min-width: 0px) and (max-width: 992px) {
   .navbarDesktop,
   .footerDesktopView {
     display: none;
@@ -659,7 +659,7 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
   }
 }
 
-@media screen and (min-width: 897px) {
+@media screen and (min-width: 993px) {
   .footer {
     display: none;
   }
