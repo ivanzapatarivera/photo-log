@@ -38,8 +38,12 @@ function profile() {
   const profilePictureUpdateForm = document.querySelector("#newProfilePic");
   const profileAPI = "/profilepic";
 
-  if (profilePicture) {
+  if (profilePicture && profilePicture.innerText !== "") {
     fetchAPI();
+  } else {
+    var createProfilePictureForm = `
+                                    `
+    profilePicture.insertAdjacentHTML("afterbegin", createProfilePictureForm)                            
   }
 
   // Retrieve and display hte latest image from /profilepic
@@ -51,7 +55,7 @@ function profile() {
       .then((d) => {
         var dL = d.length - 1;
         var URL = d[dL].URL;
-        var img = `<img src=${URL} class="profilepic">`;
+        var img = `<img src="${URL}" class="profilepic">`;
         profilePicture.insertAdjacentHTML("afterbegin", img);
         profilePictureDivEventListener();
       });

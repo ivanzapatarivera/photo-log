@@ -1,9 +1,9 @@
 function profilepicturelogger() {
     const profilepicturelogger = document.querySelector("#profilepicturelogger");
-    console.log('youre in profilepicturelogger')
+    
     const logAPhotoIcon = document.querySelector("#logNewPhoto");
     if(profilepicturelogger) {
-        console.log('youre in profilepicturelogger2')
+        
       logAPhotoIcon.style.display = "none";
   
     //   const imagesEl = document.querySelector("#profilepicturelogger");
