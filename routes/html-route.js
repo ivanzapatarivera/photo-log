@@ -14,6 +14,11 @@ router.get('/LogYourPhoto', (req, res) => {
     res.sendFile(path.join(__dirname + '../../assets/html/photo-engine.html'))
 });
 
+
+router.get('/LogYourProfilePicture', (req, res) => {
+    res.sendFile(path.join(__dirname + '../../assets/html/profile-engine.html'))
+});
+
 router.get('/thankyou', (req, res) => {
     res.sendFile(path.join(__dirname + '../../assets/html/thankyou.html'))
 });

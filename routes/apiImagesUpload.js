@@ -48,6 +48,10 @@ app.post("/upload", upload.single("upload"), (req, res) => {
   res.redirect("/LogYourPhoto");
 });
 
+app.post("/uploadprofile", upload.single("upload"), (req, res) => {
+  res.redirect("/LogYourProfilePicture");
+});
+
 app.get("/files", (req, res) => {
  gfs.files.find({}).toArray((err, files) => {
    res.json(files);
