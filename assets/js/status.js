@@ -84,16 +84,20 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             let hour = time[0] - timezoneOffSet;
             let minute = time[1];
             let seconds = time[2];
-
-            console.log(hour);
-            if(hour > 12) { hour = hour - 12; seconds = seconds + ' PM' } else
-            if(hour == 12) { seconds = seconds + ' PM'} else { seconds = seconds + ' AM'}
-            let timeConstructed = ` ${hour}:${minute}:${seconds}`;          
-
+            
+            let timeConstructed;
+            ({ timeConstructed, hour, seconds } = timeConstruction(hour, seconds, minute));          
+            
             let day = dayTime[0];
             let year = dateArray[0];
-
-
+            
+            function timeConstruction(hour, seconds, minute) {
+              if (hour > 12) { hour = hour - 12; seconds = seconds + ' PM'; }
+              else if (hour == 12) { seconds = seconds + ' PM'; } else { seconds = seconds + ' AM'; }
+              let timeConstructed = ` ${hour}:${minute}:${seconds}`;
+              return { timeConstructed, hour, seconds };
+            }
+            
             returnTimestamp(month, day, year, time);
             // StatusCard timestamp
             function returnTimestamp(){      
@@ -159,6 +163,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
       }
     });
   }
+
 }
 
 
