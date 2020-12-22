@@ -7,14 +7,17 @@ function status() {
 }
 
 function insertStatusForm() {
-  // Status Form Temp. Lit.
   const statusForm = statusFormHTML();
   statusBox.insertAdjacentHTML("afterbegin", statusForm);
-  statusformEventListeners();
+
+  // Manage eventListener's on statusForm
+  statusFormEventListeners();
+  // Load previous status posts
   loadPreviousStatusPosts();
 }
 
 function statusFormHTML() {
+  // Status Form Temp. Lit.
   return `<div id="statusText" class="statusForm">
             <form action="/status" method="post" id="formStatus" class="text-left">
               <textarea
@@ -31,25 +34,24 @@ function statusFormHTML() {
           </div>`;
 }
 
-function statusformEventListeners(statusBtn, buttonSubmit, buttonCancel) {
+function statusFormEventListeners(statusBtn, buttonSubmit, buttonCancel) {
 
-  // This section will display the status box
   statusBtn = document.querySelector("#postStatusBtn");
   buttonSubmit = document.querySelector("#buttonSubmitStatus");
   buttonCancel = document.querySelector("#buttonCancelStatus");
-  
-    statusBtn.addEventListener("click", () => {
-      statusBox.style.display = "flex";
-      statusBox.classList.add("scale-in-center");
-    });
-    buttonSubmit.addEventListener("click", () => {
-      statusBox.style.display = "none";
-      statusBox.classList.remove("scale-in-center");
-    });
-    buttonCancel.addEventListener("click", () => {
-      statusBox.style.display = "none";
-      statusBox.classList.remove("scale-in-center");
-    });
+
+  statusBtn.addEventListener("click", () => {
+    statusBox.style.display = "flex";
+    statusBox.classList.add("scale-in-center");
+  });
+  buttonSubmit.addEventListener("click", () => {
+    statusBox.classList.remove("scale-in-center");
+    statusBox.style.display = "none";
+  });
+  buttonCancel.addEventListener("click", () => {
+    statusBox.classList.remove("scale-in-center");
+    statusBox.style.display = "none";
+  });
 
 }
 
