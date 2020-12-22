@@ -35,7 +35,6 @@ function statusFormHTML() {
 }
 
 function statusFormEventListeners(statusBtn, buttonSubmit, buttonCancel) {
-
   statusBtn = document.querySelector("#postStatusBtn");
   buttonSubmit = document.querySelector("#buttonSubmitStatus");
   buttonCancel = document.querySelector("#buttonCancelStatus");
@@ -52,75 +51,104 @@ function statusFormEventListeners(statusBtn, buttonSubmit, buttonCancel) {
     statusBox.classList.remove("scale-in-center");
     statusBox.style.display = "none";
   });
-
 }
 
-
 function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
-
   statusForm = document.querySelector("#statusForm");
   previousStats = document.querySelector("#previousStatus");
   statusAPI = "/status";
 
   if (statusForm) {
-      fetch(statusAPI)
-        .then((res) => res.json(statusAPI))
-        .then((d) => {
-          d.map((d) => {
+    fetch(statusAPI)
+      .then((res) => res.json(statusAPI))
+      .then((d) => {
+        d.map((d) => {
+          let id = d._id;
+          let date = d.timestamp;
+          let dateArray = date.split("-");
+          let month = dateArray[1];
+          let dayTime = dateArray[2].split("T");
 
-            let id = d._id;
-            let date = d.timestamp;
-            let dateArray = date.split("-");
-            let month = dateArray[1];
-            let dayTime = dateArray[2].split("T");
+          // Timestamp hour:minute:second
+          let time = dayTime[1].split(".");
+          let timezoneOffSet = new Date().getTimezoneOffset();
+          timezoneOffSet = timezoneOffSet / 60;
+          time = time[0];
+          time = time.split(":");
 
-            // Timestamp hour:minute:second
-            let time = dayTime[1].split(".");
-            let timezoneOffSet = new Date().getTimezoneOffset();
-            timezoneOffSet = timezoneOffSet / 60
-            time = time[0];
-            time = time.split(':');
-            
-            let hour = time[0] - timezoneOffSet;
-            let minute = time[1];
-            let seconds = time[2];
-            
-            let timeConstructed;
-            ({ timeConstructed, hour, seconds } = timeConstruction(hour, seconds, minute));          
-            
-            let day = dayTime[0];
-            let year = dateArray[0];
+          let hour = time[0] - timezoneOffSet;
+          let minute = time[1];
+          let seconds = time[2];
 
-            // time construction for timestamp
-            function timeConstruction(hour, seconds, minute) {
-              if (hour > 12) { hour = hour - 12; seconds = seconds + ' PM'; }
-              else if (hour == 12) { seconds = seconds + ' PM'; } else { seconds = seconds + ' AM'; }
-              let timeConstructed = ` ${hour}:${minute}:${seconds}`;
-              return { timeConstructed, hour, seconds };
+          let timeConstructed;
+          ({ timeConstructed, hour, seconds } = timeConstruction(
+            hour,
+            seconds,
+            minute
+          ));
+
+          let day = dayTime[0];
+          let year = dateArray[0];
+
+          // time construction for timestamp
+          function timeConstruction(hour, seconds, minute) {
+            if (hour > 12) {
+              hour = hour - 12;
+              seconds = seconds + " PM";
+            } else if (hour == 12) {
+              seconds = seconds + " PM";
+            } else {
+              seconds = seconds + " AM";
             }
-            
-            returnTimestamp(month, day, year, time);
-            // StatusCard timestamp
-            function returnTimestamp(){      
-              
-              // Month added to timestamp
-              let monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-              month = monthArr[month - 1]
+            let timeConstructed = ` ${hour}:${minute}:${seconds}`;
+            return { timeConstructed, hour, seconds };
+          }
 
-              // Day rd, nd, th addded to timestamp
-              if(day == 1 || day == 21 || day == 31){ day = day + 'st' } else
-              if(day == 2 || day == 22){ day = day + 'nd' } else
-              if(day == 3 || day == 23){ day = day + 'rd' } else {day = day + 'th'};
-              
-              // Timestamp temp. lit.
-              let timestamp = `Posted on: ${month} ${day}, ${year} @${timeConstructed}`;
+          returnTimestamp(month, day, year, time);
+          // StatusCard timestamp
+          function returnTimestamp() {
+            // Month added to timestamp
+            let monthArr = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ];
+            month = monthArr[month - 1];
 
-              let statusText = d.statusUpdate;
-              previousStatusCard(id, timestamp, statusText, previousStats);
+            // Day rd, nd, th addded to timestamp
+            if (day == 1 || day == 21 || day == 31) {
+              day = day + "st";
+            } else if (day == 2 || day == 22) {
+              day = day + "nd";
+            } else if (day == 3 || day == 23) {
+              day = day + "rd";
+            } else {
+              day = day + "th";
+            }
 
-              // Insert timestamp and status text into card
-              function previousStatusCard(id, timestamp, statusText, previousStats) {
-                let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
+            // Timestamp temp. lit.
+            let timestamp = `Posted on: ${month} ${day}, ${year} @${timeConstructed}`;
+
+            let statusText = d.statusUpdate;
+            previousStatusCard(id, timestamp, statusText, previousStats);
+
+            // Insert timestamp and status text into card
+            function previousStatusCard(
+              id,
+              timestamp,
+              statusText,
+              previousStats
+            ) {
+              let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
                                     <span style="font-size: .8rem;">${timestamp} 
                                       <span onClick="delete" class="delete">
                                         <i class="far fa-trash-alt text-right delete" data-id=${id}></i>
@@ -128,17 +156,15 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
                                     </span>
                                     <p class="statusText pt-2" data-id="${id}">${statusText}</p>
                                   </div>`;
-              
-                previousStats.insertAdjacentHTML("afterbegin", statusCard);
-              }
-            }
 
-          });
-        })
-        .catch((err) => {
-          console.error("Error: ", err);
+              previousStats.insertAdjacentHTML("afterbegin", statusCard);
+            }
+          }
         });
-    
+      })
+      .catch((err) => {
+        console.error("Error: ", err);
+      });
 
     // Delete status post by matching target class & data-id
     previousStats.addEventListener("click", (e) => {
@@ -154,9 +180,6 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
       }
     });
   }
-
 }
 
-
 export { status };
-
