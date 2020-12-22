@@ -83,7 +83,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             // StatusCard timestamp
             function returnTimestamp(){      
 
-              // 
+              // Month added to timestamp
               if (month == 1) { month = 'January' };
               if (month == 2) { month = 'February' };
               if (month == 3) { month = 'March' };
@@ -96,9 +96,19 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               if (month == 10) { month = 'October' };
               if (month == 11) { month = 'November' };
               if (month == 12) { month = 'December' };
+
+              // Day rd, nd, th addded
+              // 1st 21st 31st
+              // 2nd 22nd 
+              // 3rd 23rd
+              // 4th 5th 6th 7th 8th 9th 10th 11th 12th 13th 14th 15th 16th 18th 19th 20th 24th 25th 26th 27th 28th 29th 30th
               
-              let timestamp =  `Created on: ${month} ${day}, ${year} @${time}`
+              if(day.split('').pop() == 1){ day = day + 'st' } else
+              if(day.split('').pop() == 2){ day = day + 'nd' } else
+              if(day.split('').pop() == 3){ day = day + 'rd' } else {day = day + 'th'};
               
+              // Timestamp temp. lit.
+              let timestamp = `Created on: ${month} ${day}, ${year} @${time}`;
 
               let statusText = d.statusUpdate;
               let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
@@ -111,7 +121,6 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
                               </div>`;
   
               previousStats.insertAdjacentHTML("afterbegin", statusCard);
-
             }
 
           });
