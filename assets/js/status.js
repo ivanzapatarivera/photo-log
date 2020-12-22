@@ -98,11 +98,6 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               if (month == 12) { month = 'December' };
 
               // Day rd, nd, th addded to timestamp
-              // 1st 21st 31st
-              // 2nd 22nd 
-              // 3rd 23rd
-              // 4th 5th 6th 7th 8th 9th 10th 11th 12th 13th 14th 15th 16th 18th 19th 20th 24th 25th 26th 27th 28th 29th 30th
-              
               if(day == 1 || day == 21 || day == 31){ day = day + 'st' } else
               if(day == 2 || day == 22){ day = day + 'nd' } else
               if(day == 3 || day == 23){ day = day + 'rd' } else {day = day + 'th'};
