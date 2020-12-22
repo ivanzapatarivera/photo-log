@@ -73,8 +73,20 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             let dateArray = date.split("-");
             let month = dateArray[1];
             let dayTime = dateArray[2].split("T");
+
+            // Timestamp hour:minute:second
             let time = dayTime[1].split(".");
+            let timezoneOffSet = new Date().getTimezoneOffset();
+            timezoneOffSet = timezoneOffSet / 60
             time = time[0];
+            time = time.split(':');
+            console.log(time)
+            let hour = time[0] - timezoneOffSet;
+            let minute = time[1];
+            let seconds = time[2];
+            timeConstructed = `${hour}:${minute}:${seconds}`;
+            // if(hour >= 0 && hour < 12)
+
             let day = dayTime[0];
             let year = dateArray[0];
 
@@ -104,18 +116,23 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               
               // Timestamp temp. lit.
               let timestamp = `Created on: ${month} ${day}, ${year} @${time}`;
-
               let statusText = d.statusUpdate;
-              let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
-                                <span style="font-size: .8rem;">${timestamp} 
-                                  <span onClick="delete" class="delete">
-                                    <i class="far fa-trash-alt text-right delete" data-id=${id}></i>
-                                  </span>
-                                </span>
-                                <p class="statusText pt-2" data-id="${id}">${statusText}</p>
-                              </div>`;
-  
-              previousStats.insertAdjacentHTML("afterbegin", statusCard);
+
+              previousStatusCard(id, timestamp, statusText, previousStats);
+
+              // Insert timestamp and status text into card
+              function previousStatusCard(id, timestamp, statusText, previousStats) {
+                let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
+                                            <span style="font-size: .8rem;">${timestamp} 
+                                              <span onClick="delete" class="delete">
+                                                <i class="far fa-trash-alt text-right delete" data-id=${id}></i>
+                                              </span>
+                                            </span>
+                                            <p class="statusText pt-2" data-id="${id}">${statusText}</p>
+                                          </div>`;
+              
+                previousStats.insertAdjacentHTML("afterbegin", statusCard);
+              }
             }
 
           });
@@ -125,7 +142,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
         });
     
 
-    // This section will delete status post
+    // Delete status post by matching target class & data-id
     previousStats.addEventListener("click", (e) => {
       if (e.target.matches(".delete")) {
         var el = e.target;
@@ -143,3 +160,4 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
 
 
 export { status };
+
