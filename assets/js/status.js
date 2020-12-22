@@ -80,12 +80,15 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             timezoneOffSet = timezoneOffSet / 60
             time = time[0];
             time = time.split(':');
-            console.log(time)
+            
             let hour = time[0] - timezoneOffSet;
             let minute = time[1];
             let seconds = time[2];
-            timeConstructed = `${hour}:${minute}:${seconds}`;
-            // if(hour >= 0 && hour < 12)
+
+            console.log(hour);
+            if(hour > 12) { hour = hour - 12; seconds = seconds + ' PM' } else
+            if(hour == 12) { seconds = seconds + ' PM'} else { seconds = seconds + ' AM'}
+            let timeConstructed = ` ${hour}:${minute}:${seconds}`;          
 
             let day = dayTime[0];
             let year = dateArray[0];
@@ -115,7 +118,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               if(day == 3 || day == 23){ day = day + 'rd' } else {day = day + 'th'};
               
               // Timestamp temp. lit.
-              let timestamp = `Created on: ${month} ${day}, ${year} @${time}`;
+              let timestamp = `Created on: ${month} ${day}, ${year} @${timeConstructed}`;
               let statusText = d.statusUpdate;
 
               previousStatusCard(id, timestamp, statusText, previousStats);
