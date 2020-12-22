@@ -34,7 +34,7 @@ function photoLogger(body, logNewPhotoDesktop, logNewPhotoMobile) {
       uploadBtnArr = uploadBtnArr.split("\\");
       var i = uploadBtnArr.length - 1;
       var fileName = uploadBtnArr[i];
-      var fileNameArr = fileName.split(" ").join("");
+      var fileNameArr = fileName.split(" ");
       fileNameArr = fileNameArr.join("");
       console.log(uploadBtnArr);
       console.log(fileName);
