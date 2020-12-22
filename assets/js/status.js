@@ -68,6 +68,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
         .then((d) => {
           console.log(d);
           d.map((d) => {
+
             let id = d._id;
             let date = d.timestamp;
             let dateArray = date.split("-");
@@ -77,7 +78,13 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             time = time[0];
             let day = dayTime[0];
             let year = dateArray[0];
-            let timestamp = `Created on: ${month}/${day}/${year} @${time}`;
+
+            // StatusCard timestamp
+            let timestamp = returnTimestamp(month, day, year, time);
+
+            function returnTimestamp(){
+              return `Created on: ${month}/${day}/${year} @${time}`
+            }
 
             let statusText = d.statusUpdate;
             let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
