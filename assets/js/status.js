@@ -90,7 +90,8 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             
             let day = dayTime[0];
             let year = dateArray[0];
-            
+
+            // time construction for timestamp
             function timeConstruction(hour, seconds, minute) {
               if (hour > 12) { hour = hour - 12; seconds = seconds + ' PM'; }
               else if (hour == 12) { seconds = seconds + ' PM'; } else { seconds = seconds + ' AM'; }
@@ -101,6 +102,8 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             returnTimestamp(month, day, year, time);
             // StatusCard timestamp
             function returnTimestamp(){      
+              
+              console.log(month);
 
               // Month added to timestamp
               if (month == 1) { month = 'January' };
@@ -115,6 +118,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               if (month == 10) { month = 'October' };
               if (month == 11) { month = 'November' };
               if (month == 12) { month = 'December' };
+
 
               // Day rd, nd, th addded to timestamp
               if(day == 1 || day == 21 || day == 31){ day = day + 'st' } else
