@@ -36,16 +36,11 @@ function photoLogger(body, logNewPhotoDesktop, logNewPhotoMobile) {
       var fileName = uploadBtnArr[i];
       var fileNameArr = fileName.split(" ");
       fileNameArr = fileNameArr.join("");
-      console.log(uploadBtnArr);
-      console.log(fileName);
-      console.log(fileNameArr);
-      console.log(`You've selected this file: `, uploadBtn.value);
       previewFileName.innerText = `Would you like to upload ${fileName} ?`;
     });
 
     const newImageSubmitEl = document.querySelector("#newImageSubmit");
     newImageSubmitEl.addEventListener("click", () => {});
-
     const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
     const logNewPhotoFormCancelBtn = document.querySelector(
       "#logNewPhotoFormCancelBtn"
