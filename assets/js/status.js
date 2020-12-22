@@ -1,36 +1,43 @@
-const statusBox = document.querySelector("#statusBox");
+var statusBox = document.querySelector("#statusBox");
+
 function status() {
   if (statusBox) {
-    statusFunction();
+    insertStatusForm();
   }
 }
 
-function statusFunction() {
-  // This section will create HTML to post status box
-  const statusEl = `<div id="statusText">
-                      <div id="status" class="statusForm">
-                        <form action="/status" method="post" id="formStatus" class="text-left">
-                          <textarea
-                            name="statusUpdate"
-                            id="statusUpdate"
-                            cols="100%"
-                            rows="3"
-                            placeholder="What's on your mind?"
-                            class="px-3 py-1"
-                          ></textarea>
-                          <button class="button btn px-2 py-1" id="buttonSubmitStatus"><i class="far fa-paper-plane"></i></button>
-                          <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancelStatus"><i class="fas fa-times"></i></span>
-                        </form>
-                      </div>
-                    </div>`;
-  statusBox.insertAdjacentHTML("afterbegin", statusEl);
+function insertStatusForm() {
+  // Status Form Temp. Lit.
+  const statusForm = statusFormHTML();
+  statusBox.insertAdjacentHTML("afterbegin", statusForm);
+  statusformEventListeners();
+  loadPreviousStatusPosts();
+}
+
+function statusFormHTML() {
+  return `<div id="statusText" class="statusForm">
+            <form action="/status" method="post" id="formStatus" class="text-left">
+              <textarea
+                name="statusUpdate"
+                id="statusUpdate"
+                cols="100%"
+                rows="3"
+                placeholder="What's on your mind?"
+                class="px-3 py-1"
+              ></textarea>
+              <button class="button btn px-2 py-1" id="buttonSubmitStatus"><i class="far fa-paper-plane"></i></button>
+              <span class="buttonCancel btn py-1 px-2 ml-1" id="buttonCancelStatus"><i class="fas fa-times"></i></span>
+            </form>
+          </div>`;
+}
+
+function statusformEventListeners(statusBtn, buttonSubmit, buttonCancel) {
 
   // This section will display the status box
-  const statusBtn = document.querySelector("#postStatusBtn");
-  const buttonSubmit = document.querySelector("#buttonSubmitStatus");
-  const buttonCancel = document.querySelector("#buttonCancelStatus");
-  showHideStatusBox();
-  function showHideStatusBox() {
+  statusBtn = document.querySelector("#postStatusBtn");
+  buttonSubmit = document.querySelector("#buttonSubmitStatus");
+  buttonCancel = document.querySelector("#buttonCancelStatus");
+  
     statusBtn.addEventListener("click", () => {
       statusBox.style.display = "flex";
       statusBox.classList.add("scale-in-center");
@@ -43,7 +50,11 @@ function statusFunction() {
       statusBox.style.display = "none";
       statusBox.classList.remove("scale-in-center");
     });
-  }
+
+}
+
+
+function loadPreviousStatusPosts() {
 
   // This section will load all the previous status post
   const status = document.querySelector("#statusText");
@@ -89,6 +100,7 @@ function statusFunction() {
           console.error("Error: ", err);
         });
     }
+    
 
     // This section will delete status post
     previousStats.addEventListener("click", (e) => {
@@ -105,5 +117,6 @@ function statusFunction() {
     });
   }
 }
+
 
 export { status };
