@@ -118,7 +118,7 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               if(day == 3 || day == 23){ day = day + 'rd' } else {day = day + 'th'};
               
               // Timestamp temp. lit.
-              let timestamp = `Created on: ${month} ${day}, ${year} @${timeConstructed}`;
+              let timestamp = `Posted on: ${month} ${day}, ${year} @${timeConstructed}`;
               let statusText = d.statusUpdate;
 
               previousStatusCard(id, timestamp, statusText, previousStats);
