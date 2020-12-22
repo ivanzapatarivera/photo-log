@@ -103,24 +103,12 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
             // StatusCard timestamp
             function returnTimestamp(){      
               
-              console.log(month);
-
               // Month added to timestamp
-              if (month == 1) { month = 'January' };
-              if (month == 2) { month = 'February' };
-              if (month == 3) { month = 'March' };
-              if (month == 4) { month = 'April' };
-              if (month == 5) { month = 'May' };
-              if (month == 6) { month = 'June' };
-              if (month == 7) { month = 'July' };
-              if (month == 8) { month = 'August' };
-              if (month == 9) { month = 'September' };
-              if (month == 10) { month = 'October' };
-              if (month == 11) { month = 'November' };
-              if (month == 12) { month = 'December' };
-
+              let monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+              month = monthArr[month - 1]
 
               // Day rd, nd, th addded to timestamp
+
               if(day == 1 || day == 21 || day == 31){ day = day + 'st' } else
               if(day == 2 || day == 22){ day = day + 'nd' } else
               if(day == 3 || day == 23){ day = day + 'rd' } else {day = day + 'th'};
@@ -134,13 +122,13 @@ function renderPreviousStatusPosts(statusForm, previousStats, statusAPI) {
               // Insert timestamp and status text into card
               function previousStatusCard(id, timestamp, statusText, previousStats) {
                 let statusCard = `<div class="mt-3 col-12 col-md-12 mx-auto card text-left px-3 py-2 cardStatus" data-id="${id}">
-                                            <span style="font-size: .8rem;">${timestamp} 
-                                              <span onClick="delete" class="delete">
-                                                <i class="far fa-trash-alt text-right delete" data-id=${id}></i>
-                                              </span>
-                                            </span>
-                                            <p class="statusText pt-2" data-id="${id}">${statusText}</p>
-                                          </div>`;
+                                    <span style="font-size: .8rem;">${timestamp} 
+                                      <span onClick="delete" class="delete">
+                                        <i class="far fa-trash-alt text-right delete" data-id=${id}></i>
+                                      </span>
+                                    </span>
+                                    <p class="statusText pt-2" data-id="${id}">${statusText}</p>
+                                  </div>`;
               
                 previousStats.insertAdjacentHTML("afterbegin", statusCard);
               }
