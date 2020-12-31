@@ -16,7 +16,7 @@ function nav() {
                                   <ul class="navbar-nav mt-4">
                                     <li class="nav-item">
                                     <a class="nav-link" href="/profile"><i class="far fa-user-circle"></i> Profile <span class="sr-only">(current)</span></a>
-                                    </li>
+                                    
                                     </li>
                                     <li class="nav-item">
                                     <a class="nav-link" id="logNewPhoto"><i class="fas fa-camera"></i> Log a Photo</a>
